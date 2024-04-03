@@ -166,6 +166,8 @@ namespace ModComponent.SDK
                     InspectAngles = new float[] { modCharcoalComponent.InspectAngles.x, modCharcoalComponent.InspectAngles.y, modCharcoalComponent.InspectAngles.z },
                     InspectOffset = new float[] { modCharcoalComponent.InspectOffset.x, modCharcoalComponent.InspectOffset.y, modCharcoalComponent.InspectOffset.z },
                     InspectScale = new float[] { modCharcoalComponent.InspectScale.x, modCharcoalComponent.InspectScale.y, modCharcoalComponent.InspectScale.z },
+                    NormalModel = modCharcoalComponent.NormalModel != null ? modCharcoalComponent.NormalModel.name : "",
+                    InspectModel = modCharcoalComponent.InspectModel != null ? modCharcoalComponent.InspectModel.name : "",
 
                     modCharcoalComponent.SurveyGameMinutes,
                     modCharcoalComponent.SurveyRealSeconds,
@@ -193,6 +195,7 @@ namespace ModComponent.SDK
                     InspectScale = new float[] { modClothingComponent.InspectScale.x, modClothingComponent.InspectScale.y, modClothingComponent.InspectScale.z },
                     NormalModel = modClothingComponent.NormalModel != null ? modClothingComponent.NormalModel.name : "",
                     InspectModel = modClothingComponent.InspectModel != null ? modClothingComponent.InspectModel.name : "",
+
                     Region = modClothingComponent.Region.ToString(),
                     MinLayer = modClothingComponent.MinLayer.ToString(),
                     MaxLayer = modClothingComponent.MaxLayer.ToString(),
@@ -235,6 +238,8 @@ namespace ModComponent.SDK
                     InspectAngles = new float[] { modCollectibleComponent.InspectAngles.x, modCollectibleComponent.InspectAngles.y, modCollectibleComponent.InspectAngles.z },
                     InspectOffset = new float[] { modCollectibleComponent.InspectOffset.x, modCollectibleComponent.InspectOffset.y, modCollectibleComponent.InspectOffset.z },
                     InspectScale = new float[] { modCollectibleComponent.InspectScale.x, modCollectibleComponent.InspectScale.y, modCollectibleComponent.InspectScale.z },
+                    NormalModel = modCollectibleComponent.NormalModel != null ? modCollectibleComponent.NormalModel.name : "",
+                    InspectModel = modCollectibleComponent.InspectModel != null ? modCollectibleComponent.InspectModel.name : "",
 
                     modCollectibleComponent.HudMessageLocalizationId,
                     modCollectibleComponent.NarrativeTextLocalizationId,
@@ -327,6 +332,8 @@ namespace ModComponent.SDK
                     InspectAngles = new float[] { modCookableComponent.InspectAngles.x, modCookableComponent.InspectAngles.y, modCookableComponent.InspectAngles.z },
                     InspectOffset = new float[] { modCookableComponent.InspectOffset.x, modCookableComponent.InspectOffset.y, modCookableComponent.InspectOffset.z },
                     InspectScale = new float[] { modCookableComponent.InspectScale.x, modCookableComponent.InspectScale.y, modCookableComponent.InspectScale.z },
+                    NormalModel = modCookableComponent.NormalModel != null ? modCookableComponent.NormalModel.name : "",
+                    InspectModel = modCookableComponent.InspectModel != null ? modCookableComponent.InspectModel.name : "",
 
                     modCookableComponent.Cooking,
                     modCookableComponent.CookingMinutes,
@@ -357,6 +364,8 @@ namespace ModComponent.SDK
                     InspectAngles = new float[] { modCookingPotComponent.InspectAngles.x, modCookingPotComponent.InspectAngles.y, modCookingPotComponent.InspectAngles.z },
                     InspectOffset = new float[] { modCookingPotComponent.InspectOffset.x, modCookingPotComponent.InspectOffset.y, modCookingPotComponent.InspectOffset.z },
                     InspectScale = new float[] { modCookingPotComponent.InspectScale.x, modCookingPotComponent.InspectScale.y, modCookingPotComponent.InspectScale.z },
+                    NormalModel = modCookingPotComponent.NormalModel != null ? modCookingPotComponent.NormalModel.name : "",
+                    InspectModel = modCookingPotComponent.InspectModel != null ? modCookingPotComponent.InspectModel.name : "",
 
                     modCookingPotComponent.CanCookLiquid,
                     modCookingPotComponent.CanCookGrub,
@@ -383,6 +392,8 @@ namespace ModComponent.SDK
                     InspectAngles = new float[] { modFirstAidComponent.InspectAngles.x, modFirstAidComponent.InspectAngles.y, modFirstAidComponent.InspectAngles.z },
                     InspectOffset = new float[] { modFirstAidComponent.InspectOffset.x, modFirstAidComponent.InspectOffset.y, modFirstAidComponent.InspectOffset.z },
                     InspectScale = new float[] { modFirstAidComponent.InspectScale.x, modFirstAidComponent.InspectScale.y, modFirstAidComponent.InspectScale.z },
+                    NormalModel = modFirstAidComponent.NormalModel != null ? modFirstAidComponent.NormalModel.name : "",
+                    InspectModel = modFirstAidComponent.InspectModel != null ? modFirstAidComponent.InspectModel.name : "",
 
                     modFirstAidComponent.ProgressBarMessage,
                     modFirstAidComponent.RemedyText,
@@ -411,6 +422,8 @@ namespace ModComponent.SDK
                     InspectAngles = new float[] { modToolComponent.InspectAngles.x, modToolComponent.InspectAngles.y, modToolComponent.InspectAngles.z },
                     InspectOffset = new float[] { modToolComponent.InspectOffset.x, modToolComponent.InspectOffset.y, modToolComponent.InspectOffset.z },
                     InspectScale = new float[] { modToolComponent.InspectScale.x, modToolComponent.InspectScale.y, modToolComponent.InspectScale.z },
+                    NormalModel = modToolComponent.NormalModel != null ? modToolComponent.NormalModel.name : "",
+                    InspectModel = modToolComponent.InspectModel != null ? modToolComponent.InspectModel.name : "",
 
                     EquippedModelPrefab = modToolComponent.EquippedModelPrefab != null ? modToolComponent.EquippedModelPrefab.name : "",
                     modToolComponent.ImplementationType,
@@ -463,6 +476,8 @@ namespace ModComponent.SDK
                     InspectAngles = new float[] { modGenericEquippableComponent.InspectAngles.x, modGenericEquippableComponent.InspectAngles.y, modGenericEquippableComponent.InspectAngles.z },
                     InspectOffset = new float[] { modGenericEquippableComponent.InspectOffset.x, modGenericEquippableComponent.InspectOffset.y, modGenericEquippableComponent.InspectOffset.z },
                     InspectScale = new float[] { modGenericEquippableComponent.InspectScale.x, modGenericEquippableComponent.InspectScale.y, modGenericEquippableComponent.InspectScale.z },
+                    NormalModel = modGenericEquippableComponent.NormalModel != null ? modGenericEquippableComponent.NormalModel.name : "",
+                    InspectModel = modGenericEquippableComponent.InspectModel != null ? modGenericEquippableComponent.InspectModel.name : "",
 
                     EquippedModelPrefab = modGenericEquippableComponent.EquippedModelPrefab?.name ?? "",
                     modGenericEquippableComponent.ImplementationType,
@@ -487,6 +502,8 @@ namespace ModComponent.SDK
                     InspectAngles = new float[] { modLiquidComponent.InspectAngles.x, modLiquidComponent.InspectAngles.y, modLiquidComponent.InspectAngles.z },
                     InspectOffset = new float[] { modLiquidComponent.InspectOffset.x, modLiquidComponent.InspectOffset.y, modLiquidComponent.InspectOffset.z },
                     InspectScale = new float[] { modLiquidComponent.InspectScale.x, modLiquidComponent.InspectScale.y, modLiquidComponent.InspectScale.z },
+                    NormalModel = modLiquidComponent.NormalModel != null ? modLiquidComponent.NormalModel.name : "",
+                    InspectModel = modLiquidComponent.InspectModel != null ? modLiquidComponent.InspectModel.name : "",
 
                     LiquidType = modLiquidComponent.LiquidType.ToString(),
                     modLiquidComponent.LiquidCapacityLiters,
@@ -512,6 +529,8 @@ namespace ModComponent.SDK
                     InspectAngles = new float[] { modPowderComponent.InspectAngles.x, modPowderComponent.InspectAngles.y, modPowderComponent.InspectAngles.z },
                     InspectOffset = new float[] { modPowderComponent.InspectOffset.x, modPowderComponent.InspectOffset.y, modPowderComponent.InspectOffset.z },
                     InspectScale = new float[] { modPowderComponent.InspectScale.x, modPowderComponent.InspectScale.y, modPowderComponent.InspectScale.z },
+                    NormalModel = modPowderComponent.NormalModel != null ? modPowderComponent.NormalModel.name : "",
+                    InspectModel = modPowderComponent.InspectModel != null ? modPowderComponent.InspectModel.name : "",
 
                     PowderType = modPowderComponent.PowderType.ToString(),
                     modPowderComponent.CapacityKG,
@@ -536,6 +555,8 @@ namespace ModComponent.SDK
                     InspectAngles = new float[] { modPurificationComponent.InspectAngles.x, modPurificationComponent.InspectAngles.y, modPurificationComponent.InspectAngles.z },
                     InspectOffset = new float[] { modPurificationComponent.InspectOffset.x, modPurificationComponent.InspectOffset.y, modPurificationComponent.InspectOffset.z },
                     InspectScale = new float[] { modPurificationComponent.InspectScale.x, modPurificationComponent.InspectScale.y, modPurificationComponent.InspectScale.z },
+                    NormalModel = modPurificationComponent.NormalModel != null ? modPurificationComponent.NormalModel.name : "",
+                    InspectModel = modPurificationComponent.InspectModel != null ? modPurificationComponent.InspectModel.name : "",
 
                     modPurificationComponent.LitersPurify,
                     modPurificationComponent.ProgressBarDurationSeconds,
@@ -561,6 +582,8 @@ namespace ModComponent.SDK
                     InspectAngles = new float[] { modRandomItemComponent.InspectAngles.x, modRandomItemComponent.InspectAngles.y, modRandomItemComponent.InspectAngles.z },
                     InspectOffset = new float[] { modRandomItemComponent.InspectOffset.x, modRandomItemComponent.InspectOffset.y, modRandomItemComponent.InspectOffset.z },
                     InspectScale = new float[] { modRandomItemComponent.InspectScale.x, modRandomItemComponent.InspectScale.y, modRandomItemComponent.InspectScale.z },
+                    NormalModel = modRandomItemComponent.NormalModel != null ? modRandomItemComponent.NormalModel.name : "",
+                    InspectModel = modRandomItemComponent.InspectModel != null ? modRandomItemComponent.InspectModel.name : "",
 
                     ItemNames = modRandomItemComponent.ItemNames?.Select(gear => gear.name).ToArray(),
                 },
@@ -583,6 +606,8 @@ namespace ModComponent.SDK
                     InspectAngles = new float[] { modRandomWeightedItemComponent.InspectAngles.x, modRandomWeightedItemComponent.InspectAngles.y, modRandomWeightedItemComponent.InspectAngles.z },
                     InspectOffset = new float[] { modRandomWeightedItemComponent.InspectOffset.x, modRandomWeightedItemComponent.InspectOffset.y, modRandomWeightedItemComponent.InspectOffset.z },
                     InspectScale = new float[] { modRandomWeightedItemComponent.InspectScale.x, modRandomWeightedItemComponent.InspectScale.y, modRandomWeightedItemComponent.InspectScale.z },
+                    NormalModel = modRandomWeightedItemComponent.NormalModel != null ? modRandomWeightedItemComponent.NormalModel.name : "",
+                    InspectModel = modRandomWeightedItemComponent.InspectModel != null ? modRandomWeightedItemComponent.InspectModel.name : "",
 
                     ItemNames = modRandomWeightedItemComponent.ItemNames?.Select(gear => gear.name).ToArray(),
                     modRandomWeightedItemComponent.ItemWeights
@@ -606,6 +631,8 @@ namespace ModComponent.SDK
                     InspectAngles = new float[] { modResearchComponent.InspectAngles.x, modResearchComponent.InspectAngles.y, modResearchComponent.InspectAngles.z },
                     InspectOffset = new float[] { modResearchComponent.InspectOffset.x, modResearchComponent.InspectOffset.y, modResearchComponent.InspectOffset.z },
                     InspectScale = new float[] { modResearchComponent.InspectScale.x, modResearchComponent.InspectScale.y, modResearchComponent.InspectScale.z },
+                    NormalModel = modResearchComponent.NormalModel != null ? modResearchComponent.NormalModel.name : "",
+                    InspectModel = modResearchComponent.InspectModel != null ? modResearchComponent.InspectModel.name : "",
 
                     SkillType = modResearchComponent.SkillType.ToString(),
                     modResearchComponent.TimeRequirementHours,
