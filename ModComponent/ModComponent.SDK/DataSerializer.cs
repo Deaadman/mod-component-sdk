@@ -15,7 +15,7 @@ namespace ModComponent.SDK
                 {
                     modRecipe.RecipeName,
                     modRecipe.RecipeDescription,
-                    RecipeIcon = modRecipe.RecipeIcon?.Icon.name ?? "",
+                    RecipeIcon = modRecipe.RecipeIcon != null ? modRecipe.RecipeIcon.Icon.name : null ?? "",
                     modRecipe.RequiredSkillLevel,
                     AllowedCookingPots = modRecipe.AllowedCookingPots?.Select(pot => pot.name).ToArray() ?? new string[0],
                     BlueprintData = new
@@ -24,10 +24,10 @@ namespace ModComponent.SDK
                         RequiredGear = modRecipe.RequiredGear?.Select(g => new { Item = g.GearItem.name, g.Count }).ToArray(),
                         RequiredPowder = modRecipe.RequiredPowder?.Select(g => new { Powder = g.PowderItem.name, g.QuantityInKilograms }).ToArray(),
                         RequiredLiquid = modRecipe.RequiredLiquid?.Select(g => new { Liquid = g.LiquidItem.name, g.VolumeInLitres }).ToArray(),
-                        CraftedResult = modRecipe.CraftedResult?.name ?? "",
+                        CraftedResult = modRecipe.CraftedResult != null ? modRecipe.CraftedResult.name : null ?? "",
                         modRecipe.CraftedResultCount,
                         modRecipe.DurationMinutes,
-                        CraftingAudio = modRecipe.CraftingAudio?.name ?? ""
+                        CraftingAudio = modRecipe.CraftingAudio != null ? modRecipe.CraftingAudio.name : null ?? ""
                     }
                 },
                 ModBlueprint modBlueprint => new
@@ -36,15 +36,15 @@ namespace ModComponent.SDK
                     RequiredGear = modBlueprint.RequiredGear?.Select(g => new { Item = g.GearItem.name, g.Count }).ToArray(),
                     modBlueprint.KeroseneLitersRequired,
                     modBlueprint.GunpowderKGRequired,
-                    RequiredTool = modBlueprint.RequiredTool?.name ?? "",
+                    RequiredTool = modBlueprint.RequiredTool != null ? modBlueprint.RequiredTool.name : null ?? "",
                     OptionalTools = modBlueprint.OptionalTools?.Select(tool => tool.name).ToArray(),
                     RequiredCraftingLocation = modBlueprint.RequiredCraftingLocation.ToString(),
                     modBlueprint.RequiresLitFire,
                     modBlueprint.RequiresLight,
-                    CraftedResult = modBlueprint.CraftedResult?.name ?? "",
+                    CraftedResult = modBlueprint.CraftedResult != null ? modBlueprint.CraftedResult.name : null ?? "",
                     modBlueprint.CraftedResultCount,
                     modBlueprint.DurationMinutes,
-                    CraftingAudio = modBlueprint.CraftingAudio?.name ?? "",
+                    CraftingAudio = modBlueprint.CraftingAudio != null ? modBlueprint.CraftingAudio.name : null ?? "",
                     AppliedSkill = modBlueprint.AppliedSkill.ToString(),
                     ImprovedSkill = modBlueprint.ImprovedSkill.ToString()
                 },
@@ -108,8 +108,8 @@ namespace ModComponent.SDK
                     modBedComponent.DegradePerHour,
                     modBedComponent.BearAttackModifier,
                     modBedComponent.WolfAttackModifier,
-                    OpenAudio = modBedComponent.OpenAudio?.name ?? "",
-                    CloseAudio = modBedComponent.CloseAudio?.name ?? "",
+                    OpenAudio = modBedComponent.OpenAudio != null ? modBedComponent.OpenAudio.name : null ?? "",
+                    CloseAudio = modBedComponent.CloseAudio != null ? modBedComponent.CloseAudio.name : null ?? "",
                     PackedMesh = modBedComponent.PackedMesh != null ? modBedComponent.NormalModel.name : "",
                     UsableMesh = modBedComponent.UsableMesh != null ? modBedComponent.NormalModel.name : "",
                 },
@@ -136,14 +136,14 @@ namespace ModComponent.SDK
                     InspectModel = modBodyHarvestComponent.InspectModel != null ? modBodyHarvestComponent.InspectModel.name : "",
 
                     modBodyHarvestComponent.CanCarry,
-                    HarvestAudio = modBodyHarvestComponent.HarvestAudio?.name ?? "",
-                    GutPrefab = modBodyHarvestComponent.GutPrefab?.name ?? "",
+                    HarvestAudio = modBodyHarvestComponent.HarvestAudio != null ? modBodyHarvestComponent.HarvestAudio.name : null ?? "",
+                    GutPrefab = modBodyHarvestComponent.GutPrefab != null ? modBodyHarvestComponent.GutPrefab.name : null ?? "",
                     modBodyHarvestComponent.GutQuantity,
                     modBodyHarvestComponent.GutWeightKgPerUnit,
-                    HidePrefab = modBodyHarvestComponent.HidePrefab?.name ?? "",
+                    HidePrefab = modBodyHarvestComponent.HidePrefab != null ? modBodyHarvestComponent.HidePrefab.name : null ?? "",
                     modBodyHarvestComponent.HideQuantity,
                     modBodyHarvestComponent.HideWeightKgPerUnit,
-                    MeatPrefab = modBodyHarvestComponent.MeatPrefab?.name ?? "",
+                    MeatPrefab = modBodyHarvestComponent.MeatPrefab != null ? modBodyHarvestComponent.MeatPrefab.name : null ?? "",
                     modBodyHarvestComponent.MeatAvailableMinKG,
                     modBodyHarvestComponent.MeatAvailableMaxKG
                 },
@@ -172,7 +172,7 @@ namespace ModComponent.SDK
                     modCharcoalComponent.SurveyGameMinutes,
                     modCharcoalComponent.SurveyRealSeconds,
                     modCharcoalComponent.SurveySkillExtendedHours,
-                    SurveyLoopAudio = modCharcoalComponent.SurveyLoopAudio?.name ?? ""
+                    SurveyLoopAudio = modCharcoalComponent.SurveyLoopAudio != null ? modCharcoalComponent.SurveyLoopAudio.name : null ?? ""
                 },
                 ModClothingComponent modClothingComponent => new
                 {
@@ -282,8 +282,8 @@ namespace ModComponent.SDK
                     modFoodComponent.Calories,
                     modFoodComponent.Servings,
                     modFoodComponent.EatingTime,
-                    EatingAudio = modFoodComponent.EatingAudio?.name ?? "",
-                    EatingPackagedAudio = modFoodComponent.EatingPackagedAudio?.name ?? "",
+                    EatingAudio = modFoodComponent.EatingAudio != null ? modFoodComponent.EatingAudio.name : null ?? "",
+                    EatingPackagedAudio = modFoodComponent.EatingPackagedAudio != null ? modFoodComponent.EatingPackagedAudio.name : null ?? "",
                     modFoodComponent.ThirstEffect,
                     modFoodComponent.FoodPoisoning,
                     modFoodComponent.FoodPoisoningLowCondition,
@@ -339,11 +339,11 @@ namespace ModComponent.SDK
                     modCookableComponent.CookingMinutes,
                     modCookableComponent.CookingUnitsRequired,
                     modCookableComponent.CookingWaterRequired,
-                    CookingResult = modCookableComponent.CookingResult?.name ?? "",
+                    CookingResult = modCookableComponent.CookingResult != null ? modCookableComponent.CookingResult.name : null ?? "",
                     modCookableComponent.BurntMinutes,
                     Type = modCookableComponent.Type.ToString(),
-                    CookingAudio = modCookableComponent.CookingAudio?.name ?? "",
-                    StartCookingAudio = modCookableComponent.StartCookingAudio?.name ?? ""
+                    CookingAudio = modCookableComponent.CookingAudio != null ? modCookableComponent.CookingAudio.name : null ?? "",
+                    StartCookingAudio = modCookableComponent.StartCookingAudio != null ? modCookableComponent.StartCookingAudio.name : null ?? ""
                 },
                 ModCookingPotComponent modCookingPotComponent => new
                 {
@@ -371,7 +371,7 @@ namespace ModComponent.SDK
                     modCookingPotComponent.CanCookGrub,
                     modCookingPotComponent.CanCookMeat,
                     modCookingPotComponent.Capacity,
-                    Template = modCookingPotComponent.Template?.name ?? ""
+                    Template = modCookingPotComponent.Template != null ? modCookingPotComponent.Template.name : null ?? ""
                 },
                 ModFirstAidComponent modFirstAidComponent => new
                 {
@@ -401,7 +401,7 @@ namespace ModComponent.SDK
                     FirstAidType = modFirstAidComponent.FirstAidType.ToString(),
                     modFirstAidComponent.TimeToUseSeconds,
                     modFirstAidComponent.UnitsPerUse,
-                    UseAudio = modFirstAidComponent.UseAudio?.name ?? ""
+                    UseAudio = modFirstAidComponent.UseAudio != null ? modFirstAidComponent.UseAudio.name : null ?? ""
                 },
                 ModToolComponent modToolComponent => new
                 {
@@ -439,11 +439,11 @@ namespace ModComponent.SDK
                     modToolComponent.BreakDown,
                     modToolComponent.BreakDownTimeMultiplier,
                     modToolComponent.ForceLocks,
-                    ForceLockAudio = modToolComponent.ForceLockAudio?.name ?? "",
+                    ForceLockAudio = modToolComponent.ForceLockAudio != null ? modToolComponent.ForceLockAudio.name : null ?? "",
                     modToolComponent.IceFishingHole,
                     modToolComponent.IceFishingHoleDegradeOnUse,
                     modToolComponent.IceFishingHoleMinutes,
-                    IceFishingHoleAudio = modToolComponent.IceFishingHoleAudio?.name ?? "",
+                    IceFishingHoleAudio = modToolComponent.IceFishingHoleAudio != null ? modToolComponent.IceFishingHoleAudio.name : null ?? "",
                     modToolComponent.CarcassHarvesting,
                     modToolComponent.MinutesPerKgMeat,
                     modToolComponent.MinutesPerKgFrozenMeat,
@@ -479,9 +479,9 @@ namespace ModComponent.SDK
                     NormalModel = modGenericEquippableComponent.NormalModel != null ? modGenericEquippableComponent.NormalModel.name : "",
                     InspectModel = modGenericEquippableComponent.InspectModel != null ? modGenericEquippableComponent.InspectModel.name : "",
 
-                    EquippedModelPrefab = modGenericEquippableComponent.EquippedModelPrefab?.name ?? "",
+                    EquippedModelPrefab = modGenericEquippableComponent.EquippedModelPrefab != null ? modGenericEquippableComponent.EquippedModelPrefab.name : null ?? "",
                     modGenericEquippableComponent.ImplementationType,
-                    EquippingAudio = modGenericEquippableComponent.EquippingAudio?.name ?? ""
+                    EquippingAudio = modGenericEquippableComponent.EquippingAudio != null ? modGenericEquippableComponent.EquippingAudio.name : null ?? ""
                 },
                 ModLiquidComponent modLiquidComponent => new
                 {
@@ -561,7 +561,7 @@ namespace ModComponent.SDK
                     modPurificationComponent.LitersPurify,
                     modPurificationComponent.ProgressBarDurationSeconds,
                     modPurificationComponent.ProgressBarLocalizationID,
-                    PurifyAudio = modPurificationComponent.PurifyAudio?.name ?? ""
+                    PurifyAudio = modPurificationComponent.PurifyAudio != null ? modPurificationComponent.PurifyAudio.name : null ?? ""
                 },
                 ModRandomItemComponent modRandomItemComponent => new
                 {
@@ -638,7 +638,7 @@ namespace ModComponent.SDK
                     modResearchComponent.TimeRequirementHours,
                     modResearchComponent.SkillPoints,
                     modResearchComponent.NoBenefitAtSkillLevel,
-                    ReadAudio = modResearchComponent.ReadAudio?.name ?? ""
+                    ReadAudio = modResearchComponent.ReadAudio != null ? modResearchComponent.ReadAudio.name : null ?? ""
                 },
                 ModGenericComponent modGenericComponent => new
                 {
@@ -682,7 +682,7 @@ namespace ModComponent.SDK
                 },
                 ModEvolveBehaviour modEvolveBehaviour => new
                 {
-                    TargetItemName = modEvolveBehaviour.TargetItemName?.name ?? "",
+                    TargetItemName = modEvolveBehaviour.TargetItemName != null ? modEvolveBehaviour.TargetItemName.name : null ?? "",
                     modEvolveBehaviour.EvolveHours,
                     modEvolveBehaviour.IndoorsOnly
                 },
@@ -690,7 +690,7 @@ namespace ModComponent.SDK
                 {
                     modFireStarterBehaviour.DestroyedOnUse,
                     modFireStarterBehaviour.NumberOfUses,
-                    OnUseSoundEvent = modFireStarterBehaviour.OnUseSoundEvent?.name ?? "",
+                    OnUseSoundEvent = modFireStarterBehaviour.OnUseSoundEvent != null ? modFireStarterBehaviour.OnUseSoundEvent.name : null ?? "",
                     modFireStarterBehaviour.RequiresSunLight,
                     modFireStarterBehaviour.RuinedAfterUse,
                     modFireStarterBehaviour.SecondsToIgniteTinder,
@@ -699,7 +699,7 @@ namespace ModComponent.SDK
                 },
                 ModHarvestableBehaviour modHarvestableBehaviour => new
                 {
-                    Audio = modHarvestableBehaviour.Audio?.name ?? "",
+                    Audio = modHarvestableBehaviour.Audio != null ? modHarvestableBehaviour.Audio.name : null ?? "",
                     modHarvestableBehaviour.Minutes,
                     modHarvestableBehaviour.YieldCounts,
                     YieldNames = modHarvestableBehaviour.YieldNames?.Select(gear => gear.name).ToArray(),
@@ -718,7 +718,7 @@ namespace ModComponent.SDK
                 },
                 ModRepairableBehaviour modRepairableBehaviour => new
                 {
-                    Audio = modRepairableBehaviour.Audio?.name ?? "",
+                    Audio = modRepairableBehaviour.Audio != null ? modRepairableBehaviour.Audio.name : null ?? "",
                     modRepairableBehaviour.Minutes,
                     modRepairableBehaviour.Condition,
                     RequiredTools = modRepairableBehaviour.RequiredTools?.Select(requiredTools => requiredTools.name).ToArray(),
@@ -731,7 +731,7 @@ namespace ModComponent.SDK
                 },
                 ModSharpenableBehaviour modSharpenableBehaviour => new
                 {
-                    Audio = modSharpenableBehaviour.Audio?.name ?? "",
+                    Audio = modSharpenableBehaviour.Audio != null ? modSharpenableBehaviour.Audio.name : null ?? "",
                     modSharpenableBehaviour.MinutesMin,
                     modSharpenableBehaviour.MinutesMax,
                     modSharpenableBehaviour.ConditionMin,
@@ -746,7 +746,7 @@ namespace ModComponent.SDK
                     modStackableBehaviour.UnitsPerItem,
                     modStackableBehaviour.ChanceFull,
                     ShareStackWithGear = modStackableBehaviour.ShareStackWithGear?.Select(gearStack => gearStack.name).ToArray(),
-                    InstantiateStackItem = modStackableBehaviour.InstantiateStackItem?.name ?? "",
+                    InstantiateStackItem = modStackableBehaviour.InstantiateStackItem != null ? modStackableBehaviour.InstantiateStackItem.name : null ?? "",
                     modStackableBehaviour.StackConditionDifferenceConstraint
                 },
                 ModTinderBehaviour modTinderBehaviour => new
