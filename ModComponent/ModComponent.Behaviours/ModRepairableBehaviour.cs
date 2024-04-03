@@ -18,10 +18,17 @@ namespace ModComponent.Behaviours
         [Tooltip("Tools required for repair. None means tool-free.")]
         public DataGearAsset[] RequiredTools;
 
+        [Tooltip("An array of multiple materials.")]
+        public Materials[] Materials;
+    }
+
+    [System.Serializable]
+    public class Materials
+    {
         [Tooltip("Materials needed for repair.")]
-        public DataGearAsset[] MaterialNames;
+        public DataGearAsset MaterialNames;
 
         [Tooltip("Quantity of each material needed.")]
-        public int[] MaterialCounts;
+        public int MaterialCounts;
     }
 }

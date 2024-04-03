@@ -1,6 +1,7 @@
 using ModComponent.Behaviours;
 using ModComponent.Blueprints;
 using ModComponent.Components;
+using System;
 using System.Linq;
 
 namespace ModComponent.SDK
@@ -701,19 +702,19 @@ namespace ModComponent.SDK
                 {
                     Audio = modHarvestableBehaviour.Audio != null ? modHarvestableBehaviour.Audio.name : null ?? "",
                     modHarvestableBehaviour.Minutes,
-                    modHarvestableBehaviour.YieldCounts,
-                    YieldNames = modHarvestableBehaviour.YieldNames?.Select(gear => gear.name).ToArray(),
+                    YieldCounts = modHarvestableBehaviour.Yields?.Select(g => g.YieldCounts).ToArray(),
+                    YieldNames = modHarvestableBehaviour.Yields?.Select(g => g.YieldNames.name).ToArray(),
                     RequiredToolNames = modHarvestableBehaviour.RequiredToolNames?.Select(tools => tools.name).ToArray(),
                 },
                 ModMillableBehaviour modMillableBehaviour => new
                 {
                     modMillableBehaviour.RepairDurationMinutes,
-                    RepairRequiredGear = modMillableBehaviour.RepairRequiredGear?.Select(requiredGear => requiredGear.name).ToArray(),
-                    modMillableBehaviour.RepairRequiredGearUnits,
+                    RepairRequiredGear = modMillableBehaviour.RepairRequired?.Select(g => g.RepairRequiredGear.name).ToArray(),
+                    RepairRequiredGearUnits = modMillableBehaviour.RepairRequired?.Select(g => g.RepairRequiredGearUnits).ToArray(),
                     modMillableBehaviour.CanRestoreFromWornOut,
                     modMillableBehaviour.RecoveryDurationMinutes,
-                    RestoreRequiredGear = modMillableBehaviour.RestoreRequiredGear?.Select(restoreRequiredGear => restoreRequiredGear.name).ToArray(),
-                    modMillableBehaviour.RestoreRequiredGearUnits,
+                    RestoreRequiredGear = modMillableBehaviour.RestoreRequired?.Select(g => g.RestoreRequiredGear.name).ToArray(),
+                    RestoreRequiredGearUnits = modMillableBehaviour.RestoreRequired?.Select(g => g.RestoreRequiredGearUnits).ToArray(),
                     Skill = modMillableBehaviour.Skill.ToString()
                 },
                 ModRepairableBehaviour modRepairableBehaviour => new
@@ -722,8 +723,8 @@ namespace ModComponent.SDK
                     modRepairableBehaviour.Minutes,
                     modRepairableBehaviour.Condition,
                     RequiredTools = modRepairableBehaviour.RequiredTools?.Select(requiredTools => requiredTools.name).ToArray(),
-                    MaterialNames = modRepairableBehaviour.MaterialNames?.Select(gear => gear.name).ToArray(),
-                    modRepairableBehaviour.MaterialCounts
+                    MaterialNames = modRepairableBehaviour.Materials?.Select(g => g.MaterialNames.name).ToArray(),
+                    MaterialCounts = modRepairableBehaviour.Materials?.Select(g => g.MaterialCounts).ToArray(),
                 },
                 ModScentBehaviour modScentBehaviour => new
                 {
