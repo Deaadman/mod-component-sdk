@@ -14,11 +14,11 @@ namespace ModComponent.Blueprints
         [Tooltip("Required items and quantities for crafting.")]
         public GearRequirement[] RequiredGear;
 
-        [Tooltip("Kerosene needed (liters).")]
-        public float KeroseneLitersRequired;
+        [Tooltip("Powder ingredients required, including type and amount in kg.")]
+        public PowderRequirement[] RequiredPowder;
 
-        [Tooltip("Gunpowder needed (kg).")]
-        public float GunpowderKGRequired;
+        [Tooltip("Liquid ingredients required, including type and volume in liters.")]
+        public LiquidRequirement[] RequiredLiquid;
 
         [Tooltip("Mandatory tool for crafting.")]
         public DataGearAsset RequiredTool;
@@ -62,5 +62,28 @@ namespace ModComponent.Blueprints
 
         [Tooltip("Quantity required.")]
         public int Count;
+
+        [Tooltip("The type of measurement.")]
+        public UnitsType Units;
+    }
+
+    [System.Serializable]
+    public class PowderRequirement
+    {
+        [Tooltip("Type of powder ingredient.")]
+        public DataPowderAsset PowderItem;
+
+        [Tooltip("Amount needed in kilograms.")]
+        public int QuantityInKilograms;
+    }
+
+    [System.Serializable]
+    public class LiquidRequirement
+    {
+        [Tooltip("Type of liquid ingredient.")]
+        public DataLiquidAsset LiquidItem;
+
+        [Tooltip("Volume needed in liters.")]
+        public int VolumeInLitres;
     }
 }

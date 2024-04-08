@@ -1,6 +1,7 @@
 using ModComponent.Behaviours;
 using ModComponent.Blueprints;
 using ModComponent.Components;
+using ModComponent.Utilities;
 using System;
 using System.Linq;
 
@@ -22,7 +23,7 @@ namespace ModComponent.SDK
                     BlueprintData = new
                     {
                         modRecipe.Name,
-                        RequiredGear = modRecipe.RequiredGear?.Select(g => new { Item = g.GearItem.name, g.Count }).ToArray(),
+                        RequiredGear = modRecipe.RequiredGear?.Select(g => new { Item = g.GearItem.name, g.Count, Units = Enum.GetName(typeof(UnitsType), g.Units) }).ToArray(),
                         RequiredPowder = modRecipe.RequiredPowder?.Select(g => new { Powder = g.PowderItem.name, g.QuantityInKilograms }).ToArray(),
                         RequiredLiquid = modRecipe.RequiredLiquid?.Select(g => new { Liquid = g.LiquidItem.name, g.VolumeInLitres }).ToArray(),
                         CraftedResult = modRecipe.CraftedResult != null ? modRecipe.CraftedResult.name : null ?? "",
@@ -34,9 +35,9 @@ namespace ModComponent.SDK
                 ModBlueprint modBlueprint => new
                 {
                     modBlueprint.Name,
-                    RequiredGear = modBlueprint.RequiredGear?.Select(g => new { Item = g.GearItem.name, g.Count }).ToArray(),
-                    modBlueprint.KeroseneLitersRequired,
-                    modBlueprint.GunpowderKGRequired,
+                    RequiredGear = modBlueprint.RequiredGear?.Select(g => new { Item = g.GearItem.name, g.Count, Units = Enum.GetName(typeof(UnitsType), g.Units )}).ToArray(),
+                    RequiredPowder = modBlueprint.RequiredPowder?.Select(g => new { Powder = g.PowderItem.name, g.QuantityInKilograms }).ToArray(),
+                    RequiredLiquid = modBlueprint.RequiredLiquid?.Select(g => new { Liquid = g.LiquidItem.name, g.VolumeInLitres }).ToArray(),
                     RequiredTool = modBlueprint.RequiredTool != null ? modBlueprint.RequiredTool.name : null ?? "",
                     OptionalTools = modBlueprint.OptionalTools?.Select(tool => tool.name).ToArray(),
                     RequiredCraftingLocation = modBlueprint.RequiredCraftingLocation.ToString(),
