@@ -20,6 +20,8 @@ namespace ModComponent.SDK.Components
         internal const string ModAssetsPath = "Assets/_ModComponent";
         private const string AssetBundlesPath = ".\\AssetBundles\\";
 
+        internal static Dictionary<string, string> backupComponentData = new();
+
         private static void AddAssetsToAddressablesGroup(UnityEngine.Object[] assets, AddressableAssetGroup group)
         {
             var settings = AddressableAssetSettingsDefaultObject.Settings;
@@ -183,11 +185,25 @@ namespace ModComponent.SDK.Components
             var group = AddressablesManager.CreatePackedAssetsGroup(FileUtilities.SanitizeFileName(modDefinition.Name));
             AddressablesManager.ConfigureDefaultAddressableSettings(modDefinition.Name);
 
+            foreach (var item in modDefinition.Items)
+            {
+                var prefab = item as GameObject;
+                if (prefab != null)
+                    BackupAndRemoveComponents(prefab);
+            }
+
             AddAssetsToAddressablesGroup(modDefinition.Items, group);
             AddAssetsToAddressablesGroup(modDefinition.Icons, group);
 
             ClearAssetBundlesDirectory(AssetBundlesPath);
             AddressableAssetSettings.BuildPlayerContent();
+
+            foreach (var item in modDefinition.Items)
+            {
+                var prefab = item as GameObject;
+                if (prefab != null)
+                    RestoreComponents(prefab);
+            }
 
             string modFolderPath = PrepareModFolder(modDefinition);
             CreateBuildInfoJson(modDefinition, Path.Combine(modFolderPath, "BuildInfo.json"));
@@ -335,6 +351,39 @@ namespace ModComponent.SDK.Components
             }
 
             return localizationData;
+        }
+
+        private static void BackupAndRemoveComponents(GameObject prefab)
+        {
+            var components = prefab.GetComponents<MonoBehaviour>();
+            var componentData = new Dictionary<string, object>();
+
+            foreach (var component in components)
+            {
+                var jsonData = JsonUtility.ToJson(component);
+                componentData[component.GetType().FullName] = jsonData;
+                UnityEngine.Object.DestroyImmediate(component, true);
+            }
+
+            string backupJson = JsonConvert.SerializeObject(componentData, Formatting.Indented);
+            backupComponentData[prefab.name] = backupJson;
+        }
+
+        private static void RestoreComponents(GameObject prefab)
+        {
+            if (!backupComponentData.TryGetValue(prefab.name, out var jsonData))
+                return;
+
+            var componentData = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonData);
+            foreach (var data in componentData)
+            {
+                var type = Type.GetType(data.Key);
+                if (type != null)
+                {
+                    var component = prefab.AddComponent(type);
+                    JsonUtility.FromJsonOverwrite(data.Value, component);
+                }
+            }
         }
     }
 }
