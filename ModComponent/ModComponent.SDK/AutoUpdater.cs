@@ -5,6 +5,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using UnityEditor;
@@ -28,6 +29,7 @@ namespace ModComponent.SDK
         }
     }
 
+    [InitializeOnLoad]
     internal class AutoUpdater
     {
         private static readonly string ModComponentVersion = ModComponentSDK.SDK_VERSION;
@@ -36,6 +38,22 @@ namespace ModComponent.SDK
         private static string LatestVersionChanges;
         private static readonly Queue<UpdateInfo> updateQueue = new();
         private static bool isUpdateWindowOpen = false;
+
+        static AutoUpdater()
+        {
+            EditorApplication.delayCall += () =>
+            {
+                if (EditorPrefs.GetBool("AutomaticallyCheckForUpdates", true))
+                {
+                    CheckForUpdatesOnStartup();
+                }
+            };
+        }
+
+        private static async void CheckForUpdatesOnStartup()
+        {
+            await InitializeUpdateCheck("modcomponent");
+        }
 
         private static void AddToUpdateQueue(UpdateInfo updateInfo)
         {
@@ -67,32 +85,56 @@ namespace ModComponent.SDK
 
         private static async Task<bool> FetchLatestReleaseInfoAsync(string repoPath, string currentVersion, string packageName)
         {
+            bool checkForPreviewUpdates = EditorPrefs.GetBool("CheckForPreviewUpdates", false);
+
             try
             {
                 using var client = new WebClient();
-                string url = $"https://api.github.com/repos/{repoPath}/releases/latest";
+                string url = checkForPreviewUpdates
+                    ? $"https://api.github.com/repos/{repoPath}/releases"
+                    : $"https://api.github.com/repos/{repoPath}/releases/latest";
+
                 client.Headers.Add("User-Agent", "Unity web request");
                 string json = await client.DownloadStringTaskAsync(new Uri(url));
-                var jsonObject = JObject.Parse(json);
-                string latestVersion = jsonObject["tag_name"].ToString();
 
-                if (latestVersion != currentVersion)
+                // If checking for preview updates, select the most recent release or pre-release
+                if (checkForPreviewUpdates)
                 {
-                    LatestVersionChanges = jsonObject["body"].ToString();
-                    if (packageName == "ModComponent SDK")
-                    {
-                        LatestModComponentVersion = latestVersion;
-                    }
-                    else
-                    {
-                        LatestExampleModVersion = latestVersion;
-                    }
-                    return true;
+                    var jsonArray = JArray.Parse(json);
+                    var latestRelease = jsonArray.FirstOrDefault();
+                    if (latestRelease == null) return false;
+                    ProcessReleaseInfo(latestRelease, currentVersion, packageName);
+                }
+                else
+                {
+                    var jsonObject = JObject.Parse(json);
+                    ProcessReleaseInfo(jsonObject, currentVersion, packageName);
                 }
             }
             catch
             {
                 return false;
+            }
+            return false;
+        }
+
+        private static bool ProcessReleaseInfo(JToken releaseInfo, string currentVersion, string packageName)
+        {
+            string latestVersion = releaseInfo["tag_name"].ToString().TrimStart('v');
+            currentVersion = currentVersion.TrimStart('v');
+
+            if (latestVersion != currentVersion)
+            {
+                LatestVersionChanges = releaseInfo["body"].ToString();
+                if (packageName == "ModComponent SDK")
+                {
+                    LatestModComponentVersion = latestVersion;
+                }
+                else
+                {
+                    LatestExampleModVersion = latestVersion;
+                }
+                return true;
             }
             return false;
         }

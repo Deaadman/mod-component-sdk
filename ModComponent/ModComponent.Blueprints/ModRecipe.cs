@@ -21,31 +21,5 @@ namespace ModComponent.Blueprints
 
         [Tooltip("Specific cooking pots allowed for this recipe.")]
         public DataGearAsset[] AllowedCookingPots;
-
-        [Tooltip("Powder ingredients required, including type and amount in kg.")]
-        public PowderRequirement[] RequiredPowder;
-
-        [Tooltip("Liquid ingredients required, including type and volume in liters.")]
-        public LiquidRequirement[] RequiredLiquid;
-    }
-
-    [System.Serializable]
-    public class PowderRequirement
-    {
-        [Tooltip("Type of powder ingredient.")]
-        public DataPowderAsset PowderItem;
-
-        [Tooltip("Amount needed in kilograms.")]
-        public int QuantityInKilograms;
-    }
-
-    [System.Serializable]
-    public class LiquidRequirement
-    {
-        [Tooltip("Type of liquid ingredient.")]
-        public DataLiquidAsset LiquidItem;
-
-        [Tooltip("Volume needed in liters.")]
-        public int VolumeInLitres;
     }
 }

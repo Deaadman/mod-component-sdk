@@ -141,6 +141,12 @@ namespace ModComponent.Utilities
         RepairOnly
     }
 
+    public enum UnitsType
+    {        
+        Count,
+        Kilograms
+    }
+
     public enum WorkbenchType
     {
         Anywhere,

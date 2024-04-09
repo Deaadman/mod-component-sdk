@@ -15,7 +15,7 @@ namespace ModComponent.Editor.SDK
         internal static void ShowWindow()
         {
             var window = GetWindow<EditorValidateUpdates>("Update Checker");
-            window.minSize = new Vector2(300, 300);
+            window.minSize = new Vector2(320, 300);
             window.StartUpdateCheck();
         }
 
@@ -28,6 +28,35 @@ namespace ModComponent.Editor.SDK
             DrawStatus("ModComponent SDK", ref modComponentStatus);
 
             GUILayout.FlexibleSpace();
+            GUILayout.BeginHorizontal();
+            GUILayout.FlexibleSpace();
+            GUILayout.BeginVertical();
+
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("Check for Preview Updates", GUILayout.Width(170));
+            bool checkForPreviewUpdates = EditorPrefs.GetBool("CheckForPreviewUpdates", false);
+            bool newCheckForPreviewUpdates = EditorGUILayout.Toggle(checkForPreviewUpdates, GUILayout.Width(20));
+            GUILayout.EndHorizontal();
+
+            if (newCheckForPreviewUpdates != checkForPreviewUpdates)
+            {
+                EditorPrefs.SetBool("CheckForPreviewUpdates", newCheckForPreviewUpdates);
+            }
+
+            GUILayout.BeginHorizontal();
+            GUILayout.Label("Automatically Check for SDK Updates", GUILayout.Width(230));
+            bool automaticallyCheckForUpdates = EditorPrefs.GetBool("AutomaticallyCheckForUpdates", false);
+            bool newAutomaticallyCheckForUpdates = EditorGUILayout.Toggle(automaticallyCheckForUpdates, GUILayout.Width(20));
+            GUILayout.EndHorizontal();
+
+            if (newAutomaticallyCheckForUpdates != automaticallyCheckForUpdates)
+            {
+                EditorPrefs.SetBool("AutomaticallyCheckForUpdates", newAutomaticallyCheckForUpdates);
+            }
+
+            GUILayout.EndVertical();
+            GUILayout.FlexibleSpace();
+            GUILayout.EndHorizontal();
             GUILayout.EndVertical();
         }
 

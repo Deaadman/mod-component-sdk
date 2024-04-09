@@ -12,13 +12,20 @@ namespace ModComponent.Behaviours
         [Tooltip("Time to harvest (minutes).")]
         public int Minutes;
 
-        [Tooltip("Quantities of each item yielded.")]
-        public int[] YieldCounts;
-
-        [Tooltip("Names of items yielded.")]
-        public DataGearAsset[] YieldNames;
+        [Tooltip("An array of multiple yields.")]
+        public Yields[] Yields;
 
         [Tooltip("Tools required for harvesting. None means by hand.")]
         public DataGearAsset[] RequiredToolNames;
+    }
+
+    [System.Serializable]
+    public class Yields
+    {
+        [Tooltip("Quantities of each item yielded.")]
+        public int YieldCounts;
+
+        [Tooltip("Names of items yielded.")]
+        public DataGearAsset YieldNames;
     }
 }

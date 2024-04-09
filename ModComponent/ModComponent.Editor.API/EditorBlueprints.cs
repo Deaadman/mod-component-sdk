@@ -13,8 +13,6 @@ namespace ModComponent.Editor.API
     {
         private readonly HashSet<string> hiddenFieldsInModRecipe = new()
         {
-            "KeroseneLitersRequired", 
-            "GunpowderKGRequired", 
             "RequiredTool", 
             "OptionalTools", 
             "RequiredCraftingLocation",
@@ -107,8 +105,8 @@ namespace ModComponent.Editor.API
             {
                 "Name",
                 "RequiredGear",
-                "KeroseneLitersRequired",
-                "GunpowderKGRequired",
+                "RequiredLiquid",
+                "RequiredPowder",
                 "RequiredTool",
                 "OptionalTools",
                 "RequiredCraftingLocation",
@@ -130,9 +128,7 @@ namespace ModComponent.Editor.API
                     "RecipeDescription",
                     "RecipeIcon",
                     "RequiredSkillLevel",
-                    "AllowedCookingPots",
-                    "RequiredPowder",
-                    "RequiredLiquid"
+                    "AllowedCookingPots"
                 }, typeof(ModRecipe));
             }
 

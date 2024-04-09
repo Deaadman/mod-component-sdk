@@ -1009,6 +1009,7 @@ namespace ModComponent.SDK
                 "CampOffice",
                 "Cannery",
                 "CanneryMarshTransitionCave",
+                "CanneryRegion",
                 "CanneryTrailerA",
                 "CanyonRoadCave",
                 "CanyonRoadTransitionZone",
