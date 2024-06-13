@@ -5,7 +5,7 @@
 
 <div align="center">
 
-[![Latest Release](https://img.shields.io/github/v/release/Deaadman/ExampleModSDK?label=Latest%20Release&style=for-the-badge)](https://github.com/Deaadman/ModComponentSDK/releases/latest)
+[![Latest Release](https://img.shields.io/github/v/release/Deaadman/ModComponentSDK?label=Latest%20Release&style=for-the-badge)](https://github.com/Deaadman/ModComponentSDK/releases/latest)
 
 [![Feature Requests](https://img.shields.io/github/issues-search/Deaadman/ModComponentSDK?label=Feature%20Requests&style=for-the-badge&query=is%3Aissue+is%3Aopen+label%3A%22feature+request%22)](https://github.com/Deaadman/ModComponentSDK/issues?q=is%3Aissue+is%3Aopen+label%3A%22feature+request%22)
 [![Bug Reports](https://img.shields.io/github/issues-search/Deaadman/ModComponentSDK?label=Bug%20Reports&color=red&style=for-the-badge&query=is%3Aissue+is%3Aopen+label%3A%22bug+report%22)](https://github.com/Deaadman/ModComponentSDK/issues?q=is%3Aissue+is%3Aopen+label%3A%22bug+report%22)
