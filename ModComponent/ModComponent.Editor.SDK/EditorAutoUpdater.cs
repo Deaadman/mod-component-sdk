@@ -78,15 +78,7 @@ namespace ModComponent.Editor.SDK
 
             if (GUILayout.Button("Update Now", GUILayout.Width(120)))
             {
-                if (_packageName == "ModComponent SDK")
-                {
-                    AutoUpdater.UpdatePackage("com.deadman.modcomponent.sdk", _latestVersion);
-                }
-                else if (_packageName == "Example Mod")
-                {
-                    AutoUpdater.UpdateExampleMod(_latestVersion);
-                }
-
+                AutoUpdater.UpdatePackage("com.deadman.modcomponent.sdk", _latestVersion);
                 Close();
             }
 
