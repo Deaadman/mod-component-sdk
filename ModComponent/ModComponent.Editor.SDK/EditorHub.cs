@@ -15,7 +15,6 @@ namespace ModComponent.Editor
             DrawHeader();
             DrawGettingStartedSection();
             DrawCommunitySection();
-            DrawDonationSection();
             DrawVersionInfo();
             GUILayout.EndVertical();
         }
@@ -30,9 +29,9 @@ namespace ModComponent.Editor
         {
             GUILayout.Space(10);
             GUILayout.Label("Supported Versions:", ModComponentEditorStyles.CenteredLabel);
-            GUILayout.Label($"ModComponent Version: v{ModComponentSDK.MODCOMPONENT_VERSION}", EditorStyles.centeredGreyMiniLabel);
-            GUILayout.Label($"The Long Dark Version: v{ModComponentSDK.TLD_VERSION}", EditorStyles.centeredGreyMiniLabel);
-            GUILayout.Label($"Modders Toolbox Version: v{ModComponentSDK.MODDERSTOOLBOX_VERSION}", EditorStyles.centeredGreyMiniLabel);
+            GUILayout.Label($"ModComponent - v{ModComponentSDK.MODCOMPONENT_VERSION}", EditorStyles.centeredGreyMiniLabel);
+            GUILayout.Label($"The Long Dark - v{ModComponentSDK.TLD_VERSION}", EditorStyles.centeredGreyMiniLabel);
+            GUILayout.Label($"Modders' Gear Toolbox - v{ModComponentSDK.MODDERSTOOLBOX_VERSION}", EditorStyles.centeredGreyMiniLabel);
         }
 
         private static void DrawGettingStartedSection()
@@ -51,16 +50,6 @@ namespace ModComponent.Editor
                 { "Changelog", "https://github.com/Deaadman/ModComponentSDK/releases" },
                 { "Discord Server", "https://discord.gg/2mnXAZfGXQ" }
             });
-            GUILayout.Space(10);
-        }
-
-        private static void DrawDonationSection()
-        {
-            GUILayout.Label("Enjoying the SDK? Consider supporting us modders with a donation. \nThank you!", EditorStyles.centeredGreyMiniLabel);
-            if (GUILayout.Button("Contributors & Donations"))
-            {
-                ContributorsEditor.ShowWindow();
-            }
         }
 
         private static void DrawButtonWithLink(string label, string url)
@@ -87,7 +76,7 @@ namespace ModComponent.Editor
         internal static void Init()
         {
             var window = GetWindow<EditorHubWindow>("About Page");
-            window.minSize = new Vector2(400, 325);
+            window.minSize = new Vector2(400, 265);
             window.Show();
         }
 
