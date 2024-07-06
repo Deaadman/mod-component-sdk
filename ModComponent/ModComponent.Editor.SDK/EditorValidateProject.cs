@@ -28,7 +28,7 @@ namespace ModComponent.Editor.SDK
             GUILayout.EndVertical();
         }
 
-        private async void StartProjectValidation()
+        private void StartProjectValidation()
         {
             assetsGeneratedStatus = CheckStatus.Checking;
             bool assetsGenerationResult = DataGenerator.CheckAndPromptForAssetGeneration();

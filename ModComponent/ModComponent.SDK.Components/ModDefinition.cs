@@ -14,6 +14,7 @@ namespace ModComponent.SDK.Components
 
         public ModLocalization modLocalization;
         public ModGearSpawns modGearSpawns;
+        public ModItemRarities modItemRarities;
 
         public GameObject[] Items = new GameObject[0];
         public Texture2D[] Icons = new Texture2D[0];

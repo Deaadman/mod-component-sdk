@@ -14,8 +14,13 @@ namespace ModComponent.SDK
 
         [Tooltip("The author of this Mod Definition.")]
         public string modAuthor = "Author";
-        public static readonly string modFolderName = "_ModComponent";
 
+        [Tooltip("Will this mod be compatible with Item Rarities?")]
+        public bool itemRaritiesCompatibility = false;
+        
+        private static readonly string modFolderName = "_ModComponent";
+        private ModItemRarities modItemRarities;
+        
         [MenuItem("ModComponent SDK/New Mod Definition", false, 20)]
         private static void CreateWizard()
         {
@@ -24,34 +29,46 @@ namespace ModComponent.SDK
 
         void OnWizardCreate()
         {
-            ModDefinition modDefinition = ModDefinition.CreateModDefinition(modName, modAuthor);
+            var modDefinition = ModDefinition.CreateModDefinition(modName, modAuthor);
 
-            string mainFolderPath = Path.Combine("Assets", modFolderName);
+            var mainFolderPath = Path.Combine("Assets", modFolderName);
             if (!Directory.Exists(mainFolderPath))
             {
                 Directory.CreateDirectory(mainFolderPath);
             }
 
-            string specificFolderPath = Path.Combine(mainFolderPath, modName);
+            var specificFolderPath = Path.Combine(mainFolderPath, modName);
             if (!Directory.Exists(specificFolderPath))
             {
                 Directory.CreateDirectory(specificFolderPath);
             }
 
-            string assetPath = Path.Combine(specificFolderPath, FileUtilities.SanitizeFileName(modName) + ".asset");
+            var assetPath = Path.Combine(specificFolderPath, FileUtilities.SanitizeFileName(modName) + ".asset");
             AssetDatabase.CreateAsset(modDefinition, assetPath);
 
-            string localizationAssetPath = Path.Combine(specificFolderPath, FileUtilities.SanitizeFileName(modName) + "Localization.asset");
-            ModLocalization modLocalization = CreateInstance<ModLocalization>();
+            var localizationAssetPath = Path.Combine(specificFolderPath, FileUtilities.SanitizeFileName(modName) + "Localization.asset");
+            var modLocalization = CreateInstance<ModLocalization>();
             AssetDatabase.CreateAsset(modLocalization, localizationAssetPath);
 
-            string gearSpawnsAssetPath = Path.Combine(specificFolderPath, FileUtilities.SanitizeFileName(modName) + "GearSpawns.asset");
-            ModGearSpawns modGearSpawns = CreateInstance<ModGearSpawns>();
+            var gearSpawnsAssetPath = Path.Combine(specificFolderPath, FileUtilities.SanitizeFileName(modName) + "GearSpawns.asset");
+            var modGearSpawns = CreateInstance<ModGearSpawns>();
             AssetDatabase.CreateAsset(modGearSpawns, gearSpawnsAssetPath);
 
+            if (itemRaritiesCompatibility)
+            {
+                var itemRaritiesAssetPath = Path.Combine(specificFolderPath, FileUtilities.SanitizeFileName(modName) + "ItemRarities.asset");
+                var modItemRarities = CreateInstance<ModItemRarities>();
+                AssetDatabase.CreateAsset(modItemRarities, itemRaritiesAssetPath);
+            }
+            
             modDefinition.modLocalization = modLocalization;
             modDefinition.modGearSpawns = modGearSpawns;
 
+            if (itemRaritiesCompatibility)
+            {
+                modDefinition.modItemRarities = modItemRarities;
+            }
+            
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
         }

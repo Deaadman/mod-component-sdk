@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
+using System.Linq;
 using System.Text;
 using UnityEditor;
 using UnityEditor.AddressableAssets;
@@ -35,6 +36,21 @@ namespace ModComponent.SDK.Components
             }
         }
 
+        private static void AppendRaritySection(StringBuilder sb, string rarityName, IEnumerable<GameObject> gameObjects)
+        {
+            if (gameObjects == null || !gameObjects.Any()) return;
+
+            sb.AppendLine($"[{rarityName}]");
+            foreach (var gameObject in gameObjects)
+            {
+                if (gameObject is not null)
+                {
+                    sb.AppendLine(gameObject.name);
+                }
+            }
+            sb.AppendLine();
+        }
+        
         private static void ClearAssetBundlesDirectory(string directoryPath)
         {
             if (Directory.Exists(directoryPath))
@@ -170,6 +186,22 @@ namespace ModComponent.SDK.Components
             }
         }
 
+        private static void ExportItemRarities(ModDefinition modDefinition, string modFolderPath)
+        {
+            if (modDefinition.modItemRarities is null) return;
+
+            StringBuilder sb = new();
+
+            AppendRaritySection(sb, "Common", modDefinition.modItemRarities.Common);
+            AppendRaritySection(sb, "Uncommon", modDefinition.modItemRarities.Uncommon);
+            AppendRaritySection(sb, "Rare", modDefinition.modItemRarities.Rare);
+            AppendRaritySection(sb, "Epic", modDefinition.modItemRarities.Epic);
+            AppendRaritySection(sb, "Legendary", modDefinition.modItemRarities.Legendary);
+            AppendRaritySection(sb, "Mythic", modDefinition.modItemRarities.Mythic);
+
+            File.WriteAllText(Path.Combine(modFolderPath, "rarities.ir"), sb.ToString());
+        }
+        
         private static void ExportLocalization(ModDefinition modDefinition, string modFolderPath)
         {
             if (modDefinition.modLocalization != null)
@@ -209,6 +241,7 @@ namespace ModComponent.SDK.Components
             CreateBuildInfoJson(modDefinition, Path.Combine(modFolderPath, "BuildInfo.json"));
             ExportLocalization(modDefinition, modFolderPath);
             ExportGearSpawns(modDefinition, modFolderPath);
+            ExportItemRarities(modDefinition, modFolderPath);
             SerializeModComponentToJson(modDefinition, modFolderPath);
 
             string modComponentPath = outputPath ?? $"{modDefinition.Name}.modcomponent";

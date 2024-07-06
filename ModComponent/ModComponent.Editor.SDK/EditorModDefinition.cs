@@ -1,6 +1,7 @@
 #if UNITY_EDITOR
 using ModComponent.Editor.API;
 using ModComponent.SDK.Components;
+using Unity.VisualScripting.YamlDotNet.Serialization;
 using UnityEngine;
 using UnityEditor;
 
@@ -9,7 +10,7 @@ namespace ModComponent.Editor.SDK
     [CustomEditor(typeof(ModDefinition))]
     internal class EditorModDefinition : EditorBase
     {
-        SerializedProperty requiredMods, items, icons;
+        SerializedProperty requiredMods, items, icons, modItemRarities;
 
         protected override Tab[] GetTabs() => new[] { Tab.Common };
 
@@ -19,6 +20,7 @@ namespace ModComponent.Editor.SDK
             requiredMods = serializedObject.FindProperty("RequiredMods");
             items = serializedObject.FindProperty("Items");
             icons = serializedObject.FindProperty("Icons");
+            modItemRarities = serializedObject.FindProperty("modItemRarities");
         }
 
         void DrawCustomFields()
@@ -45,6 +47,10 @@ namespace ModComponent.Editor.SDK
             EditorGUILayout.PropertyField(items, new GUIContent("GEAR Prefabs", "GEAR_ Prefabs associated with this ModComponent."), true);
             EditorGUILayout.PropertyField(icons, new GUIContent("Inventory, Crafting & Paperdoll Textures", "Icons and textures."), true);
 
+            EditorGUILayout.Space(10);
+            DrawCustomHeading("Misc Properties");
+            EditorGUILayout.PropertyField(modItemRarities, new GUIContent("Item Rarities", "This object allows your items to have assigned rarities."), false);
+            
             GUILayout.EndVertical();
         }
 
