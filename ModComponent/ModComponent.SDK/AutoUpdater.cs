@@ -3,11 +3,12 @@ using ModComponent.Editor.SDK;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using UnityEditor;
+using UnityEditor.PackageManager;
+using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 
 namespace ModComponent.SDK
@@ -150,27 +151,37 @@ namespace ModComponent.SDK
 
         internal static void UpdatePackage(string packageName, string latestVersion)
         {
-            string manifestPath = Path.Combine(Application.dataPath, "..", "Packages", "manifest.json");
-            if (!File.Exists(manifestPath))
+            EditorUtility.DisplayProgressBar("Updating ModComponent SDK", "Preparing to update...", 0.1f);
+
+            string gitUrl = $"https://github.com/Deaadman/ModComponentSDK.git";
+            
+            AddRequest addRequest = Client.Add(gitUrl);
+            
+            EditorApplication.update += () => CheckAddRequest(addRequest, packageName, latestVersion);
+        }
+
+        private static void CheckAddRequest(AddRequest request, string packageName, string latestVersion)
+        {
+            if (request.IsCompleted)
             {
-                Debug.LogError("manifest.json not found");
-                return;
+                EditorApplication.update -= () => CheckAddRequest(request, packageName, latestVersion);
+
+                if (request.Status == StatusCode.Success)
+                {
+                    Debug.Log($"ModComponent SDK updated successfully to version {latestVersion}.");
+                }
+                else if (request.Status >= StatusCode.Failure)
+                {
+                    Debug.LogError($"Failed to update ModComponent SDK: {request.Error.message}");
+                }
+
+                EditorUtility.ClearProgressBar();
+                AssetDatabase.Refresh();
             }
-
-            string manifestContent = File.ReadAllText(manifestPath);
-            var manifestJson = JObject.Parse(manifestContent);
-            JToken packageToken = manifestJson["dependencies"][packageName];
-
-            if (packageToken == null)
+            else
             {
-                Debug.LogError($"{packageName} not found in manifest.json");
-                return;
+                EditorUtility.DisplayProgressBar("Updating ModComponent SDK", "Downloading and installing update...", 0.5f);
             }
-
-            manifestJson["dependencies"][packageName] = latestVersion;
-            File.WriteAllText(manifestPath, manifestJson.ToString());
-            AssetDatabase.Refresh();
-            Debug.Log($"{packageName} updated successfully.");
         }
     }
 }
