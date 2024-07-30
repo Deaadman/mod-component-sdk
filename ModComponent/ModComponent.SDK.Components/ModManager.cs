@@ -174,7 +174,7 @@ namespace ModComponent.SDK.Components
                 {
                     if (lootTableSpawnEntry.lootTableName != null)
                     {
-                        sb.AppendLine($"loottable=LootTable{lootTableSpawnEntry.lootTableName.name}");
+                        sb.AppendLine($"loottable={lootTableSpawnEntry.lootTableName.name}");
                         foreach (var lootTableSpawn in lootTableSpawnEntry.lootTableSpawns)
                         {
                             sb.AppendLine($"item={lootTableSpawn.itemName.name} w={lootTableSpawn.weight}");
