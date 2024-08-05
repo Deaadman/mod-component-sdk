@@ -27,13 +27,13 @@ namespace ModComponent.Components
         [Tooltip("Decay time inside (days).")]
         public float DaysToDecayWornInside;
 
-        [Tooltip("Warmth bonus when dry (°C).")]
+        [Tooltip("Warmth bonus when dry (Â°C).")]
         public float Warmth;
 
-        [Tooltip("Warmth bonus when wet (°C).")]
+        [Tooltip("Warmth bonus when wet (Â°C).")]
         public float WarmthWhenWet;
 
-        [Tooltip("Windproof bonus when wet (°C).")]
+        [Tooltip("Windproof bonus when wet (Â°C).")]
         public float Windproof;
 
         [Tooltip("Waterproofness level.")]
@@ -71,5 +71,14 @@ namespace ModComponent.Components
 
         [Tooltip("Custom logic implementation type.")]
         public string ImplementationType;
+        
+        [Tooltip("Prevent damage from the selected damage source.")]
+        public DamageSource PreventAllDamageFromSource;
+        
+        [Tooltip("The prefab to load for first person clothing on arms on a male.")]
+        public string FirstPersonPrefabMale;
+        
+        [Tooltip("The prefab to load for first person clothing on arms on a female.")]
+        public string FirstPersonPrefabFemale;
     }
 }

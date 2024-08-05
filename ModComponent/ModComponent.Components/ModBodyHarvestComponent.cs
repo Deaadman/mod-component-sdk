@@ -38,5 +38,14 @@ namespace ModComponent.Components
 
         [Tooltip("Maximum meat weight available (kg).")]
         public float MeatAvailableMaxKG;
+
+        [Tooltip("Over the gut label with a custom string.")]
+        public string GutLabelOverride;
+        
+        [Tooltip("Over the hide label with a custom string.")]
+        public string HideLabelOverride;
+        
+        [Tooltip("Over the meat label with a custom string.")]
+        public string MeatLabelOverride;
     }
 }

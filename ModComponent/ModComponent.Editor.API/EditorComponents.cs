@@ -34,7 +34,7 @@ namespace ModComponent.Editor.API
 
                 { "ConditionGainPerHour", "% / HR" },
                 { "AdditionalConditionGainPerHour", "% / HR" },
-                { "WarmthBonusCelsius", "캜" },
+                { "WarmthBonusCelsius", "째C" },
                 { "DegradePerHour", "% / HR" },
 
                 { "GutWeightKgPerUnit", "KG" },
@@ -48,9 +48,9 @@ namespace ModComponent.Editor.API
 
                 { "DaysToDecayWornOutside", "DAYS" },
                 { "DaysToDecayWornInside", "DAYS" },
-                { "Warmth", "캜" },
-                { "WarmthWhenWet", "캜" },
-                { "Windproof", "캜" },
+                { "Warmth", "째C" },
+                { "WarmthWhenWet", "째C" },
+                { "Windproof", "째C" },
                 { "Waterproofness", "%" },
                 { "Toughness", "%" },
                 { "SprintBarReduction", "%" },
@@ -282,7 +282,10 @@ namespace ModComponent.Editor.API
                     "HideWeightKgPerUnit",
                     "MeatPrefab",
                     "MeatAvailableMinKG",
-                    "MeatAvailableMaxKG"
+                    "MeatAvailableMaxKG",
+                    "GutLabelOverride",
+                    "HideLabelOverride",
+                    "MeatLabelOverride"
                 });
             }
 
@@ -320,7 +323,10 @@ namespace ModComponent.Editor.API
                     "MainTexture",
                     "BlendTexture",
                     "DrawLayer",
-                    "ImplementationType"
+                    "ImplementationType",
+                    "PreventAllDamageFromSource",
+                    "FirstPersonPrefabMale",
+                    "FirstPersonPrefabFemale"
                 });
             }
 

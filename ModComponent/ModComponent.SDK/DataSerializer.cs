@@ -147,7 +147,10 @@ namespace ModComponent.SDK
                     modBodyHarvestComponent.HideWeightKgPerUnit,
                     MeatPrefab = modBodyHarvestComponent.MeatPrefab != null ? modBodyHarvestComponent.MeatPrefab.name : null ?? "",
                     modBodyHarvestComponent.MeatAvailableMinKG,
-                    modBodyHarvestComponent.MeatAvailableMaxKG
+                    modBodyHarvestComponent.MeatAvailableMaxKG,
+                    modBodyHarvestComponent.GutLabelOverride,
+                    modBodyHarvestComponent.HideLabelOverride,
+                    modBodyHarvestComponent.MeatLabelOverride
                 },
                 ModCharcoalComponent modCharcoalComponent => new
                 {
@@ -219,7 +222,10 @@ namespace ModComponent.SDK
                     MainTexture = modClothingComponent.MainTexture != null ? modClothingComponent.MainTexture.name : "",
                     BlendTexture = modClothingComponent.BlendTexture != null ? modClothingComponent.BlendTexture.name : "",
                     modClothingComponent.DrawLayer,
-                    modClothingComponent.ImplementationType
+                    modClothingComponent.ImplementationType,
+                    DamageSource = modClothingComponent.PreventAllDamageFromSource.ToString(),
+                    modClothingComponent.FirstPersonPrefabMale,
+                    modClothingComponent.FirstPersonPrefabFemale
                 },
                 ModCollectibleComponent modCollectibleComponent => new
                 {

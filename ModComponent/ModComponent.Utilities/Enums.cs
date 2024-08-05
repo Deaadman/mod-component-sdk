@@ -43,6 +43,43 @@ namespace ModComponent.Utilities
         Meat
     }
 
+    public enum DamageSource
+    {
+        Unspecified,
+        Player,
+        Wolf,
+        Bear,
+        Falling,
+        Burns,
+        IceCracking,
+        Electrical,
+        BloodLoss,
+        CabinFever,
+        Dysentery,
+        Dehydrated,
+        EmergencyStim,
+        Exhausted,
+        FirstAid,
+        FoodPoisoning,
+        Freezing,
+        FrostBite,
+        Hypothermia,
+        Infection,
+        IntestinalParasites,
+        Sleeping,
+        Starving,
+        WillPower,
+        Anxiety,
+        Fear,
+        ToxicFog,
+        Suffocating,
+        BulletWound,
+        NoiseMaker,
+        Scurvy,
+        Cougar,
+        WeakJoints
+    }
+    
     public enum FirstAidType
     {
         Antibiotics,
