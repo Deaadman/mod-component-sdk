@@ -11,6 +11,7 @@ using System.Text;
 using UnityEditor;
 using UnityEditor.AddressableAssets;
 using UnityEditor.AddressableAssets.Settings;
+using UnityEditor.AddressableAssets.Settings.GroupSchemas;
 using UnityEngine;
 using CompressionLevel = System.IO.Compression.CompressionLevel;
 
@@ -228,6 +229,17 @@ namespace ModComponent.SDK.Components
             AddAssetsToAddressablesGroup(modDefinition.Icons, group);
 
             ClearAssetBundlesDirectory(AssetBundlesPath);
+            
+            var settings = AddressableAssetSettingsDefaultObject.Settings;
+            foreach (var sg in settings.groups)
+            {
+                if (sg.ReadOnly) continue;
+
+                var groupSchema = sg.GetSchema<BundledAssetGroupSchema>();
+                groupSchema.IncludeInBuild = sg.Name == modDefinition.Name;
+                EditorUtility.SetDirty(sg);
+            }
+
             AddressableAssetSettings.BuildPlayerContent();
 
             foreach (var item in modDefinition.Items)
