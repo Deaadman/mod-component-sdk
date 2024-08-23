@@ -74,7 +74,7 @@ namespace ModComponent.Blueprints
         public DataPowderAsset PowderItem;
 
         [Tooltip("Amount needed in kilograms.")]
-        public int QuantityInKilograms;
+        public float QuantityInKilograms;
     }
 
     [System.Serializable]
@@ -84,6 +84,6 @@ namespace ModComponent.Blueprints
         public DataLiquidAsset LiquidItem;
 
         [Tooltip("Volume needed in liters.")]
-        public int VolumeInLitres;
+        public float VolumeInLitres;
     }
 }
