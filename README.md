@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="#"><img src="https://raw.githubusercontent.com/Deaadman/ModComponentSDK/release/ModComponent/Assets/Graphics/GitHub/TitleCardGitHub.png"></a>
+    <a href="#"><img src="https://raw.githubusercontent.com/Deaadman/mod-component-sdk/main/ModComponent/Assets/Graphics/GitHub/TitleCardGitHub.png"></a>
 
 ---
 
@@ -52,6 +52,6 @@ However, a massive thanks to those who have previously worked on documentation a
 
 ## DOCUMENTATION:
 
-To access the comprehensive information about the parts of this SDK, tutorials and more. Visit the extensive resources available on the [**Documentation Website**](https://deaadman.github.io/ModComponentSDK/).
+To access the comprehensive information about the parts of this SDK, tutorials and more. Visit the extensive resources available on the [**Documentation Website**](https://deaadman.github.io/mod-component-sdk/).
 
-Everything you need to know about the ModComponent SDK will be on this [**Documentation Website**](https://deaadman.github.io/ModComponentSDK/). For anything that isn't clear or isn't provided on the [**Documentation Website**](https://deaadman.github.io/ModComponentSDK/), you can either join the [**Discord**](https://discord.gg/2mnXAZfGXQ) and ask me directly, or [**Contribute**](https://github.com/Deaadman/ModComponentSDK/wiki#contributions) to make things clearer.
+Everything you need to know about the ModComponent SDK will be on this [**Documentation Website**](https://deaadman.github.io/mod-component-sdk/). For anything that isn't clear or isn't provided on the [**Documentation Website**](https://deaadman.github.io/mod-component-sdk/), you can either join the [**Discord**](https://discord.gg/2mnXAZfGXQ) and ask me directly, or [**Contribute**](https://github.com/Deaadman/mod-component-sdk/wiki#contributions) to make things clearer.
