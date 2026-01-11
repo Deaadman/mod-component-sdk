@@ -1,7 +1,6 @@
 #if UNITY_EDITOR
 using ModComponent.Editor.API;
 using ModComponent.SDK.Components;
-using Unity.VisualScripting.YamlDotNet.Serialization;
 using UnityEngine;
 using UnityEditor;
 

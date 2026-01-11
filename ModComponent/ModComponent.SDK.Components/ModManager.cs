@@ -1,13 +1,13 @@
 #if UNITY_EDITOR
 using ModComponent.Blueprints;
 using ModComponent.Utilities;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Text;
+using Unity.Plastic.Newtonsoft.Json;
 using UnityEditor;
 using UnityEditor.AddressableAssets;
 using UnityEditor.AddressableAssets.Settings;

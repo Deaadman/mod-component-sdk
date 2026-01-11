@@ -44,8 +44,8 @@ namespace ModComponent.SDK
 
             settings.OverridePlayerVersion = FileUtilities.SanitizeFileName(modName);
 
-            settings.ShaderBundleNaming = ShaderBundleNaming.Custom;
-            settings.ShaderBundleCustomNaming = FileUtilities.SanitizeFileName(modName);
+            // settings.ShaderBundleNaming = ShaderBundleNaming.Custom;
+            // settings.ShaderBundleCustomNaming = FileUtilities.SanitizeFileName(modName);
 
             settings.BuildRemoteCatalog = true;
             settings.RemoteCatalogBuildPath.SetVariableByName(settings, AddressableAssetSettings.kLocalBuildPath);

@@ -1,18 +1,18 @@
 {
   "name": "com.deadman.modcomponent.sdk",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "displayName": "ModComponent SDK",
   "description": "An SDK built on top of the infrastructure of ModComponent, enhancing and simplifying the process of creating ModComponent's.",
-  "unity": "2021.3",
-  "unityRelease": "16f1",
-  "documentationUrl": "https://github.com/Deaadman/ModComponentSDK/wiki",
-  "changelogUrl": "https://github.com/Deaadman/ModComponentSDK/releases",
+  "unity": "6000.0",
+  "unityRelease": "60f1",
+  "documentationUrl": "https://deaadman.github.io/mod-component-sdk/",
+  "changelogUrl": "https://github.com/Deaadman/mod-component-sdk/releases",
   "licensesUrl": "",
   "author": {
     "name": "Deadman",
     "url": "https://github.com/Deaadman"
   },
   "dependencies": {
-    "com.unity.addressables": "1.19.19"
+    "com.unity.addressables": "2.7.6"
   }
 }
