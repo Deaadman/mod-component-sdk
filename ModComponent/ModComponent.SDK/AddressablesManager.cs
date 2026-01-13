@@ -43,6 +43,7 @@ namespace ModComponent.SDK
                                                            true);
 
             settings.OverridePlayerVersion = FileUtilities.SanitizeFileName(modName);
+            settings.EnableJsonCatalog = true;
 
             settings.BuiltInBundleNaming = BuiltInBundleNaming.Custom;
             settings.BuiltInBundleCustomNaming = FileUtilities.SanitizeFileName(modName);
