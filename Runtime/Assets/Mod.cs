@@ -38,6 +38,10 @@ namespace ModComponent.SDK
         [SerializeField] private LocalizationTable localization;
         [SerializeField] private SpawnTable spawns;
 
+        [Tooltip("Other assets to put in the bundle, addressed by their asset name: paper-doll textures, " +
+                 "first-person clothing prefabs, equipped models and so on. Item prefabs and icons are added automatically.")]
+        [SerializeField] private List<UnityEngine.Object> bundledAssets = new();
+
         [Tooltip("Extra files copied into the archive as-is, such as Wwise .bnk sound banks.")]
         [SerializeField] private List<UnityEngine.Object> extraFiles = new();
 
@@ -55,6 +59,7 @@ namespace ModComponent.SDK
         public List<string> RequiredMods => requiredMods;
         public List<GearItem> Items => items;
         public List<Blueprint> Blueprints => blueprints;
+        public List<UnityEngine.Object> BundledAssets => bundledAssets;
         public List<UnityEngine.Object> ExtraFiles => extraFiles;
         public IReadOnlyList<ModIntegration> Integrations => integrations;
 

@@ -2,7 +2,10 @@
     "name": "ModComponent.SDK.Editor",
     "rootNamespace": "ModComponent.SDK.Editor",
     "references": [
-        "ModComponent.SDK.Runtime"
+        "ModComponent.SDK.Runtime",
+        "Unity.Addressables",
+        "Unity.Addressables.Editor",
+        "Unity.ResourceManager"
     ],
     "includePlatforms": [
         "Editor"
