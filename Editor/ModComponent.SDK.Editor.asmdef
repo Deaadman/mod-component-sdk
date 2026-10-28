@@ -3,6 +3,7 @@
     "rootNamespace": "ModComponent.SDK.Editor",
     "references": [
         "ModComponent.SDK.Runtime",
+        "ModComponent.SDK",
         "Unity.Addressables",
         "Unity.Addressables.Editor",
         "Unity.ResourceManager"

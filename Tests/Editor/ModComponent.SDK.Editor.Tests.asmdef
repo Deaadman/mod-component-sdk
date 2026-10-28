@@ -3,6 +3,7 @@
     "rootNamespace": "ModComponent.SDK.Editor.Tests",
     "references": [
         "ModComponent.SDK.Runtime",
+        "ModComponent.SDK",
         "ModComponent.SDK.Editor",
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
