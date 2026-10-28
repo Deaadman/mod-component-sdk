@@ -69,9 +69,10 @@ namespace ModComponent.SDK.Editor.Build
     public static class ModBuildPipeline
     {
         /// <summary>
-        /// Checks run before anything is built. Phase 3's validator registers here; errors stop the build.
+        /// Checks run before anything is built (by default every validation rule). Errors stop the build.
         /// </summary>
-        public static Func<Mod, IEnumerable<BuildMessage>> Validator = BasicChecks;
+        public static Func<Mod, IEnumerable<BuildMessage>> Validator =
+            mod => Validation.ModValidator.Validate(mod, forBuild: true).Issues.Select(Validation.ModValidator.ToBuildMessage);
 
         public static string StagingRoot => Path.GetFullPath(Path.Combine("Library", "ModComponentSDK"));
 
@@ -250,41 +251,6 @@ namespace ModComponent.SDK.Editor.Build
                 File.Copy(source, target, false);
                 report.Info("extras/" + name);
             }
-        }
-
-        /// <summary>The minimum needed to build at all. Phase 3's rules replace this with full validation.</summary>
-        public static IEnumerable<BuildMessage> BasicChecks(Mod mod)
-        {
-            if (!UnityVersionGuard.IsSupported)
-                yield return new BuildMessage(BuildMessageSeverity.Error, UnityVersionGuard.Message);
-            if (EditorUserBuildSettings.activeBuildTarget != BuildTarget.StandaloneWindows64)
-                yield return new BuildMessage(BuildMessageSeverity.Error,
-                    "The Long Dark is a 64-bit Windows game. Switch the build target to Windows (64-bit) in Build Settings.");
-            if (!Mod.IsValidId(mod.Id))
-                yield return new BuildMessage(BuildMessageSeverity.Error, $"Mod id \"{mod.Id}\" may only use letters, digits, '-' and '_'.");
-            foreach (var item in mod.Items)
-            {
-                if (item == null)
-                {
-                    yield return new BuildMessage(BuildMessageSeverity.Error, "The item list has an empty slot.");
-                    continue;
-                }
-
-                if (item.Component == null)
-                    yield return new BuildMessage(BuildMessageSeverity.Error, $"{item.GearName} has no component.");
-                if (item.Prefab == null)
-                    yield return new BuildMessage(BuildMessageSeverity.Error, $"{item.GearName} has no prefab.");
-                else if (item.Prefab.name != item.GearName)
-                    yield return new BuildMessage(BuildMessageSeverity.Error,
-                        $"{item.GearName}: the prefab is named {item.Prefab.name}. ModComponent finds items by prefab name, so they must match.");
-            }
-
-            // Items with the same gear name would write the same JSON file and bundle address.
-            foreach (var group in mod.Items.Where(i => i != null)
-                         .GroupBy(i => ModWriters.ItemFileName(i), StringComparer.OrdinalIgnoreCase)
-                         .Where(g => g.Count() > 1))
-                yield return new BuildMessage(BuildMessageSeverity.Error,
-                    $"{string.Join(", ", group.Select(i => i.name))} share the gear name {group.First().GearName}. Gear names must be unique.");
         }
 
         private static void Write(string staging, string relativePath, string contents)
