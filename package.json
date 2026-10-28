@@ -1,18 +1,31 @@
 {
   "name": "com.deadman.modcomponent.sdk",
-  "version": "1.0.6",
+  "version": "2.0.0-nightly.1",
   "displayName": "ModComponent SDK",
-  "description": "An SDK built on top of the infrastructure of ModComponent, enhancing and simplifying the process of creating ModComponent's.",
+  "description": "Create .modcomponent item mods for The Long Dark in Unity: items, blueprints, localization and spawns, validated and built in one place.",
   "unity": "6000.0",
   "unityRelease": "60f1",
-  "documentationUrl": "https://deaadman.github.io/mod-component-sdk/",
+  "documentationUrl": "https://github.com/Deaadman/mod-component-sdk/wiki",
   "changelogUrl": "https://github.com/Deaadman/mod-component-sdk/releases",
-  "licensesUrl": "",
+  "licensesUrl": "https://github.com/Deaadman/mod-component-sdk/blob/main/LICENSE",
+  "keywords": [
+    "The Long Dark",
+    "ModComponent",
+    "modding"
+  ],
   "author": {
     "name": "Deadman",
     "url": "https://github.com/Deaadman"
   },
   "dependencies": {
-    "com.unity.addressables": "2.7.6"
-  }
+    "com.unity.addressables": "2.7.6",
+    "com.unity.nuget.newtonsoft-json": "3.2.1"
+  },
+  "samples": [
+    {
+      "displayName": "Vanilla Icons",
+      "description": "Inventory icons for vanilla and Modder's Gear Toolbox items, shown in the SDK's item pickers.",
+      "path": "Samples~/VanillaIcons"
+    }
+  ]
 }

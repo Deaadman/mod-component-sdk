@@ -1,0 +1,4560 @@
+{
+ "comment": "Names offered by the SDK reference pickers. \"game\" is the version the lists were taken from (SDK 1.x lists, plus Modder's Gear Toolbox 1.0.4); the SDK targets a newer game, so recent additions are missing until merged.",
+ "game": "2.31",
+ "modComponent": "7.0.0",
+ "languages": [
+  "English",
+  "German",
+  "Russian",
+  "French (France)",
+  "Japanese",
+  "Korean",
+  "Simplified Chinese",
+  "Swedish",
+  "Traditional Chinese",
+  "Turkish",
+  "Norwegian",
+  "Spanish (Spain)",
+  "Portuguese (Portugal)",
+  "Portuguese (Brazil)",
+  "Dutch",
+  "Finnish",
+  "Italian",
+  "Polish",
+  "Ukrainian"
+ ],
+ "gear": [
+  {
+   "id": "GEAR_Accelerant",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_AccelerantGunpowder",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_AccelerantKerosene",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Acorn",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_AcornCoffeeCup",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_AcornCooked",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_AcornCookedBig",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_AcornGrounds",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_AcornShelled",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_AcornShelledBig",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_AirfieldCabinNote",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_AirfieldCargomasterNote",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_AirfieldControlNote",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_AirfieldGeologistNote1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_AirfieldHangarNote",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_AirfieldJunkerNote",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_AirfieldSecChiefNote1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_AirfieldTowerNote",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_AirlineFoodChick",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_AirlineFoodVeg",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Arrow",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_ArrowHardened",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_ArrowHead",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_ArrowShaft",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BackerNote1A",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BackerNote1B",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BackerNote1C",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BackerNote2A",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BackerNote2B",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BackerNote2C",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BackerNote3A",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BackerNote3B",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BackerNote3C",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BackerNote4A",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BackerNote4B",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BackerNote4C",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Balaclava",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BallisticVest",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BankManagerHouseKey",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BankVaultCode",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BarkTinder",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BaseballCap",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Basement_Key_EP3",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BasicBoots",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BasicGloves",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BasicShoes",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BasicWinterCoat",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BasicWoolHat",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BasicWoolScarf",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Bear_Spear_complete",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Bear_Spear_head",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BearHide",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BearHideDried",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BearQuarter",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BearSkinBedRoll",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BearSkinCoat",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BearSpear",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BearSpearBroken",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BearSpearBrokenStory",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BearSpearStory",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BedRoll",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BedRoll_Down",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BeefJerky",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BIKey1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BIKey2",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BirchbarkPrepared",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BirchbarkTea",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BirchSapling",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BirchSaplingDried",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BlackrockAdminNote",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BlackrockAmmoRoomNote",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BlackrockCodeNote",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BlackrockSecurityNote",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BlackrockTowerNote",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BlueFlare",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BoltCutters",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookA",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookArchery",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookB",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookBopen",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookC",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookCarcassHarvesting",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookCooking",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookD",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookE",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookEopen",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookF",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookFireStarting",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookFopen",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookG",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookGunsmithing",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookH",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookHopen",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookI",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookIceFishing",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookLabE_01",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookLabE_02",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookLabE_03",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookLabE_Open_01",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookManual",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookMending",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookRevolverFirearm",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookRifleFirearm",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BookRifleFirearmAdvanced",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BottleAntibiotics",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BottleHydrogenPeroxide",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BottlePainKillers",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Bow",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Bow_Manufactured",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Bow_Woodwrights",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BRKey1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BRKey2",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BrokenArrow",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BrokenArrowHardened",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Broth",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Bullet",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BunkerClue1a",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BunkerClue1b",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BunkerClue1c",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BunkerClue1d",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Burdock",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BurdockPrepared",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_BurdockTea",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CandyBar",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Canister",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CannedBeans",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CannedCorn",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CannedHam",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CannedSardines",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CanneryCodeNote",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CanneryMemo",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CannerySurvivalPath",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CanOpener",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CanyonClimbersCaveNote",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CanyonDeadClimberNote",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CanyonFishingHutJournal",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CanyonMinersNote",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CarBattery",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CargoPants",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Carrot",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CashBundle",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CattailPlant",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CattailStalk",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CattailTinder",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Charcoal",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_ClimbersJournal",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_ClimbingSocks",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_ClipBoardBunker_A",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_ClipBoardBunker_B",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_ClipBoardBunker_C",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_ClipBoardBunker_D",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_ClipBoardTale2_A",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_ClipBoardTale2_B",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_ClipBoardTale2_C",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_ClipBoardTale2_D",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Cloth",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Coal",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CoffeeCup",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CoffeeTin",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CombatBoots",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CombatPants",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CondensedMilk",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedBannock",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedBannockAcorn",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedBurbot",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedCohoSalmon",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedFishcakes",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedGoldeye",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedLakeWhiteFish",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedMeatBear",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedMeatCougar",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedMeatDeer",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedMeatMoose",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedMeatPtarmigan",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedMeatRabbit",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedMeatWolf",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedPancake",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedPancakeAcorn",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedPancakePeach",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedPieFishermans",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedPieForagers",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedPieMeat",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedPiePeach",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedPiePredator",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedPiePtarmigan",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedPieRabbit",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedPieRoseHip",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedPieVenison",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedPorridge",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedPorridgeFruit",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedRainbowTrout",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedRedIrishLord",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedRockfish",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedSmallMouthBass",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedStewMeat",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedStewPtarmigan",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedStewRabbit",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedStewTrout",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedStewVegetables",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookedStewVenison",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookingOil",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookingPot",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CookingPotDummy",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CottonHoodie",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CottonScarf",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CottonShirt",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CottonSocks",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CougarClaw",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CougarClawKnife",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CougarHide",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CougarHideDried",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CougarQuarter",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CougarWrap",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CowichanSweater",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Crackers",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Crampons",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_CrowFeather",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DamFenceKey",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DamFenceKey_2",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DamFenceKey_3",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DamGarbageLetter",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DamLockerKey",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DamOfficeKey",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DarkwalkerDiary1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DarkwalkerDiary10",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DarkwalkerDiary11",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DarkwalkerDiary2",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DarkwalkerDiary3",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DarkwalkerDiary4",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DarkwalkerDiary5",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DarkwalkerDiary6",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DarkwalkerDiary7",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DarkwalkerDiary8",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DarkwalkerDiary9",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DarkwalkerID",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DeadmanNote1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DeadmanNote2",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DeadmanNote3",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DeadmanNote4",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DeadmanNote5",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DeerSkinBoots",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DeerSkinPants",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DepositBoxKey",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DogFood",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DownParka",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DownSkiJacket",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DownVest",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_DustingSulfur",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_EarMuffs",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_ElevatorParts",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_EmergencyStim",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_EnergyBar",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Ep4LockerKey1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Ep4LockerKey2",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Ep4LockerKey3",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Ep4LockerKey8",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Ep4PrisonGateKey",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Ep4RumoursWolfReport",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_FarmerDepositBoxKey",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Firelog",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Firestriker",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_FishermanSweater",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_FishingBaitA",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_FishingLine",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_FishingLureA",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_FishingLureB",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_FishingLureC",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_FishingLureD",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_FlareA",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_FlareGun",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_FlareGunAmmoSingle",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Flashlight",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Flashlight_LongLasting",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_FleeceMittens",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_FleeceSweater",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Flour",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Fuse",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Gauntlets",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_GoldNugget",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_GranolaBar",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_GreenTeaCup",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_GreenTeaPackage",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_GunpowderCan",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Gut",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_GutDried",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Hacksaw",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Hammer",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_HandheldShortwave",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Hardwood",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Hatchet",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_HatchetImprovised",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_HatGatorBalaclavaA",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_HatLeatherAviatorA",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_HeavyBandage",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_HeavyParka",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_HeavyWoolSweater",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_HighQualityTools",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_HomeMadeSoup",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Hook",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_HookAndLine",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_ImprovisedCrampons",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_ImprovisedDownInsulation",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_ImprovisedHat",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_ImprovisedMittens",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_InsulatedBoots",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_InsulatedFlask_A",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_InsulatedFlask_B",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_InsulatedFlask_C",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_InsulatedFlask_D",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_InsulatedFlask_E",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_InsulatedFlask_F",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_InsulatedPants",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_InsulatedVest",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Insulin",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_JacketLeatherFlightA",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Jeans",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_JeremiahKnife",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_JerrycanRusty",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_JerseyHockeyA",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_KeroseneLamp_Spelunkers",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_KeroseneLampB",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_KetchupChips",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Knife",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_KnifeImprovised",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_KnifeScrapMetal",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_LakeCabinKey3",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_LakeTrailerKey1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_LampFuel",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_LampFuelFull",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_LangstonMineKey1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_LangstonMineLockboxKey1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Leather",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_LeatherDried",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_LeatherHide",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_LeatherHideDried",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_LeatherShoes",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_LightParka",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Line",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Logbook_A01",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Logbook_A02",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Logbook_A03",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Logbook_A04",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_LogbookTale2_A01",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_LogbookTale2_A02",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_LogbookTale2_A03",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_LogbookTale2_A04",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_LongUnderwear",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_LongUnderwearWool",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_MackinawJacket",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_MagnifyingLens",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_MapleSapling",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_MapleSaplingDried",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_MapleSyrup",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_MedicalSupplies",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_MilitaryParka",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_MiltonDepositBoxKey1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_MiltonDepositBoxKey2",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_MiltonDepositBoxKey3",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_MineRegionBunkhouseNote",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_MineRegionPumphouseNote",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_MinersBoots",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_MinersHelmet",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_MinersJacket",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_MinersPants",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Mittens",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_MooseHide",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_MooseHideBag",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_MooseHideCloak",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_MooseHideDried",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_MooseQuarter",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_MountainPassAvalancheNote",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_MountainPassWeatherStationNote",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_MountainTownFarmKey",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_MountainTownLockBoxKey",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_MRE",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_MuklukBoots",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Newsprint",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_NewsprintBootStuffing",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_NewsprintInsulation",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_NewsprintRoll",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_NoiseMaker",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_NULL",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_OatsTin",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_OldLadyStolenItem",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_OldMansBeardDressing",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_OldMansBeardHarvested",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PackMatches",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PaperStack",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PeanutButter",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PinnacleCanPeaches",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PlaidShirt",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PostCard_AC_CentralSpire",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PostCard_AC_TopShelf",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PostCard_AF_Cabin",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PostCard_AF_Plateau",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PostCard_BI_EchoOne-RadioTower",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PostCard_BR_Canyon",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PostCard_BR_Prison",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PostCard_CR_AbandonedLookout",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PostCard_FM_MuskegOverlook",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PostCard_FM_ShortwaveTower",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PostCard_ML_ForestryLookout",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PostCard_ML_LakeOverlook",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PostCard_MP_BrokenRoad",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PostCard_MP_OgresTeardrop",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PostCard_MP1_ForwardCamp",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PostCard_MP2_Basement",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PostCard_MP3_HighPeak",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PostCard_MP4_Bunker",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PostCard_MR_Settlement",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PostCard_MR_Window",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PostCard_MT_RadioTower",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PostCard_PV_SignalHill",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PostCard_RV_Pensive",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PostCard_Tale02",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PostCard_TM_AndresPeak",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PostCard_TM_TailSection",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Potato",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PotatoCooked",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PremiumWinterCoat",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Prybar",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PtarmiganCarcass",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_PtarmiganFeathers",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_QualityWinterCoat",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RabbitCarcass",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RabbitPelt",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RabbitPeltDried",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RabbitskinHat",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RabbitSkinMittens",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RawBurbot",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RawCohoSalmon",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RawGoldeye",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RawLakeWhiteFish",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RawMeatBear",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RawMeatCougar",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RawMeatDeer",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RawMeatMoose",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RawMeatPtarmigan",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RawMeatRabbit",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RawMeatWolf",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RawRainbowTrout",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RawRedIrishLord",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RawRockfish",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RawSmallMouthBass",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RecipeCardFishcakes",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RecipeCardPancakePeach",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RecipeCardPieFishermans",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RecipeCardPieForagers",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RecipeCardPieMeat",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RecipeCardPiePredator",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RecipeCardPorridgeFruit",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RecipeCardStewMeat",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RecipeCardStewVegetables",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_ReclaimedWoodB",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RecycledCan",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_ReishiMushroom",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_ReishiPrepared",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_ReishiTea",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Respirator",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Revolver",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Revolver44Mag",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RevolverAmmoBox",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RevolverAmmoCasing",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RevolverAmmoSingle",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RevolverFancy",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RevolverGreen",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RevolverStubNosed",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Rifle",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Rifle_Barbs",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Rifle_Curators",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Rifle_Vaughns",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RifleAmmoBox",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RifleAmmoCasing",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RifleAmmoSingle",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RifleCleaningKit",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RifleScabbardA",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Rock",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RockCache_Prefab",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Rope",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RoseHip",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RosehipsPrepared",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RoseHipTea",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Rudiger_Watch",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_RuralRegionFarmKey",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Salt",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_ScrapLead",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_ScrapMetal",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_SecurityChiefID",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_SewingKit",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_SharpeningStone",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_ShortWave",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_SimpleTools",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_SkiBoots",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_SkiGloves",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_SkiJacket",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Skillet",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Snare",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Soda",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_SodaEnergy",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_SodaGrape",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_SodaOrange",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Softwood",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_SpearHead",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_SprayPaintCan",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_SprayPaintCanGlyphA",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_StagQuarter",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_SteamPipeValve",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Stick",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Stone",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_StumpRemover",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_SurvivalElevatorCrank",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_TacticalGloves",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_TacticalJacket",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tale_03_PostCard_01",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tale_03_PostCard_02",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tale_03_PostCard_03",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tale_03_PostCard_04",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tale_03_PostCard_05",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tale1ChiefNote1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tale1ChiefNote2",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tale1ChiefNote3",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tale1ChiefNote4",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tale1ChiefNote5",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tale1Transcript1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tale1Transcript2",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tale1Transcript3",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tale1Transcript4",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tale2_CorpseKey",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tale2_LockerKey",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tale2GeologistNote1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tale2RudigerNote1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tale2SecurityChiefBones",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tale3_ForemanRefugeKey",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tale3ForemanLog1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tale3ForemanLog2",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tale3ForemanLog3",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tale3ForemanLog4",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tale3RudigerNote1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tale3RudigerNote2",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tale3RudigerNote3",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_TalesTestNote1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_TechnicalBackpack",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_TeeShirt",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_TimberwolfQuarter",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Tinder",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_TipUp",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_TomatoSoupCan",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_ToolBelt",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Toque",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Torch",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Travois",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_UncookedBannock",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_UncookedBannockAcorn",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_UncookedBroth",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_UncookedFishcakes",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_UncookedPancake",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_UncookedPancakeAcorn",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_UncookedPancakePeach",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_UncookedPieFishermans",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_UncookedPieForagers",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_UncookedPieMeat",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_UncookedPiePeach",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_UncookedPiePredator",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_UncookedPiePtarmigan",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_UncookedPieRabbit",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_UncookedPieRoseHip",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_UncookedPieVenison",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_UncookedPorridge",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_UncookedPorridgeFruit",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_UncookedStewMeat",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_UncookedStewPtarmigan",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_UncookedStewRabbit",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_UncookedStewTrout",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_UncookedStewVegetables",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_UncookedStewVenison",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteAC1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteAC2",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteAC3",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteACKey1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteBI1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteBI2",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteBI3",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteBlackrock1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteBlackrock2",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteBlackrock3",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteBlackrockKey3",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteBR1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteBR2",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteBR3",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteCH1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteCH2",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteDP1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteDP2",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteDP3",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteDPKey1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteFM1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteFM2",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteFM3",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteHRV1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteHRV2",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteHRV3",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteHRVKey1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteML1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteML2",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteML3",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteMLKey2",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteMLKey3",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteMT1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteMT2",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteMT3",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteMTKey1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNotePV1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNotePV2",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNotePV3",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteTWM1",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_VisorNoteTWM2",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Water1000ml",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Water500ml",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_WaterPurificationTablets",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_WaterSupplyNotPotable",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_WaterSupplyPotable",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_WireBundle",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_WolfCarcass",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_WolfPelt",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_WolfPeltDried",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_WolfQuarter",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_WolfSkinCape",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_WolfStarvingCarcass",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_WoodMatches",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_WoolShirt",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_WoolSocks",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_WoolSweater",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_WoolWrap",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_WoolWrapCap",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_WorkBoots",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_WorkGloves",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_WorkPants",
+   "source": "vanilla"
+  },
+  {
+   "id": "GEAR_Battery9V",
+   "source": "ModdersToolbox"
+  },
+  {
+   "id": "GEAR_Bones",
+   "source": "ModdersToolbox"
+  },
+  {
+   "id": "GEAR_CeramicShards",
+   "source": "ModdersToolbox"
+  },
+  {
+   "id": "GEAR_CrumpledPaper",
+   "source": "ModdersToolbox"
+  },
+  {
+   "id": "GEAR_ElectronicParts",
+   "source": "ModdersToolbox"
+  },
+  {
+   "id": "GEAR_Flint",
+   "source": "ModdersToolbox"
+  },
+  {
+   "id": "GEAR_GlassShards",
+   "source": "ModdersToolbox"
+  },
+  {
+   "id": "GEAR_GunParts",
+   "source": "ModdersToolbox"
+  },
+  {
+   "id": "GEAR_MetalBoxForge",
+   "source": "ModdersToolbox"
+  },
+  {
+   "id": "GEAR_NutsNBolts",
+   "source": "ModdersToolbox"
+  },
+  {
+   "id": "GEAR_NutsNBoltsBox",
+   "source": "ModdersToolbox"
+  },
+  {
+   "id": "GEAR_RecycledGlass",
+   "source": "ModdersToolbox"
+  },
+  {
+   "id": "GEAR_RecycledPlastic",
+   "source": "ModdersToolbox"
+  },
+  {
+   "id": "GEAR_RifleBroken",
+   "source": "ModdersToolbox"
+  },
+  {
+   "id": "GEAR_ScrapPlastic",
+   "source": "ModdersToolbox"
+  },
+  {
+   "id": "GEAR_StringBundle",
+   "source": "ModdersToolbox"
+  },
+  {
+   "id": "GEAR_StringDurable",
+   "source": "ModdersToolbox"
+  },
+  {
+   "id": "GEAR_TapeRoll",
+   "source": "ModdersToolbox"
+  },
+  {
+   "id": "GEAR_TarpSheet",
+   "source": "ModdersToolbox"
+  }
+ ],
+ "liquids": [
+  "LIQUID_Accelerant",
+  "LIQUID_AcornCoffee",
+  "LIQUID_Antiseptic",
+  "LIQUID_BirchbarkTea",
+  "LIQUID_Broth",
+  "LIQUID_BurdockTea",
+  "LIQUID_Coffee",
+  "LIQUID_CookingOil",
+  "LIQUID_GreenTea",
+  "LIQUID_Kerosene",
+  "LIQUID_ReishiTea",
+  "LIQUID_RoseHipTea",
+  "LIQUID_TomatoSoup",
+  "LIQUID_WaterNonPotable",
+  "LIQUID_WaterPotable"
+ ],
+ "powders": [
+  "POWDER_Flour",
+  "POWDER_Gunpowder",
+  "POWDER_OatsTin",
+  "POWDER_Salt"
+ ],
+ "lootTables": [
+  "LootCacheCommon",
+  "LootCacheRare",
+  "LootCacheTrackableCrashBox",
+  "LootCacheTrackableCrashBoxInt",
+  "LootCacheTrackableHidden",
+  "LootCacheTrackableHiddenAmmo",
+  "LootCacheTrackableHiddenClothes",
+  "LootCacheTrackableHiddenFlares",
+  "LootCacheTrackableHiddenFood",
+  "LootCacheTrackableHiddenIntClothes",
+  "LootCacheTrackableHiddenIntCraft",
+  "LootCacheTrackableHiddenIntEmpty",
+  "LootCacheTrackableHiddenIntFlares",
+  "LootCacheTrackableHiddenIntFood",
+  "LootCacheTrackableHiddenIntTools",
+  "LootCacheTrackableHiddenTools",
+  "LootCargoClothingA",
+  "LootCargoClothingB",
+  "LootCargoClothingC",
+  "LootCargoClothingRareA",
+  "LootCargoClothingRareB",
+  "LootCargoClothingRareC",
+  "LootCargoDrinkA",
+  "LootCargoDrinkB",
+  "LootCargoDrinkC",
+  "LootCargoFire",
+  "LootCargoFoodA",
+  "LootCargoFoodB",
+  "LootCargoFoodC",
+  "LootCargoFoodRareA",
+  "LootCargoFoodRareB",
+  "LootCargoMaterialsA",
+  "LootCargoMaterialsB",
+  "LootCargoMaterialsRareB",
+  "LootCargoMedical",
+  "LootCargoMedicalRare",
+  "LootCargoMiscA",
+  "LootCargoMiscB",
+  "LootCargoMiscC",
+  "LootCargoMiscRareA",
+  "LootCargoRifle",
+  "LootCargoShoes",
+  "LootCargoTools",
+  "LootFoodBox",
+  "LootTableBackPack",
+  "LootTableBackPackCoastal",
+  "LootTableBackPackStory",
+  "LootTableBathroomCabinet",
+  "LootTablebriefcase",
+  "LootTableCabinet",
+  "LootTableCashRegister",
+  "LootTableCoalBin",
+  "LootTableDepositBox",
+  "LootTableDepositBoxLocked",
+  "LootTableDresser",
+  "LootTableEndTable",
+  "LootTableEndTable_bedroom",
+  "LootTableFileCabinet",
+  "LootTableFirewoodBin",
+  "LootTableFirewoodBinLocked",
+  "LootTableFirstAidKit",
+  "LootTableFishingDrawer",
+  "LootTableFishingDrawer_story",
+  "LootTableFishingFreshWater",
+  "LootTableFishingSaltWater",
+  "LootTableForestryCrate",
+  "LootTableForestryCrateLocked",
+  "LootTableForestryCrateMine",
+  "LootTableFreezer",
+  "LootTableFridge",
+  "LootTableFridgeBasic",
+  "LootTableGenericCabinet",
+  "LootTableHumanCorpse",
+  "LootTableHumanCorpseRare",
+  "LootTableKitchenCupboard",
+  "LootTableKitchenDrawer",
+  "LootTableLaundry",
+  "LootTableLocker",
+  "LootTableLocker_story",
+  "LootTableLockerLocked",
+  "LootTableLockerLocked_story",
+  "LootTableMedicalSupplies",
+  "LootTableMetalBox",
+  "LootTableNull_Story",
+  "LootTableOven",
+  "LootTablePlasticBox",
+  "LootTablePotatoSack",
+  "LootTableRifleSupplies",
+  "LootTableSafe",
+  "LootTableSafeInterloper",
+  "LootTableStartBoots",
+  "LootTableStartBootsInterloper",
+  "LootTableStartCoat",
+  "LootTableStartCoatPilgrim",
+  "LootTableStartFirstAid",
+  "LootTableStartFood",
+  "LootTableStartGloves",
+  "LootTableStartHat",
+  "LootTableStartMisc",
+  "LootTableStartMiscPilgrim",
+  "LootTableStartMiscStalker",
+  "LootTableStartMiscWhite",
+  "LootTableStartSocks",
+  "LootTableStartSweater",
+  "LootTableStartSweaterInterloper",
+  "LootTableStartTinder",
+  "LootTableStones",
+  "LootTableSuitcase",
+  "LootTableTideLine",
+  "LootTableTideLineBlizzard",
+  "LootTableToolChest",
+  "LootTableToolChest_sml",
+  "LootTableToolChest_story",
+  "LootTableToolChestDrawer",
+  "LootTableToolChestDrawer_story",
+  "LootTableTrash",
+  "LootTableVegetableCart",
+  "LootTableVegetableCartCarrot",
+  "LootTableVegetableCartPotato",
+  "LootTableVehicleGloveBox",
+  "LootTableVehicleTrunk",
+  "LootTableVehicleTrunkCoastal",
+  "LootTableVehicleTrunkLocked",
+  "LootTableVehicleTrunkLockedCoastal",
+  "LootTableVehicleTrunkStory",
+  "LootTableWardrobe_outer",
+  "LootTableWardrobe_regular",
+  "LootTableWorkbench"
+ ],
+ "scenes": [
+  "AFHangar",
+  "AFTerminal",
+  "AirfieldRegion",
+  "AirfieldTrailerB",
+  "AirfieldWoodCabinA",
+  "AshCabinD",
+  "AshCabinF",
+  "AshCanyonRegion",
+  "AshCaveA",
+  "AshCaveB",
+  "AshMine",
+  "AshWoodCabinA",
+  "BankA",
+  "BarnHouseA",
+  "BarnHouseB",
+  "BlackrockCaveA",
+  "BlackrockInteriorASurvival",
+  "BlackrockMineA",
+  "BlackrockPowerplantA",
+  "BlackrockPrisonSurvivalZone",
+  "BlackrockRegion",
+  "BlackrockSteamTunnelsASurvival",
+  "BlackRockTrailerB",
+  "BlackrockTransitionZone",
+  "BunkerA",
+  "BunkerB",
+  "BunkerC",
+  "BunkerXL",
+  "CampOffice",
+  "Cannery",
+  "CanneryMarshTransitionCave",
+  "CanneryTrailerA",
+  "CanyonRoadCave",
+  "CanyonRoadTransitionZone",
+  "CaveB",
+  "CaveC",
+  "CaveD",
+  "ChurchB",
+  "ChurchC",
+  "CoastalHouseA",
+  "CoastalHouseB",
+  "CoastalHouseC",
+  "CoastalHouseD",
+  "CoastalHouseE",
+  "CoastalHouseF",
+  "CoastalHouseH",
+  "CoastalRegion",
+  "CommunityHallA",
+  "ConvenienceStoreA",
+  "CrashMountainRegion",
+  "Dam",
+  "DamCaveTransitionZone",
+  "DamRiverTransitionZone",
+  "DamTrailerB",
+  "DamTransitionZone",
+  "FarmHouseA",
+  "FarmHouseABasement",
+  "FarmHouseB",
+  "FishingCabinA",
+  "FishingCabinC",
+  "FishingCabinD",
+  "GreyMothersHouseA",
+  "HighwayMineTransitionZone",
+  "HighwayTransitionZone",
+  "HouseBasementC",
+  "HouseBasementPV",
+  "HubCave",
+  "HubRegion",
+  "HuntingLodgeA",
+  "IceCaveA",
+  "IceCaveB",
+  "LakeCabinA",
+  "LakeCabinB",
+  "LakeCabinC",
+  "LakeCabinD",
+  "LakeCabinE",
+  "LakeCabinF",
+  "LakeRegion",
+  "LighthouseA",
+  "LongRailTransitionZone",
+  "LongTransitionCave",
+  "MaintenanceShedA",
+  "MaintenanceShedB",
+  "MarshRegion",
+  "MiltonHouseA",
+  "MiltonHouseC",
+  "MiltonHouseD",
+  "MiltonHouseF1",
+  "MiltonHouseF2",
+  "MiltonHouseF3",
+  "MiltonHouseH1",
+  "MiltonHouseH2",
+  "MiltonHouseH3",
+  "MiltonTrailerB",
+  "MineConcentratorBuilding",
+  "MineTransitionZone",
+  "MiningRegion",
+  "MiningRegionMine",
+  "MountainCaveA",
+  "MountainCaveB",
+  "MountainPassBasement",
+  "MountainPassBuriedCabin",
+  "MountainPassCabinA",
+  "MountainPassCaveA",
+  "MountainPassCaveB",
+  "MountainPassRegion",
+  "MountainTownCaveA",
+  "MountainTownCaveB",
+  "MountainTownRegion",
+  "PostOfficeA",
+  "PrepperCacheA",
+  "PrepperCacheAEmpty",
+  "PrepperCacheB",
+  "PrepperCacheBEmpty",
+  "PrepperCacheBInterloper",
+  "PrepperCacheC",
+  "PrepperCacheCEmpty",
+  "PrepperCacheD",
+  "PrepperCacheDEmpty",
+  "PrepperCacheE",
+  "PrepperCacheEEmpty",
+  "PrepperCacheEmpty",
+  "PrepperCacheF",
+  "PrepperCacheFEmpty",
+  "PumpHouse",
+  "QuonsetGasStation",
+  "RadarBuilding",
+  "RadioControlHut",
+  "RadioControlHutB",
+  "RadioControlHutC",
+  "RavineTransitionZone",
+  "RiverValleyRegion",
+  "RiverValleyTransitionCave",
+  "RuralRegion",
+  "RuralStoreA",
+  "SafeHouseA",
+  "TracksRegion",
+  "TrailerA",
+  "TrailerB",
+  "TrailerC",
+  "TrailerD",
+  "TrailerE",
+  "TrailerSShape",
+  "WhalingMine",
+  "WhalingShipA",
+  "WhalingStationRegion",
+  "WhalingWarehouseA",
+  "WoodCabinA",
+  "WoodCabinB",
+  "WoodCabinC"
+ ],
+ "sounds": [
+  "Play_4DonChallengeComplete",
+  "Play_AddFishPan",
+  "Play_AddMeatPan",
+  "Play_AirPipeFlow",
+  "Play_AirPipeLeak",
+  "Play_AirPipeLeakSwitch",
+  "Play_AmbienceIneriorBunker",
+  "Play_AmbienceIneriorBunkerLarge",
+  "Play_ambientChemicalHazardZone",
+  "Play_ambientStreamingINT",
+  "Play_AnxietyAffliction",
+  "Play_ArrowBreak",
+  "Play_ArrowImpactsBlend",
+  "Play_ArrowNock",
+  "Play_ArrowWhoosh",
+  "Play_Aurora",
+  "Play_Aurora_ExperimentRoom",
+  "Play_AuroraElectrolizerNULL",
+  "Play_BarnOwl",
+  "Play_Barrel",
+  "Play_BarrelLargeLiquidA",
+  "Play_BarrelLiquidA",
+  "Play_BearAttack",
+  "Play_BearAttackPersistent",
+  "Play_BearChasing",
+  "Play_BearDetect",
+  "Play_BearDie",
+  "Play_BearFeeding",
+  "Play_BearFlee",
+  "Play_BearHoldGround",
+  "Play_BearIdle",
+  "Play_BearOutsideArrive",
+  "Play_BearOutsideCrack",
+  "Play_BearOutsideSniffing",
+  "Play_BearSleeping",
+  "Play_BearStalking",
+  "Play_BearStruggle",
+  "Play_BlackBear_Drag_Hunted2",
+  "Play_BlackBear_Hostile_Maul",
+  "Play_BlackBear_Hostile_Maul_Hunted2",
+  "Play_Bleeding",
+  "Play_BleedingSerious",
+  "Play_BlueFlareLight",
+  "Play_BlueFlareLoop",
+  "Play_BodyfallLarge",
+  "Play_BodyfallPlayer",
+  "Play_BodyfallSmall",
+  "Play_BodyHitHeavy",
+  "Play_BoilingLight",
+  "Play_BoilingLiquidLight",
+  "Play_BoilingLiquidThickHeavy",
+  "Play_BoilingLiquidThickLight",
+  "Play_BoltCuttingCut",
+  "Play_BoltCuttingLoop",
+  "Play_BoneCrack",
+  "Play_Bones",
+  "Play_Bones_SecurityChiefBones",
+  "Play_Bonfire",
+  "Play_BowDraw",
+  "Play_BowEquip",
+  "Play_BowFireBlend",
+  "Play_BowHold",
+  "Play_BowRelax",
+  "Play_BowUnequip",
+  "Play_BreadcrumbCrowCaw",
+  "Play_BreadcrumbCrowCaw_FrontEnd",
+  "Play_BreadcrumbCrowFlap",
+  "Play_BreadcrumbCrowFlap_FrontEnd",
+  "Play_BreakdownCampfire",
+  "Play_BreakdownLeanToShelter",
+  "Play_BreakdownSnowShelter",
+  "Play_BreakdownWoodBranches",
+  "Play_BriefcaseClose",
+  "Play_BriefcaseOpen",
+  "Play_BufferModern",
+  "Play_BuildingDecrement",
+  "Play_BuildingIncrement",
+  "Play_BulletImpacts",
+  "Play_BulletImpactsSpotlight",
+  "Play_CabinAmbientBlendLoop",
+  "Play_CabinExterior",
+  "Play_CanyonWindLoop1",
+  "Play_CanyonWindLoop1_2D",
+  "Play_Car",
+  "Play_CardboardBox",
+  "Play_CargoCrateClose",
+  "Play_CargoCrateOpen",
+  "Play_CastIronPotPickup",
+  "Play_CastIronPotPutDown",
+  "Play_Caves",
+  "Play_Chains",
+  "Play_ChemicalHazardBarrel",
+  "Play_ChemicalHazardMetalGroan",
+  "Play_ChemicalPoisoningAfflictionSFX",
+  "Play_ChemicalPoisoningAfflictionVO",
+  "Play_ChemicalPoisoningRiskGainedSFX",
+  "Play_ChemicalPoisoningRiskGainedVO",
+  "Play_ChemicalPoisoningRiskLostSFX",
+  "Play_ChemicalPoisoningRiskLostVO",
+  "Play_ChickadeeChirpDistant",
+  "Play_Climbing_Hand_Stone",
+  "Play_Climbing_Hand_Wood",
+  "Play_CloseInventory",
+  "Play_ClothesTearing",
+  "Play_ClothingOnOff",
+  "Play_ClothWornOut",
+  "Play_CoffeeCupPickup",
+  "Play_CoffeeCupPutDown",
+  "Play_ColdTeethChattering",
+  "Play_ConditionFair",
+  "Play_ConditionHeartbeat",
+  "Play_ConditionNearDeath",
+  "Play_ConditionPoor",
+  "Play_CookBannock",
+  "Play_CookBroth",
+  "Play_CookCannedFood",
+  "Play_cookingPlacementBannock",
+  "Play_cookingPlacementBroth",
+  "Play_cookingPlacementCarrot",
+  "Play_cookingPlacementPancake",
+  "Play_cookingPlacementPie",
+  "Play_cookingPlacementPorridge",
+  "Play_cookingPlacementPotato",
+  "Play_cookingPlacementSkillet",
+  "Play_cookingPlacementSoup",
+  "Play_cookingPlacementStew",
+  "Play_CookingPlacePot",
+  "Play_CookingPlaceTinCan",
+  "Play_CookingPlaceTinCanFull",
+  "Play_CookPancake",
+  "Play_CookPie",
+  "Play_CookPorridge",
+  "Play_CookPotato",
+  "Play_CookSoup",
+  "Play_CookStew",
+  "Play_CoolerClose",
+  "Play_CoolerOpen",
+  "Play_CorpseLootClose",
+  "Play_CorpseLootOpen",
+  "Play_crAccessories__Equip",
+  "Play_crAccessories__Unquip",
+  "Play_crAccessories_Bag_Equip",
+  "Play_crAccessories_Bag_Unquip",
+  "Play_crAccessories_InsulationDown_Equip",
+  "Play_crAccessories_InsulationDown_Unequip",
+  "Play_crAccessories_LeatherBelt_Equip",
+  "Play_crAccessories_LeatherBelt_PickUp",
+  "Play_crAccessories_LeatherBelt_PutBack",
+  "Play_crAccessories_LeatherBelt_Unquip",
+  "Play_crAccessories_RifleScabbard_Equip",
+  "Play_crAccessories_RifleScabbard_Unquip",
+  "Play_CraftingAcornsGrinding",
+  "Play_CraftingAcornsShelling",
+  "Play_CraftingArrows",
+  "Play_CraftingBannock",
+  "Play_CraftingBrothMeat",
+  "Play_CraftingBrothVegetable",
+  "Play_CraftingBurdockPrepared",
+  "Play_CraftingCloth",
+  "Play_CraftingCougarClawKnife",
+  "Play_CraftingCougarHideWrap",
+  "Play_CraftingFishcake",
+  "Play_CraftingFishingLure",
+  "Play_CraftingFishingTipUp",
+  "Play_CraftingForge",
+  "Play_CraftingGeneric",
+  "Play_CraftingGunPowder",
+  "Play_CraftingLeatherHide",
+  "Play_CraftingMetal",
+  "Play_CraftingMetalAmmo",
+  "Play_CraftingNoisemaker",
+  "Play_CraftingPancake",
+  "Play_CraftingPie",
+  "Play_CraftingPorridge",
+  "Play_CraftingPotato",
+  "Play_CraftingReishi",
+  "Play_CraftingShelter",
+  "Play_CraftingStewMeat",
+  "Play_CraftingStewVegetable",
+  "Play_CraftingTravois",
+  "Play_CraftingWood",
+  "Play_crChest__Equip",
+  "Play_crChest__Unquip",
+  "Play_crFeet__Equip",
+  "Play_crFeet__Unquip",
+  "Play_crHands__Equip",
+  "Play_crHands__Unquip",
+  "Play_crHead__Equip",
+  "Play_crHead__Unquip",
+  "Play_crHead_Helmet_Equip",
+  "Play_crHead_Helmet_Unquip",
+  "Play_crLegs__Equip",
+  "Play_crLegs__Unquip",
+  "Play_CrowCawsDistant",
+  "Play_Dam",
+  "Play_DamInteriorLoop",
+  "Play_DarkwalkerBanishRitual",
+  "Play_DarkwalkerCampfire",
+  "Play_DarkwalkerHaveTenPages",
+  "Play_DarkwalkerRitualCircle",
+  "Play_DeadManStinger",
+  "Play_DeerAttack",
+  "Play_DeerDie",
+  "Play_DeerHit",
+  "Play_DeerHoofScrape",
+  "Play_DeerIdle",
+  "Play_Dehydration",
+  "Play_Dock",
+  "Play_DoorMiscWhooshAClose",
+  "Play_DoorMiscWhooshAOpen",
+  "Play_DrawRifle",
+  "Play_DresserDrawerClose",
+  "Play_DresserDrawerOpen",
+  "Play_DrinkInsulatedFlask",
+  "Play_DrinkWater",
+  "Play_DuctMetalRattles",
+  "Play_DuctMetalRattlesLoop",
+  "Play_Dysentery",
+  "Play_EarRingingLoop",
+  "Play_EatGranolaBar",
+  "Play_EatingAcorns",
+  "Play_EatingBannock",
+  "Play_EatingBar",
+  "Play_EatingBurdockPrepared",
+  "Play_EatingCanned",
+  "Play_EatingCarrot",
+  "Play_EatingCattail",
+  "Play_EatingChips",
+  "Play_EatingCrunchy",
+  "Play_EatingFishcake",
+  "Play_EatingFishCooked",
+  "Play_EatingFishRaw",
+  "Play_EatingMeat",
+  "Play_EatingMRE",
+  "Play_EatingPancake",
+  "Play_EatingPie",
+  "Play_EatingPorridge",
+  "Play_EatingPotato",
+  "Play_EatingSmashCan",
+  "Play_EatingSoft",
+  "Play_EatingSoftBag",
+  "Play_EatingSoup",
+  "Play_EatingStew",
+  "Play_EatingSyrup",
+  "Play_ElevatorButton",
+  "Play_ElevatorStart",
+  "Play_ElevatorStop",
+  "Play_EncumberenceHigh",
+  "Play_EncumberenceLow",
+  "Play_EncumberenceMedium",
+  "Play_EnergyDrinkPulse",
+  "Play_EntityAmbient",
+  "Play_EntityAttack",
+  "Play_EntityAttackFailed",
+  "Play_EntityAttackSuccess",
+  "Play_EntityBanishSFX",
+  "Play_EntityBanishVO",
+  "Play_EntityDeathSFX",
+  "Play_EntityDeathVO",
+  "Play_EntityEventStart",
+  "Play_EntityFootstep",
+  "Play_EntityMusic",
+  "Play_ExertionDamageHighMac",
+  "Play_ExertionHigh",
+  "Play_ExertionLimp",
+  "Play_ExertionLow",
+  "Play_ExertionMatchBurn",
+  "Play_ExertionMedium",
+  "Play_ExertionPainMac",
+  "Play_ExertionThrow",
+  "Play_FailGeneral_Respirator",
+  "Play_FailGeneralSwitch",
+  "Play_FallInWater",
+  "Play_FatigueHigh",
+  "Play_FatigueInhaleExhale",
+  "Play_FatigueVeryTired",
+  "Play_FatigueYawn",
+  "Play_FearAffliction",
+  "Play_FeatUnlocked",
+  "Play_FireFail",
+  "Play_FireProgressFail",
+  "Play_FireProgressSuccess",
+  "Play_FireSuccess",
+  "Play_FirstAidAntiseptic",
+  "Play_FirstAidBandage",
+  "Play_FirstAidPills",
+  "Play_FishCatch",
+  "Play_FishingLoop",
+  "Play_FishingNet",
+  "Play_FishLineSnap",
+  "Play_FishLineSnapB",
+  "Play_FishRelease",
+  "Play_FlagFlapping",
+  "Play_FlagFlappingHeavy",
+  "Play_FlagFlappingHeavyInterior",
+  "Play_FlagFlappingLight",
+  "Play_FlagFlappingLightInterior",
+  "Play_Flarecap",
+  "Play_FlareGunCylinderClosed",
+  "Play_FlareGunCylinderOpen",
+  "Play_FlareGunFire",
+  "Play_FlareGunHammerBack",
+  "Play_FlareGunImpact",
+  "Play_FlareGunLoadShell",
+  "Play_FlareGunProjectile",
+  "Play_FlareLight",
+  "Play_FlareLoop",
+  "Play_FlashlightIntense",
+  "Play_FlashlightLongLastingOff",
+  "Play_FlashlightLongLastingOn",
+  "Play_FlashlightLongLastingtIntense",
+  "Play_FlashlightOff",
+  "Play_FlashlightOn",
+  "Play_FloodLight",
+  "Play_FoodPoisoning",
+  "Play_Footsteps",
+  "Play_Footsteps_Climbing_Cliff",
+  "Play_FootstepsBearRun",
+  "Play_FootstepsBearWalk",
+  "Play_FootstepsDeerRun",
+  "Play_FootstepsDeerWalk",
+  "Play_FootstepsLimp",
+  "Play_FootstepsMooseRun",
+  "Play_FootstepsMooseWalk",
+  "Play_FootstepsRabbitWalk",
+  "Play_FootstepsTimberwolfRun",
+  "Play_FootstepsWolfRun",
+  "Play_FootstepsWolfWalk",
+  "Play_FP_Struggle_Wolf_Intro",
+  "Play_FPH_FlareGun_Discharge_Shell",
+  "Play_FPH_FlareGun_Equip_Loaded",
+  "Play_FPH_FlareGun_Equip_Unloaded",
+  "Play_FPH_FlareGun_Reload",
+  "Play_FPH_FlareGun_Reload_Opened",
+  "Play_FPH_FlareGun_UnEquip_Loaded",
+  "Play_FPH_FlareGun_Unequip_Unloaded",
+  "Play_FPH_Gear_BoltCutters_Interaction_Cut_SFX",
+  "Play_FPH_Get_Up",
+  "Play_FPH_Hands_Wolf_Struggle_Axe_01",
+  "Play_FPH_Hands_Wolf_Struggle_Crowbar_01",
+  "Play_FPH_Hands_Wolf_Struggle_Hands_01",
+  "Play_FPH_Hands_Wolf_Struggle_Knife_01",
+  "Play_FPH_Hands_Wolf_Struggle_Revolver",
+  "Play_FPH_HuntingRifle_Discharge_Shell",
+  "Play_FPH_HuntingRifle_Equip",
+  "Play_FPH_HuntingRifle_Reload_Cartridge_CloseBolt_",
+  "Play_FPH_HuntingRifle_Reload_Cartridge_Loop_",
+  "Play_FPH_HuntingRifle_Reload_OpenBolt",
+  "Play_FPH_HuntingRifle_Reload_Single_CloseBolt",
+  "Play_FPH_HuntingRifle_Reload_Single_Loop",
+  "Play_FPH_HuntingRifle_Reload_Unjam",
+  "Play_FPH_HuntingRifle_Unequip",
+  "Play_FPH_Lightsource_Lantern_Ignite_Cancel",
+  "Play_FPH_LightSource_Torch_Extinguish",
+  "Play_FPH_LightSource_Torch_Extinguish_Cancel",
+  "Play_FPH_LightSource_Torch_Ignite_FromFire_Success",
+  "Play_FPH_LightSource_Torch_Ignite_Success",
+  "Play_FPH_Revolver_Reload_Close",
+  "Play_FPH_Revolver_Reload_Open",
+  "Play_FPHRadioExamine",
+  "Play_Freezing",
+  "Play_FryingHeavy",
+  "Play_FryingLight",
+  "Play_FryingLight_Fish",
+  "Play_Fuse_Gear_Pickup",
+  "Play_Fuse_Gear_PutBack",
+  "Play_gearItemTravois_Pickup",
+  "Play_gearItemTravois_PutBack",
+  "Play_gearItemTravois_WornOut",
+  "Play_GeneralInjuryLow",
+  "Play_GrapplePredator",
+  "Play_GroundScrape",
+  "Play_Gui_Gameplay_MiseryMode_Stage00",
+  "Play_Gui_Gameplay_MiseryMode_Stage01",
+  "Play_Gui_Gameplay_MiseryMode_Stage02",
+  "Play_Gui_Gameplay_MiseryMode_Stage03",
+  "Play_Gui_Gameplay_MiseryMode_Stage04",
+  "Play_Gui_Gameplay_MiseryMode_Stage05",
+  "Play_Gui_Gameplay_MiseryMode_VO_Stage00",
+  "Play_Gui_Gameplay_MiseryMode_VO_Stage01",
+  "Play_Gui_Gameplay_MiseryMode_VO_Stage02",
+  "Play_Gui_Gameplay_MiseryMode_VO_Stage03",
+  "Play_Gui_Gameplay_MiseryMode_VO_Stage04",
+  "Play_Gui_Gameplay_MiseryMode_VO_Stage05",
+  "Play_GUIButtonBack",
+  "Play_GUIButtonClick",
+  "Play_GUIClothingOpen",
+  "Play_GUIComboBoxScroll",
+  "Play_GUIConfirm",
+  "Play_GUIError",
+  "Play_GUIJournalClose",
+  "Play_GUIJournalOpen",
+  "Play_GUIMenuClose",
+  "Play_GUIMenuOpen",
+  "Play_GUIScroll",
+  "Play_GUISlider",
+  "Play_GUIStatusOpen",
+  "Play_GUIWheelBack",
+  "Play_GUIWheelClick",
+  "Play_GUIWheelClose",
+  "Play_GUIWheelOpen",
+  "Play_HandheldShortwaveRadio_FirstPersonItem_Unwield",
+  "Play_HandheldShortwaveRadio_FirstPersonItem_Wield",
+  "Play_HandheldShortwaveRadio_Gear_Pickup",
+  "Play_HandheldShortwaveRadio_Gear_PutBack",
+  "Play_HandheldShortwaveRadio_Item_ElectrostaticForce_Active",
+  "Play_HandheldShortwaveRadio_Item_ElectrostaticForce_Deactive",
+  "Play_HandheldShortwaveRadio_Item_EquipStatusBackpack",
+  "Play_HandheldShortwaveRadio_Item_EquipStatusEquipped",
+  "Play_HandheldShortwaveRadio_Item_ThresholdEnter",
+  "Play_HandheldShortwaveRadio_Item_ThresholdExit",
+  "Play_HandheldShortwaveRadio_Item_TrackingMode",
+  "Play_HandheldShortwaveRadio_Item_TrackingMode_Bunker",
+  "Play_HandheldShortwaveRadio_Item_TrackingMode_Cache",
+  "Play_HandPoweredElevatorCrash",
+  "Play_HandPoweredElevatorCrashDownEnd",
+  "Play_HandPoweredElevatorCrashDownStart",
+  "Play_HandPoweredElevatorEnter",
+  "Play_HandPoweredElevatorExit",
+  "Play_HandPoweredElevatorFloorArrive",
+  "Play_HandPoweredElevatorFloorDepart",
+  "Play_HandPoweredElevatorLoopDown",
+  "Play_HandPoweredElevatorLoopUp",
+  "Play_HarvestCarcass_Bear_Barehands",
+  "Play_HarvestCarcass_Bear_Hacksaw",
+  "Play_HarvestCarcass_Bear_Hatchet",
+  "Play_HarvestCarcass_Bear_Knife",
+  "Play_HarvestCarcass_Cougar_Barehands",
+  "Play_HarvestCarcass_Cougar_Hacksaw",
+  "Play_HarvestCarcass_Cougar_Hatchet",
+  "Play_HarvestCarcass_Cougar_ImprovisedHatchet",
+  "Play_HarvestCarcass_Cougar_Knife",
+  "Play_HarvestCarcass_Deer_Barehands",
+  "Play_HarvestCarcass_Deer_Hacksaw",
+  "Play_HarvestCarcass_Deer_Hatchet",
+  "Play_HarvestCarcass_Deer_Knife",
+  "Play_HarvestCarcass_Moose_Barehands",
+  "Play_HarvestCarcass_Moose_Hacksaw",
+  "Play_HarvestCarcass_Moose_Hatchet",
+  "Play_HarvestCarcass_Moose_Knife",
+  "Play_HarvestCarcass_Ptarmigan_Barehands",
+  "Play_HarvestCarcass_Ptarmigan_Hacksaw",
+  "Play_HarvestCarcass_Ptarmigan_Hatchet",
+  "Play_HarvestCarcass_Ptarmigan_Knife",
+  "Play_HarvestCarcass_Rabbit_Barehands",
+  "Play_HarvestCarcass_Rabbit_Hacksaw",
+  "Play_HarvestCarcass_Rabbit_Hatchet",
+  "Play_HarvestCarcass_Rabbit_Knife",
+  "Play_HarvestCarcass_Stag_Barehands",
+  "Play_HarvestCarcass_Stag_Hacksaw",
+  "Play_HarvestCarcass_Stag_Hatchet",
+  "Play_HarvestCarcass_Wolf_Barehands",
+  "Play_HarvestCarcass_Wolf_Hacksaw",
+  "Play_HarvestCarcass_Wolf_Hatchet",
+  "Play_HarvestCarcass_Wolf_Knife",
+  "Play_HarvestingAcorns",
+  "Play_HarvestingAmmo",
+  "Play_HarvestingBurdock",
+  "Play_HarvestingCardboard",
+  "Play_HarvestingCloth",
+  "Play_HarvestingFish",
+  "Play_HarvestingGeneric",
+  "Play_HarvestingLeather",
+  "Play_HarvestingMeatLarge",
+  "Play_HarvestingMeatlMed",
+  "Play_HarvestingMeatlSmall",
+  "Play_HarvestingMeatlSmallPtarmigan",
+  "Play_HarvestingMetal",
+  "Play_HarvestingMetalSaw",
+  "Play_HarvestingNylonCloth",
+  "Play_HarvestingOuterwear",
+  "Play_HarvestingPaper",
+  "Play_HarvestingPlants",
+  "Play_HarvestingReishi",
+  "Play_HarvestingShardStab",
+  "Play_HarvestingTipUp",
+  "Play_HarvestingWood",
+  "Play_HarvestingWoodCedar",
+  "Play_HarvestingWoodFir",
+  "Play_HarvestingWoodReclaimed",
+  "Play_HarvestingWoodReclaimedNoAxe",
+  "Play_HarvestingWoodSmall",
+  "Play_HarvestingWool",
+  "Play_HayBale",
+  "Play_HayCart",
+  "Play_Headache_ElectrostaticFog",
+  "Play_Headache_EnergyBoost",
+  "Play_HouseAmbientBlendLoop",
+  "Play_HouseExterior",
+  "Play_HouseLargeExterior",
+  "Play_HubCave_Ambience_Exterior",
+  "Play_HubCave_Ambience_FrozenLake",
+  "Play_HubCave_Ambience_Interior",
+  "Play_HungerStomachGrowl",
+  "Play_Hypothermia",
+  "Play_IceBreakingChopping",
+  "Play_IceBreakingSplash",
+  "Play_IceCaveAmb",
+  "Play_IceCaveIce",
+  "Play_IceCaves",
+  "Play_IceCaveStream",
+  "Play_IceCrackingDistant",
+  "Play_IceCrackingDistantLoop",
+  "Play_IceCrackingFallInMarsh",
+  "Play_IceCrackingFallInWater",
+  "Play_IceCrackingLoopRandom",
+  "Play_IceCrackingWarning",
+  "Play_IceCrackingWarningMarsh",
+  "Play_IceHoleWaterLoop",
+  "Play_Infection",
+  "Play_Insomnia",
+  "Play_InspectCrafting",
+  "Play_InspectFood",
+  "Play_InspectFuel",
+  "Play_InspectIngredients",
+  "Play_InspectPotableWater",
+  "Play_InspectSoda",
+  "Play_InspectWeapon",
+  "Play_InteractiveTravois_Destroy",
+  "Play_InteractiveTravois_FPHTravoisEquip",
+  "Play_InteractiveTravois_gearTravoisDummy_Unwield",
+  "Play_InteractiveTravois_gearTravoisDummy_Wield",
+  "Play_InteractiveTravois_Movement",
+  "Play_InteractiveTravois_Pickup",
+  "Play_InteractiveTravois_Pickup_VO",
+  "Play_InteractiveTravois_Putdown",
+  "Play_InteractiveTravois_Putdown_VO",
+  "Play_InteractiveTravoisClose",
+  "Play_InteractiveTravoisMovementLoop",
+  "Play_InteractiveTravoisOpen",
+  "Play_InteractiveTravoisPickup_High",
+  "Play_InteractiveTravoisPickup_Low",
+  "Play_InteractiveTravoisPickup_Medium",
+  "Play_InteractiveTravoisPutdown_High",
+  "Play_InteractiveTravoisPutdown_Low",
+  "Play_InteractiveTravoisPutdown_Medium",
+  "Play_InteractiveTravoisSearch",
+  "Play_InteriorWindAmbientBlendLoop",
+  "Play_InvClothLeatherStow",
+  "Play_InventoryStow",
+  "Play_KeroseneLanternExtinguish",
+  "Play_KeroseneLanternLoop",
+  "Play_KeroseneLanternLoopDelay",
+  "Play_KeypadPress",
+  "Play_KeypadPressCodeFail",
+  "Play_KeypadPressNoAurora",
+  "Play_KeypadPressSuccess",
+  "Play_Kingfisher",
+  "Play_KnockdownHit",
+  "Play_Landing",
+  "Play_LanternLight",
+  "Play_LanternUnwield",
+  "Play_LanternWield",
+  "Play_LeanToShelter_Build",
+  "Play_LeanToShelter_Rotate",
+  "Play_LeatherWornOut",
+  "Play_LifeAfterDeath",
+  "Play_LighthouseBridge",
+  "Play_LiquidGlugA",
+  "Play_LockerPryOpen1",
+  "Play_LogAddToFire",
+  "Play_Loon",
+  "Play_LowCreaksRandomPosition",
+  "Play_LureDestroyed",
+  "Play_MachineAuroraGenerator",
+  "Play_MachineAuroraGenerator_A",
+  "Play_MachineAuroraGenerator_B",
+  "Play_MachineAuroraGenerator_C",
+  "Play_MachineAuroraGenerator_S",
+  "Play_Mailbox",
+  "Play_MainMenuSurvivalMode_FilterOff",
+  "Play_MainMenuSurvivalMode_FilterOn",
+  "Play_MainMenuSurvivalMode_PanelBadges",
+  "Play_MainMenuSurvivalMode_PanelChallenges",
+  "Play_MainMenuSurvivalMode_PanelChooseChallenge",
+  "Play_MainMenuSurvivalMode_PanelChooseSandbox",
+  "Play_MainMenuSurvivalMode_PanelLifeAfterDeath_Exit",
+  "Play_MainMenuSurvivalMode_PanelLifeAfterDeath_Loop",
+  "Play_MainMenuSurvivalMode_PanelLifeAfterDeath_Stage01",
+  "Play_MainMenuSurvivalMode_PanelLifeAfterDeath_Stage02",
+  "Play_MainMenuSurvivalMode_PanelLifeAfterDeath_Stage03",
+  "Play_MainMenuSurvivalMode_PanelLifeAfterDeath_Stage04",
+  "Play_MainMenuSurvivalMode_PanelLifeAfterDeath_Stage05",
+  "Play_MainMenuSurvivalMode_PanelMainMenu",
+  "Play_MainMenuSurvivalMode_PanelOptionsMenu",
+  "Play_MainMenuSurvivalMode_PanelSandbox",
+  "Play_MainMenuSurvivalMode_PanelSelectChallengeType",
+  "Play_MainMenuSurvivalMode_PanelSelectExperience",
+  "Play_MainMenuSurvivalMode_PanelSelectRegionUpdate",
+  "Play_MapCharcoalWriting",
+  "Play_MapOpen",
+  "Play_MapPageFlip",
+  "Play_MatchBurnOut",
+  "Play_MatchBurnShake",
+  "Play_MauledMuffle",
+  "Play_MauledPredatorSwitch",
+  "Play_MediumInteriorAmbientBlendLoop",
+  "Play_MediumInteriorMetalCreaking",
+  "Play_MediumInteriorMetalCreakingLoop",
+  "Play_MediumInteriorMetalCreakingRandomPosition",
+  "Play_MediumInteriorMetalCreakingRandomPositionLoop",
+  "Play_MeltingSnow",
+  "Play_MetalBoxASearch",
+  "Play_MetalBunkerDoorAClose",
+  "Play_MetalBunkerDoorAOpen",
+  "Play_MetalBunkerDoorBClose",
+  "Play_MetalBunkerDoorBOpen",
+  "Play_MetalBunkertHatchAClose",
+  "Play_MetalBunkertHatchAOpen",
+  "Play_MetalBunkertHatchAOpen_Back",
+  "Play_MetalBunkertHatchAOpen_Front",
+  "Play_MetalBunkertHatchAOpen_Left",
+  "Play_MetalBunkertHatchAOpen_Right",
+  "Play_MetalBunkertHatchAUncoverSnow",
+  "Play_MetalCannisterAClose",
+  "Play_MetalCannisterAOpen",
+  "Play_MetalCannisterASearch",
+  "Play_MetalCoverOnWoodClose",
+  "Play_MetalCoverSlideA",
+  "Play_MetalCreaks1",
+  "Play_MetalCreaksDoor",
+  "Play_MetalCreaksLoop",
+  "Play_MetalCreaksMed",
+  "Play_MetalCreaksStructure",
+  "Play_MetalCreaksSupportBeam",
+  "Play_MetalDrawerClose",
+  "Play_MetalDrawerOpen",
+  "Play_MetalFence",
+  "Play_MetalGroanMetalMedium",
+  "Play_MetalGroanMetalShort",
+  "Play_MetalHatchDoorClose1",
+  "Play_MetalHatchDoorOpen1",
+  "Play_MetalHingeSqueakSmallA",
+  "Play_MetalIronGateClose",
+  "Play_MetalIronGateOpen",
+  "Play_MetalRodFence",
+  "Play_MetalSheet",
+  "Play_MetalSqueaksLarge",
+  "Play_MetalSqueaksMed",
+  "Play_MillingMachine",
+  "Play_MillingMachineRepair",
+  "Play_Mine01",
+  "Play_Mine02",
+  "Play_Mine03",
+  "Play_MineBridge_ChainSwayLoopA",
+  "Play_MineBridge_ChainSwayLoopB",
+  "Play_MineBridge_MetalGroansLoop",
+  "Play_MineBridge_WoodCreakLoop",
+  "Play_MineWoodCreaks",
+  "Play_MiningRegion_Init",
+  "Play_MiningRegionMine_Ambience_ChemicalHazardCaveA",
+  "Play_MiningRegionMine_Ambience_ChemicalHazardCaveB",
+  "Play_MiningRegionMine_Headframe_MineAmbience",
+  "Play_MiningRegionMine_Init",
+  "Play_Moose_Headbutt_01",
+  "Play_MooseAlerted",
+  "Play_MooseAngry",
+  "Play_MooseAntlerScrape",
+  "Play_MooseAttack",
+  "Play_MooseDamage",
+  "Play_MooseDeath",
+  "Play_MooseDying",
+  "Play_MooseHoofScrape",
+  "Play_MooseHoofStomp",
+  "Play_MooseMoan",
+  "Play_MooseSniff",
+  "Play_MooseSnort",
+  "Play_MusicClear",
+  "Play_MusicFoggy",
+  "Play_MusicHeavySnow",
+  "Play_musicMainMenu",
+  "Play_musicMood_CougarDen",
+  "Play_musicMood_CougarStinger",
+  "Play_musicMood_Creepy",
+  "Play_musicMood_Danger",
+  "Play_musicMood_HappySuccess",
+  "Play_musicMood_Hope",
+  "Play_musicMood_Hope02",
+  "Play_musicMood_LifeAfterDeath",
+  "Play_musicMood_NearDeath",
+  "Play_musicMood_PlayerDeath",
+  "Play_musicMood_Sorrow",
+  "Play_musicMood_Suspense",
+  "Play_musicMood_SuspenseLowProbability",
+  "Play_musicMood_Vista",
+  "Play_musicMood_VistaLowProb",
+  "Play_musicMood_WolfStalking",
+  "Play_musicScene_Airfield_Exploration",
+  "Play_musicScene_AshCanyon_Enter",
+  "Play_musicScene_Blackrock_Exploration",
+  "Play_musicScene_Cannery_Exploration",
+  "Play_musicScene_Canyon_Exploration",
+  "Play_musicScene_Coastal_Exploration",
+  "Play_musicScene_Crash_Exploration",
+  "Play_musicScene_Hub_Enter",
+  "Play_musicScene_Hub_Exploration",
+  "Play_musicScene_Lake_Exploration",
+  "Play_musicScene_Marsh_Exploration",
+  "Play_musicScene_MiningRegion_Exploration",
+  "Play_musicScene_MiningRegionMine_Exploration",
+  "Play_musicScene_MountainPass_Exploration",
+  "Play_musicScene_MountainTown_Exploration",
+  "Play_musicScene_RiverValley_Exploration",
+  "Play_musicScene_Rural_Exploration",
+  "Play_musicScene_Tracks_Exploration",
+  "Play_musicScene_Whaling_Exploration",
+  "Play_MusicStorm",
+  "Play_musicTale02_RudigersChamber",
+  "Play_musicTales_Bunker_Exploration",
+  "Play_musicTales_Bunker_Stinger",
+  "Play_musicTales_Intro",
+  "Play_musicTales_Intro_Stinger",
+  "Play_musicTales_Objective_Intro_Stinger",
+  "Play_musicTales_Objective_Outro_Stinger",
+  "Play_musicTales_Outro",
+  "Play_musicTales_Outro_Stinger",
+  "Play_MusicTODDawn",
+  "Play_MusicTODDusk",
+  "Play_MusicWeather",
+  "Play_NoisemakerBurnOut",
+  "Play_NoisemakerCollide",
+  "Play_NoisemakerDetonate",
+  "Play_NoisemakerIgnite",
+  "Play_NoisemakerLoopWithoutIgnite",
+  "Play_NylonHeavyWornOut",
+  "Play_NylonLightWornOut",
+  "Play_OilTank",
+  "Play_OpenBar",
+  "Play_OpenCan",
+  "Play_OpenChips",
+  "Play_OpenCrackers",
+  "Play_OpenGranolaBar",
+  "Play_OpenInventory",
+  "Play_OpenMRE",
+  "Play_OpenPeanutButter",
+  "Play_OpenSardines",
+  "Play_OpenSoda",
+  "Play_Owl",
+  "Play_OwlSoundsDistant",
+  "Play_PainPulse",
+  "Play_PanelMainMenu",
+  "Play_PaperRustle",
+  "Play_Photo",
+  "Play_Picket_Fence",
+  "Play_PicnicBench",
+  "Play_Pigeon",
+  "Play_PipeBangDistant1",
+  "Play_PipeMetalWhistleA",
+  "Play_PlaceCampfire",
+  "Play_PlaceCoffeeCup",
+  "Play_PlaceTeaCup",
+  "Play_PlayerAttackSwing",
+  "Play_PlayerDamage",
+  "Play_PlayerDeathScream",
+  "Play_PlayerDie",
+  "Play_PortaPotty",
+  "Play_PotatoSackClose",
+  "Play_PotatoSackOpen",
+  "Play_PotatoSackSearch",
+  "Play_PrepperCacheBlendLoop",
+  "Play_PtarmiganFlee",
+  "Play_PtarmiganFootstep",
+  "Play_PtarmiganHold",
+  "Play_PtarmiganIdle",
+  "Play_PtarmiganKill",
+  "Play_PtarmiganRelease",
+  "Play_PtarmiganStunned",
+  "Play_PtarmiganWingFlap",
+  "Play_PtarmiganWingFlaps",
+  "Play_PutInPotBannock",
+  "Play_PutInPotBrothUncooked",
+  "Play_PutInPotCannedFood",
+  "Play_PutInPotFish",
+  "Play_PutInPotFishcake",
+  "Play_PutInPotMeat",
+  "Play_PutInPotPancake",
+  "Play_PutInPotPie",
+  "Play_PutInPotPorridge",
+  "Play_PutInPotPotato",
+  "Play_PutInPotSlop",
+  "Play_PutInPotSnow",
+  "Play_PutInPotSoup",
+  "Play_PutInPotStew",
+  "Play_PutInPotTea",
+  "Play_PutInPotWater",
+  "Play_PutInPotWaterAcornGrounds",
+  "Play_PutInPotWaterAcornsShelled",
+  "Play_PutInPotWaterAcornsShelledBig",
+  "Play_PutInPotWaterBirchbarkPrepared",
+  "Play_PutInPotWaterBurdockPrepared",
+  "Play_PutInPotWaterReishiPrepared",
+  "Play_PutInPotWaterRoseHipPrepared",
+  "Play_RabbitDie",
+  "Play_RabbitHold",
+  "Play_RabbitKill",
+  "Play_RabbitRelease",
+  "Play_RabbitSqueal",
+  "Play_RadioAurora",
+  "Play_RadioOff",
+  "Play_Railcar",
+  "Play_RandomBuildingCreaks1",
+  "Play_RandomBuildingCreaks1Loop",
+  "Play_RandomBuildingCreaks2",
+  "Play_RandomBuildingCreaks2Loop",
+  "Play_RandomMediumBuildingCreaks",
+  "Play_RandomMediumBuildingCreaksLoop",
+  "Play_RandomMediumBuildingWoodCreaks",
+  "Play_RandomMediumBuildingWoodCreaks3D",
+  "Play_RandomMediumBuildingWoodCreaks3DLoop",
+  "Play_RandomMediumBuildingWoodCreaksLoop",
+  "Play_RemoveRuined",
+  "Play_RepairingCloth",
+  "Play_RepairingGeneric",
+  "Play_RepairingLeatherClothing",
+  "Play_RepairingLeatherHide",
+  "Play_RepairingMechanical",
+  "Play_RepairingMetal",
+  "Play_RepairingNylonCloth",
+  "Play_RepairingOuterwear",
+  "Play_RepairingTransformerBattery_Start",
+  "Play_RepairingTransformerBattery_Stop",
+  "Play_RepairingTransformerFuses_Start",
+  "Play_RepairingTransformerFuses_Stop",
+  "Play_RepairingTransformerMetal_Start",
+  "Play_RepairingTransformerMetal_Stop",
+  "Play_RepairingTransformerSwitchOff",
+  "Play_RepairingTransformerSwitchOn",
+  "Play_RepairingTransformerWires_Start",
+  "Play_RepairingTransformerWires_Stop",
+  "Play_RepairingTravois",
+  "Play_RepairingWood",
+  "Play_RepairingWool",
+  "Play_ResearchBook",
+  "Play_Respirator_Gear_Harvest",
+  "Play_Respirator_GearItem_Pickup",
+  "Play_Respirator_GearItem_PutBack",
+  "Play_Respirator_Timeline_Equip",
+  "Play_Respirator_Timeline_Unequip",
+  "Play_RespiratorCanister_Gear_Attach",
+  "Play_RespiratorCanister_Gear_Expire",
+  "Play_RespiratorCanister_Gear_ExpireVO",
+  "Play_RespiratorCanister_Gear_Unattach",
+  "Play_RespiratorCanister_GearItem_Pickup",
+  "Play_RespiratorCanister_GearItem_PutBack",
+  "Play_RespiratorCanister_GearItem_WornOut",
+  "Play_RespiratorCanister_Timeline_Attach",
+  "Play_RespiratorCanister_Timeline_Exhale",
+  "Play_RespiratorCanister_Timeline_Inhale",
+  "Play_RespiratorCanister_Timeline_Replace",
+  "Play_RespiratorCanister_Timeline_Replace_Air",
+  "Play_RespiratorCanister_Timeline_Replace_voExhale",
+  "Play_RespiratorCanister_Timeline_Replace_voInhale",
+  "Play_RespiratorCanister_Timeline_Replace_voInhaleExhale",
+  "Play_RespiratorCanister_Timeline_Unattach",
+  "Play_RetractRifleFull",
+  "Play_RevolverCylinderClicks",
+  "Play_RevolverDryFire",
+  "Play_RevolverFire",
+  "Play_RevolverLoadBullet",
+  "Play_RevolverShellCasingDropped",
+  "Play_RifleCleaning",
+  "Play_RifleDryFire",
+  "Play_RifleFire",
+  "Play_RifleFireSpotlight",
+  "Play_RifleJam",
+  "Play_RifleJamRelease",
+  "Play_RifleJamWiggle",
+  "Play_RifleLoadBullet",
+  "Play_RifleShellCasingDropped",
+  "Play_RifleUnload",
+  "Play_RiverExtLargeLoop",
+  "Play_RiverExtMediumLargeLoop",
+  "Play_RiverExtMediumLargeLoop_LowerPitch",
+  "Play_RiverExtMediumLoop",
+  "Play_RiverExtSmallLoop",
+  "Play_RiverIntMediumLoop",
+  "Play_RockCache",
+  "Play_RockCacheClose",
+  "Play_RockCacheOpen",
+  "Play_RockTumblesRandom",
+  "Play_RockTumblesRandomLoop",
+  "Play_RopeAboutToSlip",
+  "Play_RopeBreak",
+  "Play_RopeDeploy",
+  "Play_RopeFallStart",
+  "Play_RopeFallStop",
+  "Play_RopeGetOff",
+  "Play_RopeGetOn",
+  "Play_RopeSlipStart",
+  "Play_RopeSlipStop",
+  "Play_RopeTake",
+  "Play_Rowboat",
+  "Play_SceneFadeIn",
+  "Play_SceneFadeOut",
+  "Play_ScurvyAffliction",
+  "Play_SearchCloth",
+  "Play_SearchCoalBin",
+  "Play_SearchCooler",
+  "Play_SearchCorpse",
+  "Play_SearchCupboard",
+  "Play_SearchDresser",
+  "Play_SearchFirewoodBin",
+  "Play_SearchGeneric",
+  "Play_SearchGlovebox",
+  "Play_SearchMetalBin",
+  "Play_SearchPlasticBox",
+  "Play_SearchToolbox",
+  "Play_SearchVase",
+  "Play_Sharpening",
+  "Play_Silo",
+  "Play_SkillLevelUp",
+  "Play_Slurping1",
+  "Play_SmallBirdsField",
+  "Play_SmallBirdsForest",
+  "Play_SmallBirdsWren",
+  "Play_SmallMetalBoxLocked",
+  "Play_SmallPlastic1_Flare",
+  "Play_SmallWoodIpmact1",
+  "Play_SndActionFireBlueFlareExtinguish1",
+  "Play_SndActionFireFlareExtinguish1",
+  "Play_SndActionFireFlintLoop",
+  "Play_SndActionFireMatchLight1",
+  "Play_SndActionFireStrikerLight1",
+  "Play_SndActionFireTorchLoop",
+  "Play_SndActionLadderDown2",
+  "Play_SndActionLadderUp1",
+  "Play_SndActionMetalBoxClose1",
+  "Play_SndActionMetalBoxClose3",
+  "Play_SndActionMetalBoxClose5",
+  "Play_SndActionMetalBoxClose6",
+  "Play_SndActionMetalBoxOpen1",
+  "Play_SndActionMetalBoxOpen2",
+  "Play_SndActionMetalBoxOpen5",
+  "Play_SndActionPlasticBoxClose1",
+  "Play_SndActionPlasticBoxOpen1",
+  "Play_SndActionRefuelLantern",
+  "Play_SndAmbientCaveLargeLoop1",
+  "Play_SndAmbientCaveWaterfallLoop1",
+  "Play_SndAmbientFireMediumLoop1",
+  "Play_SndAmbientWaterDripSinkLoop",
+  "Play_SndAmbOcean_01",
+  "Play_SndAmbOceanCloseup",
+  "Play_SndAmbOceanDistant",
+  "Play_SndAnimalBearGrowl1",
+  "Play_SndAnimalBearGrowl2",
+  "Play_SndAnimalBearGrowl5",
+  "Play_SndAnimalBearRoar1",
+  "Play_SndAnimalBearSniff1",
+  "Play_SndAnimalBearSniff2",
+  "Play_SndElecCarRadioOff",
+  "Play_SndElecCarRadioOnNoBuzz",
+  "Play_SndElecControlTowerGauge",
+  "Play_SndElecControlTowerMonitorA",
+  "Play_SndElecControlTowerMonitorB",
+  "Play_SndElecFlorescentHumLoop01",
+  "Play_SndElecFlorescentHumLoop02",
+  "Play_SndElecFlorescentHumLoop03",
+  "Play_SndElecFlorescentHumLoop04",
+  "Play_SndElecFlorescentHumLoop05",
+  "Play_SndElecFlorescentHumLoop06",
+  "Play_SndElecFlorescentHumLoop07",
+  "Play_SndElecFlorescentHumLoop08",
+  "Play_SndElecFlorescentHumLoop09",
+  "Play_SndElecHelicopterGauges",
+  "Play_SndElecIncandescentLargeLoop",
+  "Play_SndElecIncandescentMediumLoop",
+  "Play_SndElecIncandescentSmallLoop",
+  "Play_SndElecPlaneBeeps",
+  "Play_SndElecRadar",
+  "Play_SndElecRadioStaticLoop01",
+  "Play_SndElecRadioStaticLoop02",
+  "Play_SndElecRadioStaticLoop03",
+  "Play_SndElecRadioStaticLoop04",
+  "Play_SndElecRadioStaticLoop04B",
+  "Play_SndElecRadioStaticLoop05",
+  "Play_SndElecRadioStaticLoop06",
+  "Play_SndElecRadioStaticLoop09",
+  "Play_SndElecRadioTubeOnNoBuzz",
+  "Play_SndElecRelaySwitchB00",
+  "Play_SndElecRelaySwitchB10",
+  "Play_SndElecRunwayLightLoopA",
+  "Play_SndElecRunwayLightLoopB",
+  "Play_SndElecShortwaveLoop04",
+  "Play_SndElecTVLoop01",
+  "Play_SndElecTVLoop02",
+  "Play_SndElecTVLoop04",
+  "Play_SndFireLoopBlend",
+  "Play_SndFireLoopBlendStove",
+  "Play_SndGenBedrollClose",
+  "Play_SndGenBedrollOpen",
+  "Play_SndGenCanvasBagZipperClose1",
+  "Play_SndGenCanvasBagZipperOpen1",
+  "Play_SndGenHayBedGetUp",
+  "Play_SndGenHayBedLayDown",
+  "Play_SndGenSleepingBagClose",
+  "Play_SndGenSleepingBagOpen",
+  "Play_SndIntE4Boltcutter_Tale02",
+  "Play_SndIntE4SteamLeverClose",
+  "Play_SndIntE4SteamLeverOpen",
+  "Play_SndInvAccessoryLeather",
+  "Play_SndInvAmmoCardboardBox",
+  "Play_SndInvAntisepticBottle",
+  "Play_SndInvAxe",
+  "Play_SndInvAxeBreak",
+  "Play_SndInvBandageCloth",
+  "Play_SndInvBookHardcover",
+  "Play_SndInvBoots",
+  "Play_SndInvBottlePlastic",
+  "Play_SndInvBow",
+  "Play_SndInvBowBreak",
+  "Play_SndInvBoxCrackers",
+  "Play_sndInvBrothPickup",
+  "Play_sndInvBrothPutBack",
+  "Play_SndInvBullet",
+  "Play_SndInvBulletCasing",
+  "Play_SndInvCanSmall",
+  "Play_SndInvCanSoda",
+  "Play_SndInvCarBattery",
+  "Play_SndInvCarcassPtarmiganPickup",
+  "Play_SndInvCarcassPtarmiganPutback",
+  "Play_SndInvCarcassRabbitPickup",
+  "Play_SndInvCarcassRabbitPutback",
+  "Play_SndInvCardboardBoxSmall",
+  "Play_SndInvCarrotPickup",
+  "Play_SndInvCarrotPutBack",
+  "Play_SndInvClothHeavy",
+  "Play_SndInvClothLeather",
+  "Play_SndInvClothLeatherMetal",
+  "Play_SndInvClothLeatherStow",
+  "Play_SndInvClothSmall",
+  "Play_SndInvClothSoft",
+  "Play_SndInvClothStiff",
+  "Play_sndInvCookedBannockPickup",
+  "Play_sndInvCookedBannockPutBack",
+  "Play_sndInvCookedFishcakePickup",
+  "Play_sndInvCookedFishcakePutBack",
+  "Play_sndInvCookedPancakePickup",
+  "Play_sndInvCookedPancakePutBack",
+  "Play_sndInvCookedPieFishermanPickup",
+  "Play_sndInvCookedPieFishermanPutBack",
+  "Play_sndInvCookedPiePickup",
+  "Play_sndInvCookedPiePutBack",
+  "Play_sndInvCookedPorridgePickup",
+  "Play_sndInvCookedPorridgePutBack",
+  "Play_sndInvCookedPotatoPickup",
+  "Play_sndInvCookedPotatoPutBack",
+  "Play_sndInvCookedSoupPickup",
+  "Play_sndInvCookedSoupPutBack",
+  "Play_sndInvCookedStewPickup",
+  "Play_sndInvCookedStewPutBack",
+  "Play_sndInvCookingOilPickup",
+  "Play_sndInvCookingOilPutBack",
+  "Play_SndInvCrowbarBreak",
+  "Play_SndInvCrowbarPrybar",
+  "Play_SndInvCup",
+  "Play_SndInvDustingSulfur",
+  "Play_SndInvElevatorCrankPickUp",
+  "Play_SndInvElevatorCrankPutBack",
+  "Play_SndInvEnergyBar",
+  "Play_SndInvFeather",
+  "Play_sndInvFishingBaitPickup",
+  "Play_sndInvFishingBaitPutBack",
+  "Play_sndInvFishingBaitWornOut",
+  "Play_sndInvFlashlightPickupA",
+  "Play_sndInvFlashlightPickupB",
+  "Play_sndInvFlashlightPutBackA",
+  "Play_sndInvFlashlightPutBackB",
+  "Play_sndInvFlourPickup",
+  "Play_sndInvFlourPutBack",
+  "Play_SndInvGenericSmall",
+  "Play_SndInvGenericTiny",
+  "Play_SndInvHardCase",
+  "Play_SndInvHardCasePickup01",
+  "Play_SndInvHardCasePutdown01",
+  "Play_sndInvInsulatedFlask_AddToFlask",
+  "Play_sndInvInsulatedFlask_Pickup",
+  "Play_sndInvInsulatedFlask_PutDown",
+  "Play_sndInvInsulatedFlask_RemoveFromFlask",
+  "Play_sndInvInsulatedFlask_UITransfer_Close",
+  "Play_sndInvInsulatedFlask_UITransfer_Open",
+  "Play_SndInvJerky",
+  "Play_SndInvJerryCan",
+  "Play_SndInvKitSmallBreak1",
+  "Play_SndInvKnife",
+  "Play_SndInvKnifeBreak",
+  "Play_SndInvLeatherHide",
+  "Play_SndInvLeatherHideBPickup",
+  "Play_SndInvLeatherHideBPutBack",
+  "Play_SndInvLighterFluid",
+  "Play_SndInvMatchbook",
+  "Play_SndInvMeatLarge",
+  "Play_SndInvMeatSmall",
+  "Play_SndInvMetalContainer",
+  "Play_SndInvMetalHeavy",
+  "Play_SndInvMetalMedium",
+  "Play_SndInvMetalMediumBreak2",
+  "Play_SndInvMetalSmall",
+  "Play_SndInvMetalSmallBreak1",
+  "Play_SndInvMetalSmallBreak2",
+  "Play_SndInvMinersClothesEquipUnequip",
+  "Play_SndInvMinersClothesPickup",
+  "Play_SndInvMinersClothesPutback",
+  "Play_SndInvMinersHelmetPickup",
+  "Play_SndInvMinersHelmetPutback",
+  "Play_SndInvMRE",
+  "Play_sndInvMugCeramicPickup",
+  "Play_sndInvMugCeramicPutDown",
+  "Play_SndInvNoisemaker",
+  "Play_SndInvNylon",
+  "Play_SndInvNylonHeavy",
+  "Play_sndInvOatsTinPickup",
+  "Play_sndInvOatsTinPutBack",
+  "Play_SndInvPaper",
+  "Play_SndInvPaperCard",
+  "Play_SndInvPillsLarge",
+  "Play_SndInvPillsSmall",
+  "Play_SndInvPipeLeverAttach",
+  "Play_SndInvPlantAcorn",
+  "Play_SndInvPlantAcorns",
+  "Play_SndInvPlantAcorns_Drop",
+  "Play_SndInvPlantAcornsGrounds",
+  "Play_SndInvPlantAcornsGrounds_Drop",
+  "Play_SndInvPlantAcornsShelled",
+  "Play_SndInvPlantAcornsShelled_Drop",
+  "Play_SndInvPlantBurdockPickup",
+  "Play_SndInvPlantBurdockPreparedPickup",
+  "Play_SndInvPlantBurdockPreparedPutBack",
+  "Play_SndInvPlantBurdockPutBack",
+  "Play_SndInvPlantLeafy",
+  "Play_SndInvPlantMedium",
+  "Play_SndInvPlantSmall",
+  "Play_SndInvPlasticSmall",
+  "Play_SndInvPotatoPickup",
+  "Play_SndInvPotatoPutBack",
+  "Play_SndInvRifleBreak",
+  "Play_sndInvSaltPickup",
+  "Play_sndInvSaltPutBack",
+  "Play_SndInvSewingKit",
+  "Play_sndInvSkilletPickup",
+  "Play_sndInvSkilletPutDown",
+  "Play_SndInvStoneSmall",
+  "Play_sndInvTipUpPickup",
+  "Play_sndInvTipUpPutBack",
+  "Play_SndInvToolboxMetalSmall",
+  "Play_SndInvToolboxPlastic",
+  "Play_sndInvUncookedBannockPickup",
+  "Play_sndInvUncookedBannockPutBack",
+  "Play_sndInvUncookedFishcakePickup",
+  "Play_sndInvUncookedFishcakePutBack",
+  "Play_sndInvUncookedPancakePickup",
+  "Play_sndInvUncookedPancakePutBack",
+  "Play_sndInvUncookedPiePickup",
+  "Play_sndInvUncookedPiePutBack",
+  "Play_sndInvUncookedPorridgePickup",
+  "Play_sndInvUncookedPorridgePutBack",
+  "Play_sndInvUncookedPotatoPickup",
+  "Play_sndInvUncookedPotatoPutBack",
+  "Play_sndInvUncookedSoupPickup",
+  "Play_sndInvUncookedSoupPutBack",
+  "Play_sndInvUncookedStewPickup",
+  "Play_sndInvUncookedStewPutBack",
+  "Play_SndInvWaterBottle",
+  "Play_SndInvWaterBottlePutBack",
+  "Play_SndInvWoodFirewood",
+  "Play_SndInvWoodLight",
+  "Play_SndInvWoodMatches",
+  "Play_SndInvWoodMedium",
+  "Play_SndInvWoodMediumBreak1",
+  "Play_SndInvWoodSmallBreak",
+  "Play_SndMechanicalMailboxClose1",
+  "Play_SndMechanicalMailboxOpen1",
+  "Play_SndMechanicalMetalFireplaceClose1",
+  "Play_SndMechanicalMetalFireplaceOpen1",
+  "Play_SndMechanicalMetalGrillClose1",
+  "Play_SndMechanicalMetalGrillOpen1",
+  "Play_SndMechanicalMicrowaveClose1",
+  "Play_SndMechanicalMicrowaveOpen1",
+  "Play_SndMechCarVisorClose1",
+  "Play_SndMechCarVisorOpen1",
+  "Play_SndMechCashRegisterClose1",
+  "Play_SndMechCashRegisterOpen1",
+  "Play_SndMechChestClose1",
+  "Play_SndMechChestOpen1",
+  "Play_SndMechCupboardWoodClose1",
+  "Play_SndMechCupboardWoodClose2",
+  "Play_SndMechCupboardWoodOpen1",
+  "Play_SndMechCupboardWoodOpen2",
+  "Play_SndMechDoorChainLocked01",
+  "Play_SndMechDoorHeliABackClose",
+  "Play_SndMechDoorHeliABackOpen",
+  "Play_SndMechDoorHeliAFrontClose",
+  "Play_SndMechDoorHeliAFrontOpen",
+  "Play_SndMechDoorLockerLocked",
+  "Play_SndMechDoorMetalChainClose1",
+  "Play_SndMechDoorMetalChainOpen1",
+  "Play_SndMechDoorMetalClose1",
+  "Play_SndMechDoorMetalClose2",
+  "Play_SndMechDoorMetalClose4",
+  "Play_SndMechDoorMetalClose5",
+  "Play_SndMechDoorMetalClose6",
+  "Play_SndMechDoorMetalLocked01",
+  "Play_SndMechDoorMetalLocked02",
+  "Play_SndMechDoorMetalOpen1",
+  "Play_SndMechDoorMetalOpen2",
+  "Play_SndMechDoorMetalOpen4",
+  "Play_SndMechDoorMetalOpen5",
+  "Play_SndMechDoorMetalOpen6",
+  "Play_SndMechDoorPlaneABack_Close",
+  "Play_SndMechDoorPlaneABack_Open",
+  "Play_SndMechDoorPlaneAFront_Close",
+  "Play_SndMechDoorPlaneAFront_Open",
+  "Play_SndMechDoorPlaneCargoOpen01",
+  "Play_SndMechDoorWoodClose1",
+  "Play_SndMechDoorWoodClose2",
+  "Play_SndMechDoorWoodLocked01",
+  "Play_SndMechDoorWoodOpen1",
+  "Play_SndMechDoorWoodOpen2",
+  "Play_SndMechDrawerWoodClose1",
+  "Play_SndMechDrawerWoodOpen1",
+  "Play_SndMechDryerDoorClose1",
+  "Play_SndMechDryerDoorOpen1",
+  "Play_SndMechFileCabinetMetalClose1",
+  "Play_SndMechFileCabinetMetalOpen1",
+  "Play_SndMechFridgeDoorClose1",
+  "Play_SndMechFridgeDoorOpen1",
+  "Play_SndMechGloveboxClose1",
+  "Play_SndMechGloveboxOpen1",
+  "Play_SndMechHelicopterCargoAClose",
+  "Play_SndMechHelicopterCargoAOpen",
+  "Play_SndMechLockerClose1",
+  "Play_SndMechLockerOpen1",
+  "Play_SndMechMetalBoxOpenKey",
+  "Play_SndMechMetalCarDoorClose1",
+  "Play_SndMechMetalCarDoorOpen1",
+  "Play_SndMechMetalCarFuelDoorClose1",
+  "Play_SndMechMetalCarFuelDoorOpen1",
+  "Play_SndMechMetalCarHoodClose1",
+  "Play_SndMechMetalCarHoodOpen1",
+  "Play_SndMechMetalCarTrunkClose1",
+  "Play_SndMechMetalCarTrunkOpen1",
+  "Play_SndMechMetalHatchLargeClose1",
+  "Play_SndMechMetalHatchLargeOpen1",
+  "Play_SndMechMetalPickupDoorClose1",
+  "Play_SndMechMetalPickupDoorOpen1",
+  "Play_SndMechMetalPickupHoodClose1",
+  "Play_SndMechMetalPickupHoodOpen1",
+  "Play_SndMechMetalToolBoxLidClose1",
+  "Play_SndMechMetalToolBoxLidOpen1",
+  "Play_SndMechMetalTractorDoorClose2",
+  "Play_SndMechMetalTractorDoorOpen2",
+  "Play_SndMechMetalVault2Close",
+  "Play_SndMechMetalVault2Open",
+  "Play_SndMechMetalVaultClose",
+  "Play_SndMechMetalVaultOpen",
+  "Play_SndMechMetalVentDoorClose1",
+  "Play_SndMechMetalVentDoorOpen1",
+  "Play_SndMechOvenMetalDoorClose1",
+  "Play_SndMechOvenMetalDoorOpen1",
+  "Play_SndMechSafeClick",
+  "Play_SndMechSafeClose",
+  "Play_SndMechSafeDialSpin",
+  "Play_SndMechSafeFail",
+  "Play_SndMechSafeOpen",
+  "Play_SndMechSafeTumblerFall",
+  "Play_SndMechVasePickup",
+  "Play_SndMechVaseSetDown",
+  "Play_SndMechWasherDoorClose1",
+  "Play_SndMechWasherDoorOpen2",
+  "Play_SndMechWoodDoorSlideAClose",
+  "Play_SndMechWoodDoorSlideAOpen",
+  "Play_SndMechWoodDoorSlideBClose",
+  "Play_SndMechWoodDoorSlideBOpen",
+  "Play_SndMechWoodHatchClose01",
+  "Play_SndMechWoodHatchOpen01",
+  "Play_SndMechWoodstove02Close",
+  "Play_SndMechWoodstove02Open",
+  "Play_SndMechWoodstoveClose1",
+  "Play_SndMechWoodstoveClose2",
+  "Play_SndMechWoodstoveOpen1",
+  "Play_SndMechWoodstoveOpen2",
+  "Play_SndMusAreaTransition1",
+  "Play_SndMusicExploration1",
+  "Play_SndMusicExploration1Light",
+  "Play_SndMusicExploration2",
+  "Play_SndMusicExplorationLong",
+  "Play_SndMusicExplorationLongDay",
+  "Play_SndMusicExplorationLongNight",
+  "Play_SndMusNewLocation",
+  "Play_SndMusNewLocationShort",
+  "Play_SndTechnicalBackpackDrop",
+  "Play_SndTechnicalBackpackPickup",
+  "Play_SndTechnicalBackpackStow",
+  "Play_SndWeaponRifleBoltClose1",
+  "Play_SndWeaponRifleBoltOpen1",
+  "Play_SndWeaponRifleStripClipBullets",
+  "Play_SndWeaponRifleStripClipLoad",
+  "Play_SndWeaponRifleStripClipUnload",
+  "Play_SnowFallingStructure",
+  "Play_SnowShelterEnter",
+  "Play_SnowShelterExit",
+  "Play_SnowShelterRuined",
+  "Play_SnowUncovered_TrackableMetal",
+  "Play_SnowUncoveringLoop_Trackable",
+  "Play_Solitaire",
+  "Play_Sparks",
+  "Play_SparksSlow",
+  "Play_SparrowChirpDistant",
+  "Play_SprayPaintCan_Equip_Equip",
+  "Play_SprayPaintCan_Equip_UnEquip",
+  "Play_SprayPaintCan_Erase",
+  "Play_SprayPaintCan_Spray",
+  "Play_StartGame",
+  "Play_Starving",
+  "Play_SteamTunnels",
+  "Play_Stimpack",
+  "Play_StimpackHeartbeat",
+  "Play_StoneImpacts",
+  "Play_StunnedMuffle",
+  "Play_SuffocationCough",
+  "Play_Suitcase_Search",
+  "Play_SuitcaseA_Close",
+  "Play_SuitcaseA_Open",
+  "Play_SuitcaseB_Close",
+  "Play_SuitcaseB_Open",
+  "Play_SuitcaseC_Close",
+  "Play_SuitcaseC_Open",
+  "Play_SuitcaseD_Close",
+  "Play_SuitcaseD_Open",
+  "Play_SuitcaseE_Close",
+  "Play_SuitcaseE_Open",
+  "Play_SuspensionBridge",
+  "Play_SwingSet",
+  "Play_Tale01_SecurityChiefLog_01",
+  "Play_Tale01_SecurityChiefLog_02",
+  "Play_Tale01_SecurityChiefLog_03",
+  "Play_Tale01_SecurityChiefLog_04",
+  "Play_Tale01_TranscriptFragment_01",
+  "Play_Tale01_TranscriptFragment_02",
+  "Play_Tale01_TranscriptFragment_03",
+  "Play_Tale01_TranscriptFragment_04",
+  "Play_Tale02_ForemansReport_01",
+  "Play_Tale02_ForemansReport_02",
+  "Play_Tale02_ForemansReport_03",
+  "Play_Tale02_ForemansReport_04",
+  "Play_Tale02_Interactive_FinalRestingPlace",
+  "Play_Tale02_Interactive_FinalRestingPlace_MusicStinger",
+  "Play_Tale02_Interactive_SpireTouch",
+  "Play_Tale02_RudigersTestament",
+  "Play_Tale02_SecurityChiefLog_01",
+  "Play_Tale02_SecurityChiefLog_02",
+  "Play_Tale02_SecurityChiefLog_03",
+  "Play_Tale02_SecurityChiefLog_04",
+  "Play_Tale03_ForemansClipboard_01",
+  "Play_Tale03_ForemansClipboard_02",
+  "Play_Tale03_ForemansClipboard_03",
+  "Play_Tale03_ForemansClipboard_04",
+  "Play_Tale03_Interactive_BunkerDoorway",
+  "Play_Tale03_Interactive_BunkerDoorway_VO_01",
+  "Play_Tale03_Interactive_BunkerDoorway_VO_02",
+  "Play_Tale03_Interactive_BunkerDoorway_VO_03",
+  "Play_Tale03_Interactive_UncoverSnow",
+  "Play_Tale03_RudigersNote_01",
+  "Play_Tale03_RudigersNote_02",
+  "Play_Tale03_RudigersNote_03",
+  "Play_TeaCupPickup",
+  "Play_TeaCupPutDown",
+  "Play_TechnicalBackpackInventoryOpen",
+  "Play_TechnicalBackpackInvetoryClose",
+  "Play_ThirstDryMouth",
+  "Play_Throw",
+  "Play_TimberwolfAttackBark",
+  "Play_TimberwolfAttackBite",
+  "Play_TimberwolfAttackBreaths",
+  "Play_TimberwolfAttackEnter",
+  "Play_TimberwolfCombat",
+  "Play_TimberwolfDie",
+  "Play_TimberwolfEat",
+  "Play_TimberwolfGrapple",
+  "Play_TimberwolfGrowlLoop",
+  "Play_TimberwolfHowl",
+  "Play_TimberwolfIdle",
+  "Play_TimberwolfOutside",
+  "Play_TimberwolfScuff",
+  "Play_TimberwolfShake",
+  "Play_TimberwolfSleeping",
+  "Play_TimberwolfSniff",
+  "Play_TimberwolfStalking",
+  "Play_TimberwolfWarn",
+  "Play_TimberwolfWhine",
+  "Play_TimberwolfYelp",
+  "Play_TinCanFullPickup",
+  "Play_TinCanFullPutDown",
+  "Play_TinCanPickup",
+  "Play_TinCanPutDown",
+  "Play_TipUpBreakAudio",
+  "Play_TipUpCatch",
+  "Play_TipUpDownIdle",
+  "Play_TipUpPlace",
+  "Play_TipUpReset",
+  "Play_TipUpUpIdle",
+  "Play_TODDawn",
+  "Play_TODNight",
+  "Play_ToolboxMetalClose1",
+  "Play_ToolboxMetalOpen1",
+  "Play_TorchExtinguish",
+  "Play_TorchExtinguishSwitch",
+  "Play_TorchLitPickup",
+  "Play_TorchPredator",
+  "Play_TorchSwing",
+  "Play_ToxicFogAffliction",
+  "Play_TrafficSign",
+  "Play_TransformerDoorClose",
+  "Play_TransformerDoorOpen",
+  "Play_TransformerStart",
+  "Play_TransformerStop",
+  "Play_TrashCanisterClose",
+  "Play_TrashCanisterOpen",
+  "Play_TreesCreakingDistant",
+  "Play_TreesCreakingDistantLoop",
+  "Play_TreesCreakingHeavy",
+  "Play_TreesCreakingHeavyLoop",
+  "Play_TreesCreakingLight",
+  "Play_TreesCreakingLightLoop",
+  "Play_TunnelLantern",
+  "Play_TunnelWindLoop",
+  "Play_UnwieldItem",
+  "Play_UnwieldItemFlare",
+  "Play_VegetableCartClose",
+  "Play_VegetableCartOpen",
+  "Play_VegetableCartSearch",
+  "Play_VeryCold",
+  "Play_VeryHungry",
+  "Play_VeryThirsty",
+  "Play_VOBreatheLowIntensityNoLoop",
+  "Play_VOBreathHighIntensityNoLoop",
+  "Play_VOBreathMediumIntensityNoLoop",
+  "Play_VOBreathMediumIntensityNoSprint",
+  "Play_VOBurnDamage",
+  "Play_VOBurnReminder",
+  "Play_VOBurnSteamDamage",
+  "Play_VOCatchBreath",
+  "Play_VOColdWater",
+  "Play_VOElectricalDamage",
+  "Play_VOInspectObject",
+  "Play_VOInspectObjectImportant",
+  "Play_VOLandInjuryAnkleSprain",
+  "Play_VOLandInjuryBleeding",
+  "Play_VOLandInjuryLevel1",
+  "Play_VOLandInjuryLevel2",
+  "Play_VOLandInjuryLevel3",
+  "Play_VOLandInjuryWristSprain",
+  "Play_VOLandLevel1",
+  "Play_VOLandLevel2",
+  "Play_VOOpenContainer",
+  "Play_VORopeAboutToSlip",
+  "Play_VORopeFallStart",
+  "Play_VORopeFallStop",
+  "Play_VORopeSlipStart",
+  "Play_VORopeSlipStop",
+  "Play_VOStimpack",
+  "Play_WashingLine",
+  "Play_WaterCollectionToilet",
+  "Play_WaterDripDry3D",
+  "Play_WaterDripLoop1",
+  "Play_WaterDripLoop2",
+  "Play_WaterDripsMine",
+  "Play_WaterDripsMineShorterDistance",
+  "Play_WaterDripTunnelFast",
+  "Play_WaterDripTunnelMedium",
+  "Play_WaterfallFrozen_HubCaveLake",
+  "Play_WaterfallFrozen_HubCaveRavine",
+  "Play_WaterfallFrozen_HubCaveRavine_Bottom",
+  "Play_WaterfallFrozen_MountainPassA_Ext01",
+  "Play_WaterfallFrozen_MountainPassA_Ext01_Bottom",
+  "Play_WaterfallFrozen_MountainPassA_Ext02",
+  "Play_WaterfallFrozen_MountainPassA_Ext02_Bottom",
+  "Play_WaterfallFrozen_MountainPassA_Small01",
+  "Play_WaterfallFrozen_MountainPassA_Small01_Bottom",
+  "Play_WaterfallFrozen_MountainPassA_Small02",
+  "Play_WaterfallFrozen_MountainPassA_Small02_Bottom",
+  "Play_WaterfallFrozen_MountainPassA_TunnelExt",
+  "Play_WaterfallFrozen_MountainPassA_TunnelExt_Bottom",
+  "Play_WaterfallFrozen_MountainPassA_TunnelInt",
+  "Play_WaterfallFrozen_MountainPassA_TunnelInt_Bottom",
+  "Play_WaterfallFrozen_MountainPassB_Tunnel01",
+  "Play_WaterfallFrozen_MountainPassB_Tunnel02",
+  "Play_WaterfallFrozen_MountainPassB_Tunnel03",
+  "Play_WaterfallIceCave",
+  "Play_WaterfallLarge",
+  "Play_WaterfallMediumLoop",
+  "Play_WaterfallTall",
+  "Play_WaterfallWalkThroughLoop01",
+  "Play_WaterfallWide",
+  "Play_WaterPurification",
+  "Play_WeaponPickerEnter",
+  "Play_WeaponPickerExit",
+  "Play_Weather_Blizzard",
+  "Play_Weather_Blizzard_withStinger00",
+  "Play_Weather_Blizzard_withStinger05",
+  "Play_Weather_Blizzard_withStinger30",
+  "Play_Weather_Blizzard_withStinger60",
+  "Play_Weather_Clear",
+  "Play_Weather_Clear_withStinger45",
+  "Play_Weather_Clear_withStinger60",
+  "Play_Weather_ClearAurora",
+  "Play_Weather_ClearAurora_withStinger05",
+  "Play_Weather_ClearAurora_withStinger60",
+  "Play_Weather_Cloudy",
+  "Play_Weather_DenseFog",
+  "Play_Weather_DenseFog_withStinger30",
+  "Play_Weather_DenseFog_withStinger45",
+  "Play_Weather_DenseFog_withStinger60",
+  "Play_Weather_ElectrostaticFog",
+  "Play_Weather_ElectrostaticFog_Actions",
+  "Play_Weather_HeavySnow",
+  "Play_Weather_HeavySnow_withStinger30",
+  "Play_Weather_LightFog",
+  "Play_Weather_LightFog_withStinger45",
+  "Play_Weather_LightFog_withStinger60",
+  "Play_Weather_LightSnow",
+  "Play_Weather_PartlyCloudy",
+  "Play_Weather_ToxicFog",
+  "Play_WesternScreechOwl",
+  "Play_WhalingShip2DCreaks",
+  "Play_WhalingShip3DCreaks",
+  "Play_WhalingShipAmbience",
+  "Play_WieldItem",
+  "Play_WieldItemFlare",
+  "Play_Winch",
+  "Play_Wind_HubCave_Ravine",
+  "Play_WindClothingFlapLoop",
+  "Play_WindGustCoastMed",
+  "Play_WindIndoors",
+  "Play_WindOutdoors",
+  "Play_WindowRattlesBlendLoop",
+  "Play_WindowRattlesHeavy",
+  "Play_WindowRattlesHeavyLoop",
+  "Play_WindowRattlesHeavyOutdoors",
+  "Play_WindowRattlesLight",
+  "Play_WindowRattlesLightLoop",
+  "Play_WindowRattlesLightOutdoors",
+  "Play_WindowRattlesSlatLoop",
+  "Play_WindSpotEntranceToOutside",
+  "Play_WindSpotEntranceToOutside_INT_Bunker",
+  "Play_WindSpotOpenToOutside",
+  "Play_WindSpotOpenToOutside50m",
+  "Play_WinterWindBlendLoopHeavyOcclusion",
+  "Play_WireFence",
+  "Play_WireLargeA",
+  "Play_Wires",
+  "Play_Wires_Gear_Pickup",
+  "Play_Wires_Gear_PutBack",
+  "Play_WiresMetal",
+  "Play_WolfAttack",
+  "Play_WolfAttackBreaths",
+  "Play_WolfAttackEnter",
+  "Play_WolfDie",
+  "Play_WolfEat",
+  "Play_WolfGrapple",
+  "Play_WolfGrowl7sec",
+  "Play_WolfGrowlLoop",
+  "Play_WolfHit",
+  "Play_WolfHowl",
+  "Play_WolfHowlDistant",
+  "Play_WolfIdle",
+  "Play_WolfScuff",
+  "Play_WolfSleeping",
+  "Play_WolfStalking",
+  "Play_WolfStruggleAttack1",
+  "Play_WolfStruggleAttack2",
+  "Play_WolfStruggleAttack3",
+  "Play_WolfStruggleAttack4",
+  "Play_WolfStruggleAttack5",
+  "Play_WolfStruggleFadeAbort",
+  "Play_WolfStruggleFadeFPGetUp",
+  "Play_WolfStruggleFadeStart",
+  "Play_WolfStruggleOneShot",
+  "Play_WolfStruggleTakeDown",
+  "Play_WolfWarn",
+  "Play_WolfWhine",
+  "Play_Wood_MineStructureCreaks",
+  "Play_WoodBinClose",
+  "Play_WoodBinOpen",
+  "Play_WoodCreaksDoors",
+  "Play_WoodCreaksHeavyClose",
+  "Play_WoodCreaksHouse",
+  "Play_WoodCreaksShed",
+  "Play_WoodCreaksStructure",
+  "Play_WoodDoorKey",
+  "Play_WoodenBridgeCreaks",
+  "Play_WoodenStairCreaking",
+  "Play_WoodPallet",
+  "Play_WoodPeckerPeckMetal",
+  "Play_WoodpeckerPeckWood",
+  "Play_WoodSign",
+  "Play_WoodStorageClose",
+  "Play_WoodStorageOpen",
+  "Play_WoodStorageSearch",
+  "Play_WoodTrunkClose",
+  "Play_WoodTrunkKey",
+  "Play_WoodTrunkOpen"
+ ]
+}

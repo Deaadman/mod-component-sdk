@@ -1,0 +1,18 @@
+{
+    "name": "ModComponent.SDK.Editor",
+    "rootNamespace": "ModComponent.SDK.Editor",
+    "references": [
+        "ModComponent.SDK.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -396,3 +396,6 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 *.idea
+## ModComponent SDK
+# Local reference copy of the ModComponent runtime source (not shipped, not committed)
+ModComponent-SourceCode~/
