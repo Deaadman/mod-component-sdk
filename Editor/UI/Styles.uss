@@ -1,0 +1,263 @@
+/* ModComponent SDK editor styles. Colours come from Unity's own variables so both editor skins work. */
+
+.mcsdk-section {
+    margin: 6px 0 4px 0;
+    padding: 6px 8px 8px 8px;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: var(--unity-colors-default-border);
+    background-color: var(--unity-colors-inspector_titlebar-background);
+}
+
+.mcsdk-section__title {
+    -unity-font-style: bold;
+    margin-bottom: 4px;
+}
+
+.mcsdk-header {
+    flex-direction: row;
+    align-items: center;
+    margin: 4px 0 6px 0;
+}
+
+.mcsdk-header__thumb {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    margin-right: 10px;
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: var(--unity-colors-default-border);
+    background-color: var(--unity-colors-object_field-background);
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.mcsdk-header__title {
+    font-size: 15px;
+    -unity-font-style: bold;
+}
+
+.mcsdk-header__subtitle {
+    color: var(--unity-colors-label-text-focus);
+    opacity: 0.6;
+}
+
+/* Module cards */
+.mcsdk-card {
+    margin: 6px 0;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: var(--unity-colors-default-border);
+}
+
+.mcsdk-card__header {
+    flex-direction: row;
+    align-items: center;
+    padding: 3px 6px;
+    background-color: var(--unity-colors-inspector_titlebar-background);
+    border-bottom-width: 1px;
+    border-color: var(--unity-colors-default-border);
+}
+
+.mcsdk-card__kind {
+    font-size: 9px;
+    -unity-font-style: bold;
+    padding: 1px 5px;
+    margin-right: 6px;
+    border-radius: 3px;
+    color: rgb(169, 205, 240);
+    background-color: rgb(47, 77, 107);
+}
+
+.mcsdk-card__kind--behaviour {
+    color: rgb(240, 207, 150);
+    background-color: rgb(77, 61, 34);
+}
+
+.mcsdk-card__kind--modification {
+    color: rgb(159, 211, 155);
+    background-color: rgb(38, 72, 46);
+}
+
+.mcsdk-card__title {
+    -unity-font-style: bold;
+    flex-grow: 1;
+}
+
+.mcsdk-card__menu {
+    width: 20px;
+    padding: 0;
+}
+
+.mcsdk-card__body {
+    padding: 4px 6px 6px 6px;
+}
+
+.mcsdk-tabs {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+}
+
+.mcsdk-tab {
+    margin: 0 2px 2px 0;
+    padding: 1px 8px;
+    border-radius: 3px;
+}
+
+.mcsdk-tab--selected {
+    background-color: var(--unity-colors-highlight-background);
+    color: var(--unity-colors-highlight-text);
+}
+
+/* References */
+.mcsdk-ref {
+    flex-direction: row;
+    align-items: center;
+}
+
+.mcsdk-ref__field {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.mcsdk-ref__pick {
+    width: 22px;
+    margin-left: 2px;
+    padding: 0;
+}
+
+.mcsdk-ref__state {
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    margin-left: 4px;
+}
+
+.mcsdk-ref__state--unknown {
+    background-color: rgb(216, 162, 39);
+}
+
+.mcsdk-ref__hint {
+    opacity: 0.6;
+    margin-left: 4px;
+    -unity-text-align: middle-left;
+    max-width: 45%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Issues */
+.mcsdk-issue {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 3px 4px;
+    margin-bottom: 2px;
+    border-radius: 3px;
+    background-color: var(--unity-colors-helpbox-background);
+}
+
+.mcsdk-issue__icon {
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    margin: 1px 6px 0 0;
+}
+
+.mcsdk-issue__text {
+    flex-grow: 1;
+    flex-shrink: 1;
+    white-space: normal;
+}
+
+.mcsdk-issue__where {
+    opacity: 0.65;
+    font-size: 11px;
+}
+
+.mcsdk-issue__button {
+    margin-left: 4px;
+}
+
+.mcsdk-empty {
+    opacity: 0.6;
+    -unity-font-style: italic;
+    padding: 4px;
+}
+
+/* Hub */
+.mcsdk-toolbar__spacer {
+    flex-grow: 1;
+}
+
+.mcsdk-footer {
+    flex-direction: row;
+    padding: 3px 8px;
+    border-top-width: 1px;
+    border-color: var(--unity-colors-default-border);
+    opacity: 0.75;
+    font-size: 11px;
+}
+
+.mcsdk-banner {
+    flex-direction: row;
+    align-items: center;
+    padding: 5px 8px;
+    background-color: var(--unity-colors-highlight-background);
+}
+
+.mcsdk-banner__text {
+    flex-grow: 1;
+    color: var(--unity-colors-highlight-text);
+    white-space: normal;
+}
+
+.mcsdk-tree-row {
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.mcsdk-tree-row__icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+}
+
+.mcsdk-tree-row__badge {
+    margin-left: auto;
+    padding: 0 5px;
+    border-radius: 7px;
+    font-size: 10px;
+}
+
+.mcsdk-tree-row__badge--error {
+    background-color: rgb(93, 34, 34);
+    color: rgb(255, 155, 147);
+}
+
+.mcsdk-tree-row__badge--warning {
+    background-color: rgb(91, 59, 27);
+    color: rgb(255, 191, 134);
+}
+
+.mcsdk-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+
+.mcsdk-buttons > Button {
+    margin-left: 0;
+    margin-right: 4px;
+}
+
+.mcsdk-form {
+    padding: 10px;
+}
+
+.mcsdk-form__actions {
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
