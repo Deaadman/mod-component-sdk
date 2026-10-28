@@ -63,7 +63,7 @@ namespace ModComponent.SDK.Editor.Build
     }
 
     /// <summary>
-    /// Builds a .modcomponent: check → stage → bundle → write → package → copy. Staging happens under
+    /// Builds a .modcomponent: check → stage → write → bundle → package → copy. Staging happens under
     /// Library/, never inside Assets/, and nothing in the project is left changed.
     /// </summary>
     public static class ModBuildPipeline
@@ -118,23 +118,31 @@ namespace ModComponent.SDK.Editor.Build
                 return;
             }
 
-            var staging = Path.Combine(StagingRoot, mod.Id);
+            var id = mod.Id;
+            var archiveName = ArchiveFileName(mod);
+            var staging = Path.Combine(StagingRoot, id);
             report.StagingDirectory = staging;
             if (Directory.Exists(staging)) Directory.Delete(staging, true);
             Directory.CreateDirectory(staging);
             report.Info($"Staging in {staging}");
 
-            // 3. Bundle
+            if (!options.SkipBundles && !ProjectSetup.IsJsonCatalogEnabled)
+            {
+                report.Fail(ProjectSetup.JsonCatalogMessage);
+                return;
+            }
+
+            // 3. Write. Runs before the bundle step: an Addressables build can unload the mod's assets,
+            // after which item and table references read as null.
+            Progress("Writing data files", 0.15f);
+            WriteDataFiles(mod, staging, report);
+            if (report.Errors.Any()) return;
+
+            // 4. Bundle
             if (!options.SkipBundles)
             {
-                if (!ProjectSetup.IsJsonCatalogEnabled)
-                {
-                    report.Fail(ProjectSetup.JsonCatalogMessage);
-                    return;
-                }
-
-                Progress("Building bundles", 0.2f);
-                var bundles = AddressablesModBuilder.Build(mod, Path.Combine(StagingRoot, mod.Id + "-addressables"));
+                Progress("Building bundles", 0.3f);
+                var bundles = AddressablesModBuilder.Build(mod, Path.Combine(StagingRoot, id + "-addressables"));
                 if (!bundles.Succeeded)
                 {
                     report.Fail("Bundle build failed: " + bundles.Error);
@@ -151,16 +159,12 @@ namespace ModComponent.SDK.Editor.Build
                 }
             }
 
-            // 4. Write
-            Progress("Writing data files", 0.7f);
-            WriteDataFiles(mod, staging, report);
-
             // 5. Package
             Progress("Packaging", 0.85f);
             var outputDirectory = string.IsNullOrEmpty(options.OutputDirectory)
                 ? Path.Combine(StagingRoot, "Output")
                 : options.OutputDirectory;
-            var archive = Path.Combine(outputDirectory, ArchiveFileName(mod));
+            var archive = Path.Combine(outputDirectory, archiveName);
             report.Entries.AddRange(ModPackager.Package(staging, archive));
             report.ArchivePath = archive;
             report.Info($"Wrote {archive} ({FormatSize(new FileInfo(archive).Length)}, {report.Entries.Count} files)");
@@ -169,7 +173,7 @@ namespace ModComponent.SDK.Editor.Build
             if (!string.IsNullOrEmpty(options.CopyToDirectory))
             {
                 Directory.CreateDirectory(options.CopyToDirectory);
-                var copy = Path.Combine(options.CopyToDirectory, ArchiveFileName(mod));
+                var copy = Path.Combine(options.CopyToDirectory, archiveName);
                 File.Copy(archive, copy, true);
                 report.Info($"Copied to {copy}");
             }

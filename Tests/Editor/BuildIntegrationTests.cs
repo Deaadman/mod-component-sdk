@@ -49,6 +49,10 @@ namespace ModComponent.SDK.Editor.Tests
             _mod.DisplayName = "SDK Test";
             _mod.Id = "SdkTest";
             _mod.Items.Add(item);
+            var localization = ScriptableObject.CreateInstance<LocalizationTable>();
+            localization.Set("GAMEPLAY_TestCan", "English", "Test Can");
+            AssetDatabase.CreateAsset(localization, $"{Folder}/Localization.asset");
+            _mod.Localization = localization;
             AssetDatabase.CreateAsset(_mod, $"{Folder}/SdkTest.asset");
             AssetDatabase.SaveAssets();
         }
@@ -76,6 +80,7 @@ namespace ModComponent.SDK.Editor.Tests
             Assert.That(report.Entries, Has.Some.Match(@"^bundle/modcomponentsdk_sdktest_.*\.bundle$"));
             Assert.That(report.Entries, Does.Contain("bundle/catalog_sdktest.json"));
             Assert.That(report.Entries, Does.Contain("auto-mapped/testcan.json"));
+            Assert.That(report.Entries, Does.Contain("localizations/sdktest.json"));
             Assert.That(report.Messages.Select(m => m.Text), Has.Some.Contains("CookingResult"));
 
             using (var stream = File.OpenRead(report.ArchivePath))
