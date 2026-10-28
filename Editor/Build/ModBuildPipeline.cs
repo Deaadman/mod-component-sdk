@@ -43,6 +43,17 @@ namespace ModComponent.SDK.Editor.Build
         public bool SkipBundles;
     }
 
+    /// <summary>The pipeline's steps, in order.</summary>
+    public enum BuildStep
+    {
+        Check,
+        Stage,
+        Write,
+        Bundle,
+        Package,
+        Copy
+    }
+
     /// <summary>What a build did, for the build window and logs.</summary>
     public sealed class BuildReport
     {
@@ -53,6 +64,9 @@ namespace ModComponent.SDK.Editor.Build
         public readonly List<string> Entries = new();
         public readonly List<BuildMessage> Messages = new();
         public TimeSpan Duration;
+
+        /// <summary>The step the build was on when it finished or failed.</summary>
+        public BuildStep Step;
 
         public IEnumerable<BuildMessage> Errors => Messages.Where(m => m.Severity == BuildMessageSeverity.Error);
         public IEnumerable<BuildMessage> Warnings => Messages.Where(m => m.Severity == BuildMessageSeverity.Warning);
@@ -107,11 +121,13 @@ namespace ModComponent.SDK.Editor.Build
         private static void Run(Mod mod, ModBuildOptions options, BuildReport report)
         {
             // 1. Check
+            report.Step = BuildStep.Check;
             Progress("Checking", 0.05f);
             foreach (var message in Validator(mod) ?? Enumerable.Empty<BuildMessage>())
                 report.Messages.Add(message);
             if (report.Errors.Any()) return;
 
+            report.Step = BuildStep.Stage;
             // 2. Stage. The id names folders that are deleted recursively, so it is checked here as well as in validation.
             if (!Mod.IsValidId(mod.Id))
             {
@@ -135,6 +151,7 @@ namespace ModComponent.SDK.Editor.Build
 
             // 3. Write. Runs before the bundle step: an Addressables build can unload the mod's assets,
             // after which item and table references read as null.
+            report.Step = BuildStep.Write;
             Progress("Writing data files", 0.15f);
             WriteDataFiles(mod, staging, report);
             if (report.Errors.Any()) return;
@@ -142,6 +159,7 @@ namespace ModComponent.SDK.Editor.Build
             // 4. Bundle
             if (!options.SkipBundles)
             {
+                report.Step = BuildStep.Bundle;
                 Progress("Building bundles", 0.3f);
                 var bundles = AddressablesModBuilder.Build(mod, Path.Combine(StagingRoot, id + "-addressables"));
                 if (!bundles.Succeeded)
@@ -161,6 +179,7 @@ namespace ModComponent.SDK.Editor.Build
             }
 
             // 5. Package
+            report.Step = BuildStep.Package;
             Progress("Packaging", 0.85f);
             var outputDirectory = string.IsNullOrEmpty(options.OutputDirectory)
                 ? Path.Combine(StagingRoot, "Output")
@@ -173,6 +192,7 @@ namespace ModComponent.SDK.Editor.Build
             // 6. Copy
             if (!string.IsNullOrEmpty(options.CopyToDirectory))
             {
+                report.Step = BuildStep.Copy;
                 Directory.CreateDirectory(options.CopyToDirectory);
                 var copy = Path.Combine(options.CopyToDirectory, archiveName);
                 File.Copy(archive, copy, true);

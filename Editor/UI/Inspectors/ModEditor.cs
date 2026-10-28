@@ -61,8 +61,8 @@ namespace ModComponent.SDK.Editor.UI.Inspectors
             c.Add(new PropertyField(serializedObject.FindProperty("localization")));
             c.Add(new PropertyField(serializedObject.FindProperty("spawns")));
             c.Add(SdkUI.Row(
-                new Button(() => { if (Mod.Localization == null) AssetFactory.CreateLocalizationTable(Mod); Selection.activeObject = Mod.Localization; }) { text = "Edit localization" },
-                new Button(() => { if (Mod.Spawns == null) AssetFactory.CreateSpawnTable(Mod); Selection.activeObject = Mod.Spawns; }) { text = "Edit spawns" }));
+                new Button(() => { if (Mod.Localization == null) AssetFactory.CreateLocalizationTable(Mod); LocalizationWindow.Open(Mod); }) { text = "Edit localization" },
+                new Button(() => { if (Mod.Spawns == null) AssetFactory.CreateSpawnTable(Mod); SpawnsWindow.Open(Mod); }) { text = "Edit spawns" }));
             root.Add(tables);
 
             var integrations = SdkUI.Section("Integrations", out c);
@@ -82,7 +82,7 @@ namespace ModComponent.SDK.Editor.UI.Inspectors
             _buildStatus.style.whiteSpace = WhiteSpace.Normal;
             c.Add(_buildStatus);
             c.Add(SdkUI.Row(
-                new Button(() => { BuildActions.Build(Mod); RefreshBuildStatus(); }) { text = "Build" },
+                new Button(() => BuildWindow.Open(Mod)) { text = "Build…" },
                 new Button(Revalidate) { text = "Validate" }));
             root.Add(build);
             RefreshBuildStatus();

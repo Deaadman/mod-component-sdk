@@ -173,6 +173,9 @@ namespace ModComponent.SDK.Editor.Validation.Rules
                 if (!string.IsNullOrWhiteSpace(group.Tag) && !Word.IsMatch(group.Tag.Trim()))
                     yield return Error($"Tag \"{group.Tag}\" may only use letters, digits and '_'.", table, where);
 
+                if (group.Spawns.Any(s => s != null && !s.Item.IsEmpty && s.Chance <= 0))
+                    yield return Warning("A spawn has a 0% chance, so it never appears.", table, where);
+
                 foreach (var issue in CheckItems(group.Spawns.Select(s => s?.Item ?? default), table, where, context))
                     yield return issue;
             }

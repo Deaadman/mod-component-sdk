@@ -84,7 +84,7 @@ namespace ModComponent.SDK.Editor.UI.Windows
             _search.RegisterValueChangedCallback(_ => Refresh());
             toolbar.Add(_search);
             toolbar.Add(new ToolbarButton(Refresh) { text = "Validate", tooltip = "Check every mod again" });
-            toolbar.Add(new ToolbarButton(BuildSelected) { text = "Build", tooltip = "Build the selected mod" });
+            toolbar.Add(new ToolbarButton(BuildSelected) { text = "Build…", tooltip = "Build the selected mod" });
             root.Add(toolbar);
 
             var split = new TwoPaneSplitView(0, 260, TwoPaneSplitViewOrientation.Horizontal) { style = { flexGrow = 1 } };
@@ -94,8 +94,13 @@ namespace ModComponent.SDK.Editor.UI.Windows
             _tree.selectionChanged += selection => ShowAsset((selection.FirstOrDefault() as Node)?.Asset);
             _tree.itemsChosen += chosen =>
             {
-                var asset = (chosen.FirstOrDefault() as Node)?.Asset;
-                if (asset != null) EditorGUIUtility.PingObject(asset);
+                var node = chosen.FirstOrDefault() as Node;
+                switch (node?.Asset)
+                {
+                    case LocalizationTable: LocalizationWindow.Open(node.Mod); break;
+                    case SpawnTable: SpawnsWindow.Open(node.Mod); break;
+                    case { } asset: EditorGUIUtility.PingObject(asset); break;
+                }
             };
             split.Add(_tree);
 
@@ -252,9 +257,7 @@ namespace ModComponent.SDK.Editor.UI.Windows
         private void BuildSelected()
         {
             var mod = SelectedMod;
-            if (mod == null) return;
-            BuildActions.Build(mod);
-            Refresh();
+            if (mod != null) BuildWindow.Open(mod);
         }
     }
 }
