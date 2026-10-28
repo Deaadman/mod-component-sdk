@@ -67,6 +67,7 @@ namespace ModComponent.SDK.Editor.Tests
         [Test]
         public void Build_ProducesLoadableArchive_AndRestoresAddressables()
         {
+            if (!ProjectSetup.IsJsonCatalogEnabled) Assert.Ignore("This project builds binary Addressables catalogs; run ProjectSetup.EnableJsonCatalog once.");
             var settings = AddressableAssetSettingsDefaultObject.GetSettings(true);
             var groupsBefore = settings.groups.Select(g => g.Name).ToList();
             var includeBefore = settings.groups.Select(g => g.GetSchema<BundledAssetGroupSchema>()?.IncludeInBuild).ToList();

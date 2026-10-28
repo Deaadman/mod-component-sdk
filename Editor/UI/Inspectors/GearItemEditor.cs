@@ -1,5 +1,6 @@
 using System.Linq;
 using ModComponent.SDK.Editor.Modules;
+using ModComponent.SDK.Editor.UI.Preview;
 using ModComponent.SDK.Editor.Validation;
 using ModComponent.SDK.Integrations;
 using ModComponent.SDK.Modules;
@@ -22,6 +23,9 @@ namespace ModComponent.SDK.Editor.UI.Inspectors
         private VisualElement _modules;
         private VisualElement _issues;
         private IVisualElementScheduledItem _pendingValidation;
+        private ItemPreview _preview;
+        private GameObject _previewPrefab;
+        private Vector2 _dragAngles;
 
         private GearItem Item => (GearItem)target;
 
@@ -37,6 +41,7 @@ namespace ModComponent.SDK.Editor.UI.Inspectors
             identityContent.Add(new PropertyField(serializedObject.FindProperty("icon"), "Inventory icon"));
             identityContent.Add(new PropertyField(serializedObject.FindProperty("craftingIcon"), "Crafting icon"));
             _root.Add(identity);
+            _root.Add(BuildPreviewSection());
 
             _modules = new VisualElement();
             _root.Add(_modules);
@@ -55,6 +60,102 @@ namespace ModComponent.SDK.Editor.UI.Inspectors
             _root.TrackSerializedObjectValue(serializedObject, _ => ScheduleValidation());
             _root.Bind(serializedObject);
             return _root;
+        }
+
+        private void OnDisable()
+        {
+            _preview?.Dispose();
+            _preview = null;
+        }
+
+        /// <summary>
+        /// A live, approximate inspect view: drag to turn the model, then "Use current view" to store the angles.
+        /// "Render icon" renders an inventory icon from the model.
+        /// </summary>
+        private VisualElement BuildPreviewSection()
+        {
+            var section = SdkUI.Section("Inspect preview", out var content);
+            if (!ItemPreview.CanRender)
+            {
+                content.Add(new HelpBox("Previews need a graphics device.", HelpBoxMessageType.Info));
+                return section;
+            }
+
+            IMGUIContainer view = null;
+            view = new IMGUIContainer(() =>
+            {
+                if (target == null) return;
+                var component = Item.Component;
+                var rect = GUILayoutUtility.GetRect(10, 10000, 180, 180);
+                if (Item.Prefab == null || component == null)
+                {
+                    EditorGUI.HelpBox(rect, "Assign a prefab and a component to preview the inspect view.", MessageType.None);
+                    return;
+                }
+
+                if (_preview == null || _previewPrefab != Item.Prefab)
+                {
+                    _preview?.Dispose();
+                    _preview = new ItemPreview(Item.Prefab);
+                    _previewPrefab = Item.Prefab;
+                }
+
+                var e = Event.current;
+                if (e.type == EventType.MouseDrag && rect.Contains(e.mousePosition))
+                {
+                    _dragAngles += new Vector2(e.delta.y, -e.delta.x) * 0.5f;
+                    e.Use();
+                    view.MarkDirtyRepaint();
+                }
+
+                _preview.PoseForInspect(component, component.InspectAngles + new Vector3(_dragAngles.x, _dragAngles.y, 0));
+                _preview.Draw(rect);
+            });
+            view.RegisterCallback<MouseMoveEvent>(_ => view.MarkDirtyRepaint());
+            content.Add(view);
+
+            var hint = new Label("Drag to turn the model. The framing approximates the game's inspect camera.") { style = { opacity = 0.65f, whiteSpace = WhiteSpace.Normal } };
+            content.Add(hint);
+            content.Add(SdkUI.Row(
+                new Button(() =>
+                {
+                    if (Item.Component == null) return;
+                    Undo.RecordObject(Item, "Use current view");
+                    Item.Component.InspectAngles += new Vector3(_dragAngles.x, _dragAngles.y, 0);
+                    _dragAngles = Vector2.zero;
+                    Changed();
+                }) { text = "Use current view", tooltip = "Store the dragged rotation in Inspect angles" },
+                new Button(() =>
+                {
+                    _dragAngles = Vector2.zero;
+                    view.MarkDirtyRepaint();
+                }) { text = "Reset view" },
+                new Button(() =>
+                {
+                    try
+                    {
+                        IconRenderer.RenderAndAssign(Item);
+                        Changed();
+                    }
+                    catch (System.InvalidOperationException ex)
+                    {
+                        EditorUtility.DisplayDialog("Render icon", ex.Message, "OK");
+                    }
+                }) { text = "Render icon", tooltip = "Render the model to ico_GearItem__Name.png and use it as the inventory icon" },
+                new Button(() =>
+                {
+                    try
+                    {
+                        IconRenderer.RenderAndAssign(Item, crafting: true);
+                        Changed();
+                    }
+                    catch (System.InvalidOperationException ex)
+                    {
+                        EditorUtility.DisplayDialog("Render crafting icon", ex.Message, "OK");
+                    }
+                }) { text = "Render crafting icon", tooltip = "Render ico_CraftItem__Name.png, needed when a blueprint makes this item" }));
+            content.TrackSerializedObjectValue(serializedObject, _ => view.MarkDirtyRepaint());
+            return section;
         }
 
         private VisualElement BuildHeader()

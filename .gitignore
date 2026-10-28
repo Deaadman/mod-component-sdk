@@ -399,3 +399,6 @@ FodyWeavers.xsd
 ## ModComponent SDK
 # Local reference copy of the ModComponent runtime source (not shipped, not committed)
 ModComponent-SourceCode~/
+# Package folders ending in ~ are skipped by Unity's importer but belong in the repo (*~ above ignores them).
+!Documentation~/
+!Samples~/

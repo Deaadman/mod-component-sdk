@@ -1,0 +1,35 @@
+name: Release
+
+# Push a tag such as v2.0.0-nightly.3 or v2.0.0. Tags with a pre-release suffix become pre-releases (nightlies).
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check package.json matches the tag
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          version="$(jq -r .version package.json)"
+          if [ "$tag" != "$version" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME doesn't match package.json version $version"
+            exit 1
+          fi
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          name: ModComponent SDK ${{ github.ref_name }}
+          prerelease: ${{ contains(github.ref_name, '-') }}
+          generate_release_notes: true
+          body: |
+            Install or update through Package Manager › Add package from git URL:
+            `https://github.com/Deaadman/mod-component-sdk.git#${{ github.ref_name }}`
+
+            Requires Unity 6000.0.60f1. See CHANGELOG.md for details.

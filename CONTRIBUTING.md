@@ -35,7 +35,25 @@ After coding new functionality or fixing bugs, remember to commit your changes a
 - Make sure commit messages are clear and concise that explain any changes made.
 
 ### Step 5: Testing Changes
-Once you have either added the feature or fixed a bug, it's important to test your changing in order to make sure nothing else has been affected in the process. While there isn't really a process towards checking certain things, it's good practice.
+Once you have added the feature or fixed the bug, run the EditMode tests: in your test project, add the package to `testables` in `Packages/manifest.json`:
+
+```json
+"testables": ["com.deadman.modcomponent.sdk"]
+```
+
+then open **Window › General › Test Runner** and run the EditMode tests. The tests that build a real mod need JSON catalogs turned on once (**Preferences › ModComponent SDK › Turn on JSON catalogs**); otherwise they are skipped. Add tests for what you change. The exporter's `LoaderContractTests` pin every JSON key to ModComponent, so a new or renamed module field must be added there too.
+
+#### Where things live
+| Folder | Contents |
+| - | - |
+| `Runtime/` | Assets and data model: `Mod`, `GearItem`, `Blueprint`, tables, modules, references. |
+| `Editor/Build/` | Exporter, loader quirks, Addressables builder, packager, pipeline. |
+| `Editor/Validation/` | Rule engine and rules. New rules are found automatically. |
+| `Editor/UI/` | Mod Hub, inspectors, pickers, windows. UI Toolkit, styled in `Styles.uss`. |
+| `Editor/Migration/` | 1.x importer. |
+| `Legacy/` | 1.x serialized types, kept so old projects load. Don't add to them. |
+| `Data/catalog.json` | Vanilla names offered by the pickers. |
+| `Tests/Editor/` | EditMode tests. |
 
 ### Step 6: Submitting a Pull Request
 Finally, after all the following steps are completed - you can finally make a pull request for these changes to be merged into the official SDK. Once doing so, you will be added to the contributors list with what you have contributed to the SDK. Follow the steps below in order to ensure a successful pull request.
