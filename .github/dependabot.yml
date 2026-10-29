@@ -1,0 +1,19 @@
+# Once a week, opens a pull request against develop for actions with a newer
+# version. Minor and patch updates come together in one pull request; a new
+# major version gets its own, since it may break a workflow. CI runs on each
+# one, so merge it when it passes.
+#
+# Dependabot can't read src/package.json's Unity packages: check those by
+# hand when moving to a new Unity version.
+
+version: 2
+
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    target-branch: develop
+    schedule:
+      interval: weekly
+    groups:
+      actions:
+        update-types: [minor, patch]

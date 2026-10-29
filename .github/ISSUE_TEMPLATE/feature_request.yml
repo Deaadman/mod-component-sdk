@@ -1,0 +1,43 @@
+name: Feature request
+description: An idea for something the ModComponent SDK could do, or do better.
+labels: ["feature"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Check the [open issues](https://github.com/Deaadman/mod-component-sdk/issues) first, in case someone has already suggested it.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What you're trying to do
+      description: The moment while making a mod where something gets in your way. Start from your mod, not the feature.
+      placeholder: My mod has 40 items, and setting the same weight and condition on each one takes ages.
+    validations:
+      required: true
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+      description: What the SDK could do about it.
+      placeholder: Select several items in the Mod Hub and edit the fields they share at once.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part of the SDK
+      multiple: true
+      options:
+        - Mod Hub
+        - Items and their modules
+        - Pickers for game names
+        - Validation
+        - Building a mod
+        - Localization
+        - Spawns
+        - Inspect preview or icons
+        - New Mod and New Item wizards
+        - Something the SDK doesn't do yet

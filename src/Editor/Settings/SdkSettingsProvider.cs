@@ -67,7 +67,7 @@ namespace ModComponent.SDK.Editor.Settings
             var updates = SdkUI.Section("Updates", out c);
             var check = new Toggle("Check on startup") { value = EditorPrefs.GetBool(UpdateService.CheckOnStartupKey, true) };
             check.RegisterValueChangedCallback(e => EditorPrefs.SetBool(UpdateService.CheckOnStartupKey, e.newValue));
-            var nightlies = new Toggle("Include nightlies") { value = UpdateService.IncludePrereleases, tooltip = "Offer 2.x.y-nightly.N releases as updates." };
+            var nightlies = new Toggle("Include nightlies") { value = UpdateService.IncludePrereleases, tooltip = "Offer the nightly build of develop as an update." };
             nightlies.RegisterValueChangedCallback(e => UpdateService.IncludePrereleases = e.newValue);
             c.Add(check);
             c.Add(nightlies);

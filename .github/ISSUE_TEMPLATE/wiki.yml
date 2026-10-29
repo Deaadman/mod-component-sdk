@@ -1,0 +1,31 @@
+name: Wiki change
+description: A page the wiki is missing, or one that's wrong or out of date.
+labels: ["wiki"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Only maintainers can edit the [wiki](https://github.com/Deaadman/mod-component-sdk/wiki), so suggest the change here.
+
+  - type: input
+    id: page
+    attributes:
+      label: Which page
+      description: A link to the page, or the title of a new one.
+      placeholder: https://github.com/Deaadman/mod-component-sdk/wiki/Spawns
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's missing or wrong
+      placeholder: The page doesn't say that spawn tags may only use letters, digits and _.
+    validations:
+      required: true
+
+  - type: textarea
+    id: change
+    attributes:
+      label: What it should say
+      description: The new text, or an outline of the new page.

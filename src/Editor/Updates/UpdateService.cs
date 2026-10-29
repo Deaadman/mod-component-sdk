@@ -107,11 +107,12 @@ namespace ModComponent.SDK.Editor.Updates
 
         public static SemVersion CurrentVersion => SemVersion.TryParse(SdkInfo.Version, out var v) ? v : default;
 
-        public static bool IsDismissed(AvailableUpdate update) => EditorPrefs.GetString(DismissedKey, string.Empty) == update?.Tag;
+        // By version, not tag: the nightly's tag stays "nightly" from one build to the next.
+        public static bool IsDismissed(AvailableUpdate update) => update != null && EditorPrefs.GetString(DismissedKey, string.Empty) == update.Version.ToString();
 
         public static void Dismiss(AvailableUpdate update)
         {
-            EditorPrefs.SetString(DismissedKey, update?.Tag ?? string.Empty);
+            EditorPrefs.SetString(DismissedKey, update?.Version.ToString() ?? string.Empty);
             Changed?.Invoke();
         }
 
@@ -139,7 +140,10 @@ namespace ModComponent.SDK.Editor.Updates
             };
         }
 
-        /// <summary>The newest release above <paramref name="current"/>, from GitHub's releases JSON. Drafts are ignored.</summary>
+        /// <summary>
+        /// The newest release above <paramref name="current"/>, from GitHub's releases JSON. Drafts are ignored. A release's
+        /// version is its tag (1.0.5, v1.0.5), or its title for the "nightly" release, titled e.g. 2.0.0-nightly.20261029.42.
+        /// </summary>
         public static AvailableUpdate PickUpdate(string releasesJson, SemVersion current, bool includePrereleases)
         {
             var candidates = new List<AvailableUpdate>();
@@ -147,7 +151,7 @@ namespace ModComponent.SDK.Editor.Updates
             {
                 if (release.Value<bool?>("draft") == true) continue;
                 var tag = release.Value<string>("tag_name");
-                if (!SemVersion.TryParse(tag, out var version)) continue;
+                if (!SemVersion.TryParse(tag, out var version) && !SemVersion.TryParse(release.Value<string>("name"), out version)) continue;
                 if (version.IsPrerelease && !includePrereleases) continue;
                 if (version.CompareTo(current) <= 0) continue;
                 candidates.Add(new AvailableUpdate
@@ -160,10 +164,10 @@ namespace ModComponent.SDK.Editor.Updates
             return candidates.OrderByDescending(c => c.Version).FirstOrDefault();
         }
 
-        /// <summary>Installs the release's tag through Package Manager, e.g. …mod-component-sdk.git#v2.0.1.</summary>
+        /// <summary>Installs the release's tag through Package Manager, e.g. …mod-component-sdk.git?path=src#2.0.1.</summary>
         public static void Install(AvailableUpdate update)
         {
-            var request = Client.Add($"{SdkInfo.RepositoryUrl}.git#{update.Tag}");
+            var request = Client.Add($"{SdkInfo.RepositoryUrl}.git?path=src#{update.Tag}");
             EditorApplication.CallbackFunction poll = null;
             poll = () =>
             {

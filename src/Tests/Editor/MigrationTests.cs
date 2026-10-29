@@ -44,6 +44,19 @@ namespace ModComponent.SDK.Editor.Tests
             SemVersion.TryParse("1.0.6", out var old);
             Assert.That(UpdateService.PickUpdate("[{\"tag_name\":\"v2.0.0-nightly.3\"}]", old, includePrereleases: false), Is.Null);
         }
+
+        [Test]
+        public void PickUpdate_ReadsTheNightlysVersionFromItsTitle()
+        {
+            const string json = "[{\"tag_name\":\"nightly\",\"name\":\"2.0.1-nightly.20261029.42\",\"prerelease\":true}," +
+                                "{\"tag_name\":\"2.0.0\",\"name\":\"2.0.0\"}]";
+            SemVersion.TryParse("2.0.0", out var current);
+
+            var update = UpdateService.PickUpdate(json, current, includePrereleases: true);
+            Assert.That(update.Tag, Is.EqualTo("nightly"));
+            Assert.That(update.Version.ToString(), Is.EqualTo("2.0.1-nightly.20261029.42"));
+            Assert.That(UpdateService.PickUpdate(json, current, includePrereleases: false), Is.Null);
+        }
     }
 
     public class MigrationTests

@@ -1,24 +1,51 @@
-name: Tests
+# Checks every push to main and every pull request: the changelog's format
+# and the EditMode tests, run with the package in package mode. The nightly
+# and release workflows run this first and only publish when it passes.
+
+name: CI
 
 on:
-  pull_request:
   push:
-    branches: [main, develop, rewrite]
+    branches: [main]
+  pull_request:
+  workflow_call:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
-  editmode:
-    name: EditMode tests (Unity 6000.0.60f1)
+  lint:
+    name: Changelog
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
+          persist-credentials: false
+      - name: Changelog
+        shell: pwsh
+        run: ./scripts/release-notes.ps1 -Check
+
+  test:
+    name: Tests
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      checks: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
           lfs: true
 
       - uses: actions/cache@v4
         with:
           path: Library
-          key: Library-${{ hashFiles('package.json') }}
+          key: Library-${{ hashFiles('src/package.json') }}
           restore-keys: Library-
 
       # Needs repository secrets UNITY_LICENSE, UNITY_EMAIL and UNITY_PASSWORD (see game.ci "Activation").
@@ -32,13 +59,13 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           packageMode: true
-          projectPath: .
+          projectPath: src
           unityVersion: 6000.0.60f1
           testMode: editmode
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           checkName: EditMode results
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: test-results

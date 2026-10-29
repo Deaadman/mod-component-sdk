@@ -1,6 +1,6 @@
 {
   "name": "com.deadman.modcomponent.sdk",
-  "version": "2.0.0-nightly.1",
+  "version": "2.0.0",
   "displayName": "ModComponent SDK",
   "description": "Create .modcomponent item mods for The Long Dark in Unity: items, blueprints, localization and spawns, validated and built in one place.",
   "unity": "6000.0",

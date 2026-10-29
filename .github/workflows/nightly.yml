@@ -1,0 +1,103 @@
+# Publishes a nightly build on every push to develop. It replaces the
+# "nightly" pre-release and its tag each time, so there's only ever one. The
+# version is src/package.json's with a suffix for the day and the run, like
+# 2.0.0-nightly.20261029.42. It's committed onto the tag only, so Package
+# Manager and the Mod Hub's update banner show it while develop keeps the
+# plain version. Its notes are CHANGELOG.md's Unreleased section, then a link
+# to every commit since the latest release.
+#
+# Inspired by:
+# 1. NeoVim's nightly release: https://github.com/neovim/neovim/blob/master/.github/workflows/release.yml
+# 2. SeasonedInterloping's release: https://github.com/ds5678/SeasonedInterloping/blob/main/.github/workflows/publish.yml
+
+name: Nightly
+
+on:
+  push:
+    branches: [develop]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# A newer push replaces a nightly that's still building.
+concurrency:
+  group: nightly
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    uses: ./.github/workflows/ci.yml
+    permissions:
+      contents: read
+      checks: write
+    secrets: inherit
+
+  publish:
+    name: Publish
+    needs: ci
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      GH_REPO: ${{ github.repository }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      # Keeps its credentials to push the nightly tag.
+      - uses: actions/checkout@v7
+
+      # Numbered by day and run rather than commit: Package Manager wants plain SemVer.
+      - name: Set the version
+        run: |
+          base="$(jq -r .version src/package.json)"
+          if [[ "$base" == *-* ]]; then
+            echo "::error::src/package.json's version, $base, should be a plain version like 2.0.1"
+            exit 1
+          fi
+          version="$base-nightly.$(date -u +%Y%m%d).$GITHUB_RUN_NUMBER"
+          jq --arg v "$version" '.version = $v' src/package.json > package.json.tmp
+          mv package.json.tmp src/package.json
+          echo "VERSION=$version" >> "$GITHUB_ENV"
+
+      # The changelog's Unreleased section, then a link to every commit since the latest release.
+      - name: Write the notes
+        shell: pwsh
+        run: |
+          ./scripts/release-notes.ps1 -Version Unreleased -OutDir notes -Repo "https://github.com/$env:GH_REPO"
+          $latest = gh api "repos/$env:GH_REPO/releases/latest" --jq .tag_name
+          $sha = $env:GITHUB_SHA.Substring(0, 7)
+          $changes = (Get-Content -Raw notes/release-notes.md).Trim()
+          if (-not $changes) { $changes = "_Nothing under Unreleased in the changelog yet._" }
+          $notes = @(
+            "A build of ``develop`` at $sha. It may be unstable, so back up your project first."
+            ''
+            "Install it from Package Manager with ``https://github.com/$env:GH_REPO.git?path=src#nightly``."
+            ''
+            "## Since $latest"
+            ''
+            $changes
+            ''
+            "**Every commit**: https://github.com/$env:GH_REPO/compare/$latest...nightly"
+          ) -join "`n"
+          [IO.File]::WriteAllText("$PWD/notes/nightly.md", $notes + "`n")
+
+      - name: Commit the version
+        run: |
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -m "Nightly $VERSION" -- src/package.json
+
+      - name: Remove the previous nightly
+        run: |
+          gh release delete nightly --yes --cleanup-tag || true
+          git push origin :refs/tags/nightly || true
+
+      - name: Publish
+        run: |
+          git tag nightly
+          git push origin refs/tags/nightly
+          gh release create nightly \
+            --prerelease \
+            --title "$VERSION" \
+            --notes-file notes/nightly.md \
+            --verify-tag
+          echo "Published nightly **$VERSION**" >> "$GITHUB_STEP_SUMMARY"

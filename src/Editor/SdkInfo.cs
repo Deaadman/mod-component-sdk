@@ -19,7 +19,7 @@ namespace ModComponent.SDK.Editor
 
         public static PackageInfo Package => _package ??= PackageInfo.FindForAssembly(typeof(SdkInfo).Assembly);
 
-        /// <summary>Installed package version, e.g. 2.0.0-nightly.1.</summary>
+        /// <summary>Installed package version, e.g. 2.0.0 or 2.0.0-nightly.20261029.42.</summary>
         public static string Version => Package?.version ?? "0.0.0";
 
         /// <summary>Absolute path of the package folder on disk.</summary>

@@ -1,0 +1,92 @@
+name: Bug report
+description: Something in the ModComponent SDK is wrong, broken, or builds a mod that doesn't work.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting it. The more of this you fill in, the faster it can be fixed.
+        One bug per report, please. Check the [open issues](https://github.com/Deaadman/mod-component-sdk/issues) first, in case it's already there.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What went wrong, and any error you saw in the Console or the Build window.
+      placeholder: My clothing item builds, but in the game it shows the wrong model in first person.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+      placeholder: The first-person model I picked on the Clothing module shows in the game.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: How to make it happen
+      description: The steps from a new or example mod, and which item template or modules you used. How often it happens. A short video helps.
+      placeholder: |
+        1. Create a mod with ModComponent SDK › Create Example Mod
+        2. Add an item from the Clothing template and set its first-person prefabs
+        3. Build it, copy it to the game and equip the item
+
+  - type: dropdown
+    id: where
+    attributes:
+      label: Which part of the SDK
+      multiple: true
+      options:
+        - Mod Hub
+        - Items and their modules
+        - Pickers for game names
+        - Validation
+        - Building a mod
+        - The built mod in the game
+        - Localization
+        - Spawns
+        - Inspect preview or icons
+        - New Mod and New Item wizards
+        - The 1.x importer
+        - The update banner or installing
+        - Something else
+    validations:
+      required: true
+
+  - type: input
+    id: sdk-version
+    attributes:
+      label: SDK version
+      description: Shown next to ModComponent SDK in Window › Package Manager, like 2.0.0 or 2.0.0-nightly.20261029.42.
+      placeholder: 2.0.0
+    validations:
+      required: true
+
+  - type: input
+    id: unity-version
+    attributes:
+      label: Unity version
+      description: Shown in Help › About Unity. The SDK needs 6000.0.60f1 exactly.
+      placeholder: 6000.0.60f1
+    validations:
+      required: true
+
+  - type: textarea
+    id: log
+    attributes:
+      label: Editor log
+      description: |
+        Make the bug happen again, then close Unity and drag `Editor.log` into this box. It's in `%LOCALAPPDATA%\Unity\Editor` on Windows.
+        If the bug is with the built mod in the game, attach `MelonLoader\Latest.log` from your game's folder too. Please attach the files rather than screenshots.
+    validations:
+      required: true
+
+  - type: textarea
+    id: more
+    attributes:
+      label: Anything else
+      description: Screenshots, a video, the `.modcomponent` file, or anything else that might help.
