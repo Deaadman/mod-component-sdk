@@ -23,6 +23,10 @@ namespace ModComponent.SDK.Editor.UI
             return element;
         }
 
+        /// <summary>
+        /// A titled box. Add to <paramref name="content"/>, which sits under the title, so clearing it to refresh
+        /// keeps the title.
+        /// </summary>
         public static VisualElement Section(string title, out VisualElement content)
         {
             var section = new VisualElement();
@@ -34,7 +38,9 @@ namespace ModComponent.SDK.Editor.UI
                 section.Add(label);
             }
 
-            content = section;
+            content = new VisualElement();
+            content.AddToClassList("mcsdk-section__content");
+            section.Add(content);
             return section;
         }
 

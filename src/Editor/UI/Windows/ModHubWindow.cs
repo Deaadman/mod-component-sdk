@@ -88,7 +88,13 @@ namespace ModComponent.SDK.Editor.UI.Windows
             root.Add(toolbar);
 
             var split = new TwoPaneSplitView(0, 260, TwoPaneSplitViewOrientation.Horizontal) { style = { flexGrow = 1 } };
-            _tree = new TreeView { fixedItemHeight = 20, selectionType = SelectionType.Single };
+            // TreeView's own style sets flex-basis to 0, which overrides the width the split gives its fixed pane
+            // and collapses the tree to nothing. Auto lets that width apply; the minimum keeps it from being dragged away.
+            _tree = new TreeView
+            {
+                fixedItemHeight = 20, selectionType = SelectionType.Single,
+                style = { flexBasis = StyleKeyword.Auto, minWidth = 160 }
+            };
             _tree.makeItem = MakeRow;
             _tree.bindItem = BindRow;
             _tree.selectionChanged += selection => ShowAsset((selection.FirstOrDefault() as Node)?.Asset);

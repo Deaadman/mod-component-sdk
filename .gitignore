@@ -397,6 +397,8 @@ FodyWeavers.xsd
 *.sln.iml
 *.idea
 ## ModComponent SDK
+# Local reference copies of other projects' source, such as ModComponent's (not shipped, not committed)
+/refs/
 # Local reference copy of the ModComponent runtime source (not shipped, not committed)
 ModComponent-SourceCode~/
 # Package folders ending in ~ are skipped by Unity's importer but belong in the repo (*~ above ignores them).
