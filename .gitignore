@@ -402,3 +402,11 @@ ModComponent-SourceCode~/
 # Package folders ending in ~ are skipped by Unity's importer but belong in the repo (*~ above ignores them).
 !Documentation~/
 !Samples~/
+# CI's test project keeps only its package manifest and editor version; Unity makes the rest.
+test-project/*
+!test-project/Packages/
+test-project/Packages/*
+!test-project/Packages/manifest.json
+!test-project/ProjectSettings/
+test-project/ProjectSettings/*
+!test-project/ProjectSettings/ProjectVersion.txt

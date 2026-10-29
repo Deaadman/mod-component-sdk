@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using ModComponent.SDK.Integrations;
@@ -20,7 +21,9 @@ namespace ModComponent.SDK.Editor.Authoring
             public string Author = string.Empty;
             public string Version = "1.0.0";
             public string Folder;
-            public bool ItemRarities;
+
+            /// <summary><see cref="ModIntegration"/> types to enable, such as an add-on's.</summary>
+            public List<Type> Integrations = new();
         }
 
         public sealed class ItemSettings
@@ -62,7 +65,7 @@ namespace ModComponent.SDK.Editor.Authoring
             mod.Version = settings.Version;
             mod.Localization = localization;
             mod.Spawns = spawns;
-            if (settings.ItemRarities) mod.EnableIntegration<ItemRaritiesIntegration>();
+            foreach (var integration in settings.Integrations ?? new List<Type>()) mod.EnableIntegration(integration);
             AssetDatabase.CreateAsset(mod, AssetDatabase.GenerateUniqueAssetPath($"{folder}/{id}.asset"));
 
             AssetDatabase.SaveAssets();

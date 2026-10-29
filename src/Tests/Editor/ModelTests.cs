@@ -2,7 +2,6 @@ using System;
 using System.Linq;
 using System.Reflection;
 using ModComponent.SDK.Editor.Modules;
-using ModComponent.SDK.Integrations;
 using ModComponent.SDK.Modules;
 using NUnit.Framework;
 using UnityEngine;
@@ -115,8 +114,8 @@ namespace ModComponent.SDK.Editor.Tests
         public void GearItem_IntegrationDataIsAddedOnce()
         {
             var item = ScriptableObject.CreateInstance<GearItem>();
-            var a = item.GetOrAddIntegrationData<ItemRarityData>();
-            var b = item.GetOrAddIntegrationData<ItemRarityData>();
+            var a = item.GetOrAddIntegrationData<TestItemData>();
+            var b = item.GetOrAddIntegrationData<TestItemData>();
 
             Assert.That(a, Is.SameAs(b));
             Assert.That(item.IntegrationData.Count, Is.EqualTo(1));
@@ -173,12 +172,12 @@ namespace ModComponent.SDK.Editor.Tests
         public void Mod_IntegrationsToggle()
         {
             var mod = ScriptableObject.CreateInstance<Mod>();
-            mod.EnableIntegration<ItemRaritiesIntegration>();
-            mod.EnableIntegration<ItemRaritiesIntegration>();
+            mod.EnableIntegration<TestIntegration>();
+            mod.EnableIntegration<TestIntegration>();
 
             Assert.That(mod.Integrations.Count, Is.EqualTo(1));
-            Assert.That(mod.DisableIntegration<ItemRaritiesIntegration>(), Is.True);
-            Assert.That(mod.HasIntegration<ItemRaritiesIntegration>(), Is.False);
+            Assert.That(mod.DisableIntegration<TestIntegration>(), Is.True);
+            Assert.That(mod.HasIntegration<TestIntegration>(), Is.False);
             UnityEngine.Object.DestroyImmediate(mod);
         }
     }

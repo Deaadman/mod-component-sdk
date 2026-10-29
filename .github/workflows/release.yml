@@ -1,8 +1,8 @@
 # Publishes a release: push a tag like 2.0.0 (no v prefix) that matches the
-# version in src/package.json. Package Manager installs the SDK from that tag
-# through the README's git URL, and the Mod Hub's update banner offers it. The
-# version's section of CHANGELOG.md is the release's description; the release
-# stops if it has none.
+# version in src/package.json and every addons/*/package.json. Package
+# Manager installs the SDK and its add-ons from that tag through the README's
+# git URL, and the Mod Hub's update banner offers it. The version's section of
+# CHANGELOG.md is the release's description; the release stops if it has none.
 #
 # A manual run checks but never publishes: the job below only publishes from
 # a tag.
@@ -42,9 +42,15 @@ jobs:
       - name: Check the tag matches the version
         shell: pwsh
         run: |
-          $version = (Get-Content src/package.json -Raw | ConvertFrom-Json).version
-          if ($version -ne $env:GITHUB_REF_NAME) {
-            throw "tag $env:GITHUB_REF_NAME does not match the version in src/package.json, $version"
+          foreach ($manifest in @('src/package.json') + (Get-ChildItem addons/*/package.json | ForEach-Object { $_.FullName })) {
+            $package = Get-Content $manifest -Raw | ConvertFrom-Json
+            if ($package.version -ne $env:GITHUB_REF_NAME) {
+              throw "tag $env:GITHUB_REF_NAME does not match the version in $manifest, $($package.version)"
+            }
+            $sdk = $package.dependencies.'com.deadman.modcomponent.sdk'
+            if ($sdk -and $sdk -ne $env:GITHUB_REF_NAME) {
+              throw "$manifest needs SDK $sdk, not $env:GITHUB_REF_NAME"
+            }
           }
 
       - name: Read the release notes from CHANGELOG.md

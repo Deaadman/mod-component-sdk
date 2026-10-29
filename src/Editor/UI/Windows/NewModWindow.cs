@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using ModComponent.SDK.Editor.Authoring;
+using ModComponent.SDK.Editor.Integrations;
 using ModComponent.SDK.Editor.Validation;
 using UnityEditor;
 using UnityEditor.UIElements;
@@ -18,7 +19,7 @@ namespace ModComponent.SDK.Editor.UI.Windows
         public static void Open()
         {
             var window = GetWindow<NewModWindow>(true, "New Mod", true);
-            window.minSize = window.maxSize = new Vector2(420, 250);
+            window.minSize = window.maxSize = new Vector2(420, 230 + 20 * IntegrationRegistry.All.Count);
         }
 
         public static Action<Mod> Created;
@@ -34,7 +35,9 @@ namespace ModComponent.SDK.Editor.UI.Windows
             var author = new TextField("Author") { value = EditorPrefs.GetString(AuthorKey, string.Empty) };
             var version = new TextField("Version") { value = "1.0.0" };
             var folder = new TextField("Folder") { value = $"{AssetFactory.DefaultModsFolder}/{id.value}" };
-            var rarities = new Toggle("Item Rarities support");
+            var integrations = IntegrationRegistry.All
+                .Select(i => (info: i, toggle: new Toggle(i.DisplayName + " support") { tooltip = i.Description }))
+                .ToList();
             var error = new HelpBox(string.Empty, HelpBoxMessageType.Error) { style = { display = DisplayStyle.None } };
 
             var idEdited = false;
@@ -47,7 +50,9 @@ namespace ModComponent.SDK.Editor.UI.Windows
             id.RegisterValueChangedCallback(_ => idEdited = true);
             folder.RegisterValueChangedCallback(_ => folderEdited = true);
 
-            foreach (var element in new VisualElement[] { name, id, author, version, folder, rarities, error }) root.Add(element);
+            foreach (var element in new VisualElement[] { name, id, author, version, folder }) root.Add(element);
+            foreach (var (_, toggle) in integrations) root.Add(toggle);
+            root.Add(error);
 
             var actions = new VisualElement();
             actions.AddToClassList("mcsdk-form__actions");
@@ -64,7 +69,8 @@ namespace ModComponent.SDK.Editor.UI.Windows
                     var mod = AssetFactory.CreateMod(new AssetFactory.ModSettings
                     {
                         DisplayName = name.value, Id = id.value, Author = author.value, Version = version.value,
-                        Folder = folder.value, ItemRarities = rarities.value
+                        Folder = folder.value,
+                        Integrations = integrations.Where(i => i.toggle.value).Select(i => i.info.Type).ToList()
                     });
                     Selection.activeObject = mod;
                     Created?.Invoke(mod);

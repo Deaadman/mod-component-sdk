@@ -149,11 +149,19 @@ namespace ModComponent.SDK
         public T GetIntegrationData<T>() where T : ItemIntegrationData =>
             integrationData.OfType<T>().FirstOrDefault();
 
-        public T GetOrAddIntegrationData<T>() where T : ItemIntegrationData, new()
+        public ItemIntegrationData GetIntegrationData(Type type) =>
+            integrationData.FirstOrDefault(d => d != null && d.GetType() == type);
+
+        public T GetOrAddIntegrationData<T>() where T : ItemIntegrationData, new() => (T)GetOrAddIntegrationData(typeof(T));
+
+        /// <summary>Returns the item's data of <paramref name="type"/>, adding it first if the item has none.</summary>
+        public ItemIntegrationData GetOrAddIntegrationData(Type type)
         {
-            var data = GetIntegrationData<T>();
+            if (type == null || type.IsAbstract || !typeof(ItemIntegrationData).IsAssignableFrom(type))
+                throw new ArgumentException($"{type?.Name ?? "null"} isn't an ItemIntegrationData type.", nameof(type));
+            var data = GetIntegrationData(type);
             if (data != null) return data;
-            data = new T();
+            data = (ItemIntegrationData)Activator.CreateInstance(type);
             integrationData.Add(data);
             return data;
         }

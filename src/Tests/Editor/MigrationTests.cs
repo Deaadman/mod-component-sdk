@@ -5,7 +5,6 @@ using ModComponent.Components;
 using ModComponent.SDK.Components;
 using ModComponent.SDK.Editor.Migration;
 using ModComponent.SDK.Editor.Updates;
-using ModComponent.SDK.Integrations;
 using ModComponent.SDK.Modules;
 using NUnit.Framework;
 using UnityEditor;
@@ -159,7 +158,7 @@ namespace ModComponent.SDK.Editor.Tests
         }
 
         [Test]
-        public void Import_ConvertsItemsTablesAndRarities()
+        public void Import_ConvertsItemsAndTables()
         {
             var report = V1Importer.Import(_definition, dryRun: false);
             var mod = report.Mod;
@@ -190,7 +189,6 @@ namespace ModComponent.SDK.Editor.Tests
 
             Assert.That(mod.Localization.Get("GAMEPLAY_OldStew", "French (France)"), Is.EqualTo("Vieux ragoût"));
             Assert.That(mod.Spawns.Scenes.Single().Spawns.Single().Chance, Is.EqualTo(40f));
-            Assert.That(item.GetIntegrationData<ItemRarityData>().Rarity, Is.EqualTo(Rarity.Rare));
             Assert.That(V1Importer.IsImported(_definition), Is.True);
             Assert.That(_prefab.GetComponent<ModFoodComponent>(), Is.Not.Null, "1.x data is left alone");
         }

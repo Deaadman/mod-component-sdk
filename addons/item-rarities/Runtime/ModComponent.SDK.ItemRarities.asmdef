@@ -1,0 +1,16 @@
+{
+    "name": "ModComponent.SDK.ItemRarities",
+    "rootNamespace": "ModComponent.SDK.ItemRarities",
+    "references": [
+        "ModComponent.SDK.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

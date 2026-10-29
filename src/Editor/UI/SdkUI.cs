@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ModComponent.SDK.Editor.Validation;
 using UnityEditor;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -120,6 +121,25 @@ namespace ModComponent.SDK.Editor.UI
             }
 
             return list;
+        }
+
+        /// <summary>
+        /// A field per visible child of <paramref name="property"/>, without its foldout. Used for add-on data held by
+        /// reference, such as an integration's settings. Empty when the property has no visible children.
+        /// </summary>
+        public static VisualElement ChildFields(SerializedProperty property)
+        {
+            var fields = new VisualElement();
+            var child = property.Copy();
+            var end = property.GetEndProperty();
+            if (!child.NextVisible(true)) return fields;
+            while (!SerializedProperty.EqualContents(child, end))
+            {
+                fields.Add(new PropertyField(child.Copy()));
+                if (!child.NextVisible(false)) break;
+            }
+
+            return fields;
         }
 
         /// <summary>Mods whose item list contains the item. Usually one.</summary>

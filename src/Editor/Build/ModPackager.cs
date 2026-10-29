@@ -26,11 +26,33 @@ namespace ModComponent.SDK.Editor.Build
             ("gear-spawns/", new[] { ".txt" }),
         };
 
-        // Files the loader reads from anywhere, or skips harmlessly (integration data such as rarities.ir).
-        private static readonly string[] LooseExtensions = { ".bnk", ".ir" };
+        // Files the loader reads from anywhere.
+        private static readonly string[] LooseExtensions = { ".bnk" };
 
-        /// <summary>The archive path for a staged file, or null with a reason if the loader would reject it.</summary>
-        public static string ToEntryName(string relativePath, out string rejection)
+        // Every extension the loader reads (ZipFileLoader.GetFileType). It skips any other, which is what makes
+        // an integration's own root files, such as rarities.ir, safe.
+        private static readonly string[] LoaderExtensions = { ".unity3d", ".bundle", ".json", ".txt", ".dll", ".bnk" };
+
+        /// <summary>
+        /// Whether integrations may write files with this extension at the archive root: a plain extension the
+        /// loader skips. Anything it reads would be loaded, or stop the archive loading.
+        /// </summary>
+        public static bool IsAllowedRootExtension(string extension, out string reason)
+        {
+            reason = null;
+            var ext = extension?.ToLowerInvariant() ?? string.Empty;
+            if (ext.Length < 2 || ext[0] != '.' || !ext.Skip(1).All(char.IsLetterOrDigit))
+                reason = $"\"{extension}\" isn't a file extension like \".ir\"";
+            else if (LoaderExtensions.Contains(ext))
+                reason = $"ModComponent loads {ext} files itself";
+            return reason == null;
+        }
+
+        /// <summary>
+        /// The archive path for a staged file, or null with a reason if the loader would reject it.
+        /// <paramref name="rootExtensions"/> are extra extensions allowed at the root, declared by integrations.
+        /// </summary>
+        public static string ToEntryName(string relativePath, out string rejection, IEnumerable<string> rootExtensions = null)
         {
             rejection = null;
             var path = relativePath.Replace('\\', '/').TrimStart('/').ToLowerInvariant();
@@ -47,14 +69,27 @@ namespace ModComponent.SDK.Editor.Build
             }
 
             if (LooseExtensions.Contains(extension)) return path;
+            if (!path.Contains('/') && rootExtensions != null &&
+                rootExtensions.Any(e => string.Equals(e, extension, StringComparison.OrdinalIgnoreCase))) return path;
 
             rejection = $"{relativePath}: ModComponent would reject this file";
             return null;
         }
 
-        /// <summary>Writes the archive. Throws if any staged file would be rejected by the loader.</summary>
-        public static IReadOnlyList<string> Package(string stagingDirectory, string archivePath)
+        /// <summary>
+        /// Writes the archive. Throws if any staged file would be rejected by the loader, or a root extension isn't
+        /// one the loader skips.
+        /// </summary>
+        public static IReadOnlyList<string> Package(string stagingDirectory, string archivePath, IEnumerable<string> rootExtensions = null)
         {
+            var allowedRoot = (rootExtensions ?? Enumerable.Empty<string>()).ToList();
+            var badExtensions = allowedRoot
+                .Select(e => IsAllowedRootExtension(e, out var reason) ? null : $"An integration declares the root extension {e}, but {reason}.")
+                .Where(r => r != null)
+                .ToList();
+            if (badExtensions.Count > 0)
+                throw new InvalidOperationException("Cannot package the mod:\n" + string.Join("\n", badExtensions));
+
             var files = Directory.GetFiles(stagingDirectory, "*", SearchOption.AllDirectories)
                 .Select(f => (full: f, rel: Path.GetRelativePath(stagingDirectory, f)))
                 .ToList();
@@ -63,7 +98,7 @@ namespace ModComponent.SDK.Editor.Build
             var problems = new List<string>();
             foreach (var (full, rel) in files)
             {
-                var entry = ToEntryName(rel, out var rejection);
+                var entry = ToEntryName(rel, out var rejection, allowedRoot);
                 if (entry == null) problems.Add(rejection);
                 else entries.Add((full, entry));
             }

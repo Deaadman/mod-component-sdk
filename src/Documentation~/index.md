@@ -38,7 +38,7 @@ The bundled list of vanilla names was taken from The Long Dark 2.31, so things a
 ├─ auto-mapped/     one JSON per item, named in lower case without GEAR_
 ├─ blueprints/      recipes/
 ├─ localizations/   gear-spawns/
-└─ rarities.ir      when Item Rarities is on
+└─ rarities.ir      with the Item Rarities add-on, when it's on
 ```
 
 Builds need, once per project: the Windows build target, and JSON Addressables catalogs (the build offers to turn them on).

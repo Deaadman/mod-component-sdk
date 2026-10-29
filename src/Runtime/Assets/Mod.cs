@@ -65,19 +65,30 @@ namespace ModComponent.SDK
 
         public T GetIntegration<T>() where T : ModIntegration => integrations.OfType<T>().FirstOrDefault();
 
+        public ModIntegration GetIntegration(Type type) => integrations.FirstOrDefault(i => i != null && i.GetType() == type);
+
         public bool HasIntegration<T>() where T : ModIntegration => GetIntegration<T>() != null;
 
-        public T EnableIntegration<T>() where T : ModIntegration, new()
+        public bool HasIntegration(Type type) => GetIntegration(type) != null;
+
+        public T EnableIntegration<T>() where T : ModIntegration, new() => (T)EnableIntegration(typeof(T));
+
+        /// <summary>Adds an integration of <paramref name="type"/>, or returns the one already enabled.</summary>
+        public ModIntegration EnableIntegration(Type type)
         {
-            var existing = GetIntegration<T>();
+            if (type == null || type.IsAbstract || !typeof(ModIntegration).IsAssignableFrom(type))
+                throw new ArgumentException($"{type?.Name ?? "null"} isn't a ModIntegration type.", nameof(type));
+            var existing = GetIntegration(type);
             if (existing != null) return existing;
-            var integration = new T();
+            var integration = (ModIntegration)Activator.CreateInstance(type);
             integrations.Add(integration);
             return integration;
         }
 
-        public bool DisableIntegration<T>() where T : ModIntegration =>
-            integrations.RemoveAll(i => i is T) > 0;
+        public bool DisableIntegration<T>() where T : ModIntegration => DisableIntegration(typeof(T));
+
+        public bool DisableIntegration(Type type) =>
+            integrations.RemoveAll(i => i != null && i.GetType() == type) > 0;
 
         /// <summary>Turns a display name into an id: ASCII letters, digits, '-' and '_' only.</summary>
         public static string ToId(string name)

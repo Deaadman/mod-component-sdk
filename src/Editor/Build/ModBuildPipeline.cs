@@ -185,7 +185,7 @@ namespace ModComponent.SDK.Editor.Build
                 ? Path.Combine(StagingRoot, "Output")
                 : options.OutputDirectory;
             var archive = Path.Combine(outputDirectory, archiveName);
-            report.Entries.AddRange(ModPackager.Package(staging, archive));
+            report.Entries.AddRange(ModPackager.Package(staging, archive, IntegrationRegistry.RootExtensions(mod)));
             report.ArchivePath = archive;
             report.Info($"Wrote {archive} ({FormatSize(new FileInfo(archive).Length)}, {report.Entries.Count} files)");
 
@@ -241,7 +241,7 @@ namespace ModComponent.SDK.Editor.Build
 
             foreach (var integration in mod.Integrations.Where(i => i != null))
             {
-                var exporter = IntegrationExporters.For(integration.GetType());
+                var exporter = IntegrationRegistry.Get(integration)?.Exporter;
                 if (exporter == null)
                 {
                     report.Warn($"No exporter for the {integration.DisplayName} integration; its data was not written.");

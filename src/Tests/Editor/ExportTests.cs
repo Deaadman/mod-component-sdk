@@ -5,9 +5,7 @@ using System.Linq;
 using System.Threading;
 using ModComponent.SDK.Editor.Build;
 using ModComponent.SDK.Editor.Build.Export;
-using ModComponent.SDK.Editor.Integrations;
 using ModComponent.SDK.Editor.Modules;
-using ModComponent.SDK.Integrations;
 using ModComponent.SDK.Modules;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
@@ -386,26 +384,6 @@ namespace ModComponent.SDK.Editor.Tests
         }
 
         [Test]
-        public void ItemRarities_GroupsItemsByRarity()
-        {
-            var a = ScriptableObject.CreateInstance<GearItem>();
-            a.GearName = "GEAR_A";
-            a.GetOrAddIntegrationData<ItemRarityData>().Rarity = Rarity.Epic;
-            var b = ScriptableObject.CreateInstance<GearItem>();
-            b.GearName = "GEAR_B";
-            _mod.Items.Add(a);
-            _mod.Items.Add(b);
-            var integration = _mod.EnableIntegration<ItemRaritiesIntegration>();
-
-            var files = IntegrationExporters.For(typeof(ItemRaritiesIntegration)).Export(_mod, integration).ToList();
-
-            Assert.That(files.Single().Key, Is.EqualTo("rarities.ir"));
-            Assert.That(files.Single().Value, Is.EqualTo("[Epic]\nGEAR_A\n\n"));
-            UnityEngine.Object.DestroyImmediate(a);
-            UnityEngine.Object.DestroyImmediate(b);
-        }
-
-        [Test]
         public void Number_IsFixedPointWithoutNegativeZero()
         {
             Assert.That(ModWriters.Number(-0f), Is.EqualTo("0"));
@@ -422,7 +400,6 @@ namespace ModComponent.SDK.Editor.Tests
         [TestCase("bundle/WarmGear_assets_all.bundle", "bundle/warmgear_assets_all.bundle")]
         [TestCase("gear-spawns/warmgear.txt", "gear-spawns/warmgear.txt")]
         [TestCase("extras/Sounds.bnk", "extras/sounds.bnk")]
-        [TestCase("rarities.ir", "rarities.ir")]
         public void AcceptedPaths(string staged, string expected)
         {
             Assert.That(ModPackager.ToEntryName(staged, out var rejection), Is.EqualTo(expected));
@@ -433,10 +410,52 @@ namespace ModComponent.SDK.Editor.Tests
         [TestCase("auto-mapped/readme.txt")]
         [TestCase("gear-spawns/spawns.json")]
         [TestCase("icon.png")]
+        [TestCase("rarities.ir")]
         public void RejectedPaths(string staged)
         {
             Assert.That(ModPackager.ToEntryName(staged, out var rejection), Is.Null);
             Assert.That(rejection, Is.Not.Empty);
+        }
+
+        [Test]
+        public void DeclaredRootExtensions_AreAllowedAtTheRootOnly()
+        {
+            var declared = new[] { ".ir" };
+            Assert.That(ModPackager.ToEntryName("Rarities.ir", out var rejection, declared), Is.EqualTo("rarities.ir"));
+            Assert.That(rejection, Is.Null);
+            Assert.That(ModPackager.ToEntryName("extras/rarities.ir", out _, declared), Is.Null);
+        }
+
+        [TestCase(".ir", true)]
+        [TestCase(".isk", true)]
+        [TestCase(".json", false)]
+        [TestCase(".DLL", false)]
+        [TestCase(".bnk", false)]
+        [TestCase("ir", false)]
+        [TestCase(".i/r", false)]
+        public void RootExtensions_MustBeOnesTheLoaderSkips(string extension, bool allowed)
+        {
+            Assert.That(ModPackager.IsAllowedRootExtension(extension, out var reason), Is.EqualTo(allowed));
+            Assert.That(reason, allowed ? Is.Null : Is.Not.Empty);
+        }
+
+        [Test]
+        public void Package_RefusesARootExtensionTheLoaderReads()
+        {
+            var staging = System.IO.Path.Combine(System.IO.Path.GetTempPath(), "mcsdk-pack-" + Guid.NewGuid().ToString("N"));
+            try
+            {
+                System.IO.Directory.CreateDirectory(staging);
+                System.IO.File.WriteAllText(System.IO.Path.Combine(staging, "buildinfo.json"), "{}");
+                var archive = System.IO.Path.Combine(staging, "out", "Test.modcomponent");
+
+                var e = Assert.Throws<InvalidOperationException>(() => ModPackager.Package(staging, archive, new[] { ".json" }));
+                Assert.That(e.Message, Does.Contain(".json"));
+            }
+            finally
+            {
+                if (System.IO.Directory.Exists(staging)) System.IO.Directory.Delete(staging, true);
+            }
         }
 
         [Test]

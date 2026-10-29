@@ -164,10 +164,14 @@ namespace ModComponent.SDK.Editor.Updates
             return candidates.OrderByDescending(c => c.Version).FirstOrDefault();
         }
 
-        /// <summary>Installs the release's tag through Package Manager, e.g. …mod-component-sdk.git?path=src#2.0.1.</summary>
+        /// <summary>
+        /// Installs the release's tag through Package Manager, e.g. …mod-component-sdk.git?path=src#2.0.1, along with
+        /// every add-on installed from this repository, so they stay on the same release.
+        /// </summary>
         public static void Install(AvailableUpdate update)
         {
-            var request = Client.Add($"{SdkInfo.RepositoryUrl}.git?path=src#{update.Tag}");
+            var installed = UnityEditor.PackageManager.PackageInfo.GetAllRegisteredPackages().Select(p => p.packageId);
+            var request = Client.AddAndRemove(InstallUrls(update.Tag, installed).ToArray());
             EditorApplication.CallbackFunction poll = null;
             poll = () =>
             {
@@ -179,6 +183,27 @@ namespace ModComponent.SDK.Editor.Updates
                     Debug.LogError($"{SdkInfo.DisplayName} update to {update.Version} failed: {request.Error?.message}");
             };
             EditorApplication.update += poll;
+        }
+
+        /// <summary>
+        /// Git URLs to install for <paramref name="tag"/>: the SDK, then each add-on from this repository found in
+        /// <paramref name="installedPackageIds"/> (name@url), such as …mod-component-sdk.git?path=addons/item-rarities.
+        /// </summary>
+        public static IEnumerable<string> InstallUrls(string tag, IEnumerable<string> installedPackageIds)
+        {
+            var repository = SdkInfo.RepositoryUrl + ".git?path=";
+            yield return $"{repository}src#{tag}";
+
+            var addOns = installedPackageIds
+                .Select(id =>
+                {
+                    var start = id.IndexOf(repository, StringComparison.OrdinalIgnoreCase);
+                    return start < 0 ? null : id.Substring(start + repository.Length).Split('#')[0].Trim('/');
+                })
+                .Where(path => path != null && path.StartsWith("addons/", StringComparison.Ordinal))
+                .Distinct(StringComparer.Ordinal)
+                .OrderBy(path => path, StringComparer.Ordinal);
+            foreach (var path in addOns) yield return $"{repository}{path}#{tag}";
         }
     }
 }

@@ -1,7 +1,8 @@
 # Publishes a nightly build on every push to develop. It replaces the
 # "nightly" pre-release and its tag each time, so there's only ever one. The
 # version is src/package.json's with a suffix for the day and the run, like
-# 2.0.0-nightly.20261029.42. It's committed onto the tag only, so Package
+# 2.0.0-nightly.20261029.42, and each add-on in addons/ gets the same. It's
+# committed onto the tag only, so Package
 # Manager and the Mod Hub's update banner show it while develop keeps the
 # plain version. Its notes are CHANGELOG.md's Unreleased section, then a link
 # to every commit since the latest release.
@@ -57,6 +58,11 @@ jobs:
           version="$base-nightly.$(date -u +%Y%m%d).$GITHUB_RUN_NUMBER"
           jq --arg v "$version" '.version = $v' src/package.json > package.json.tmp
           mv package.json.tmp src/package.json
+          # Add-ons share the SDK's version, and need the nightly SDK they were built with.
+          for manifest in addons/*/package.json; do
+            jq --arg v "$version" '.version = $v | .dependencies["com.deadman.modcomponent.sdk"] = $v' "$manifest" > package.json.tmp
+            mv package.json.tmp "$manifest"
+          done
           echo "VERSION=$version" >> "$GITHUB_ENV"
 
       # The changelog's Unreleased section, then a link to every commit since the latest release.
@@ -73,6 +79,8 @@ jobs:
             ''
             "Install it from Package Manager with ``https://github.com/$env:GH_REPO.git?path=src#nightly``."
             ''
+            "Add-ons install the same way, such as ``https://github.com/$env:GH_REPO.git?path=addons/item-rarities#nightly``."
+            ''
             "## Since $latest"
             ''
             $changes
@@ -84,7 +92,7 @@ jobs:
       - name: Commit the version
         run: |
           git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
-            commit -m "Nightly $VERSION" -- src/package.json
+            commit -m "Nightly $VERSION" -- src/package.json addons/*/package.json
 
       - name: Remove the previous nightly
         run: |

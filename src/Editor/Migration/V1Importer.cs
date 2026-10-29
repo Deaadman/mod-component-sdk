@@ -6,7 +6,6 @@ using System.Reflection;
 using ModComponent.SDK.Editor.Authoring;
 using ModComponent.SDK.Editor.Build.Export;
 using ModComponent.SDK.Editor.Modules;
-using ModComponent.SDK.Integrations;
 using ModComponent.SDK.Modules;
 using ModComponent.SDK.References;
 using UnityEditor;
@@ -29,13 +28,23 @@ namespace ModComponent.SDK.Editor.Migration
         public int LocalizationKeys;
         public int Spawns;
 
-        internal void Note(string text) => Notes.Add(text);
+        public void Note(string text) => Notes.Add(text);
     }
 
     /// <summary>
-    /// Reads a mod made with SDK 1.x (a ModDefinition, its prefabs' Mod*Component scripts, localization, spawns and
-    /// rarities) into 2.0 assets. Nothing from 1.x is changed or deleted; removing the old scripts from prefabs is
-    /// a separate step (<see cref="RemoveLegacyComponents"/>).
+    /// Brings across 1.x data the SDK itself no longer handles, such as an add-on's. Subclasses are found
+    /// automatically and run after the SDK's own steps, in dry runs too, so they only change the new assets.
+    /// </summary>
+    public abstract class V1ImportStep
+    {
+        public abstract void Import(V1Definition definition, Mod mod, ImportReport report);
+    }
+
+    /// <summary>
+    /// Reads a mod made with SDK 1.x (a ModDefinition, its prefabs' Mod*Component scripts, localization and spawns,
+    /// plus whatever installed <see cref="V1ImportStep"/>s bring across, such as rarities) into 2.0 assets. Nothing
+    /// from 1.x is changed or deleted; removing the old scripts from prefabs is a separate step
+    /// (<see cref="RemoveLegacyComponents"/>).
     /// </summary>
     public static class V1Importer
     {
@@ -127,7 +136,7 @@ namespace ModComponent.SDK.Editor.Migration
                 if (mod.Localization != null) created.Add(mod.Localization);
                 mod.Spawns = ImportSpawns(definition, report);
                 if (mod.Spawns != null) created.Add(mod.Spawns);
-                ImportRarities(definition, mod, report);
+                RunImportSteps(definition, mod, report);
 
                 if (!dryRun && IsImported(definition))
                     report.Note($"A mod with the id {id} already exists, so nothing was written. Delete or rename it to import again.");
@@ -418,23 +427,20 @@ namespace ModComponent.SDK.Editor.Migration
             return table;
         }
 
-        private static void ImportRarities(V1Definition definition, Mod mod, ImportReport report)
+        private static IReadOnlyList<V1ImportStep> _steps;
+
+        private static void RunImportSteps(V1Definition definition, Mod mod, ImportReport report)
         {
-            var v1 = definition.modItemRarities;
-            if (v1 == null) return;
-            mod.EnableIntegration<ItemRaritiesIntegration>();
-            var tiers = new (GameObject[] prefabs, Rarity rarity)[]
-            {
-                (v1.Common, Rarity.Common), (v1.Uncommon, Rarity.Uncommon), (v1.Rare, Rarity.Rare),
-                (v1.Epic, Rarity.Epic), (v1.Legendary, Rarity.Legendary), (v1.Mythic, Rarity.Mythic)
-            };
-            foreach (var (prefabs, rarity) in tiers)
-            foreach (var prefab in (prefabs ?? Array.Empty<GameObject>()).Where(p => p != null))
-            {
-                var item = mod.Items.FirstOrDefault(i => i.Prefab == prefab);
-                if (item != null) item.GetOrAddIntegrationData<ItemRarityData>().Rarity = rarity;
-                else report.Note($"Rarity for {prefab.name} skipped: it isn't one of the mod's items.");
-            }
+            _steps ??= TypeCache.GetTypesDerivedFrom<V1ImportStep>()
+                .Where(t => !t.IsAbstract && t.GetConstructor(Type.EmptyTypes) != null)
+                .OrderBy(t => t.FullName, StringComparer.Ordinal)
+                .Select(t => (V1ImportStep)Activator.CreateInstance(t))
+                .ToList();
+            foreach (var step in _steps) step.Import(definition, mod, report);
+
+            // Item Rarities was 1.x's only integration, and now comes from an add-on.
+            if (definition.modItemRarities != null && mod.Integrations.Count == 0)
+                report.Note("The mod has 1.x item rarities. Install the Item Rarities add-on before importing to bring them across.");
         }
 
         private static void Save(ImportReport report, string folder)

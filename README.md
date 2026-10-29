@@ -27,6 +27,14 @@ The ModComponent SDK is a Unity package for making `.modcomponent` item mods for
 
 When a new release is out, the Mod Hub shows a banner that installs it. To update by hand, enter the git URL again with the new version after the `#`.
 
+### Add-ons
+
+Add-ons are optional packages that teach the SDK about other mods. Install one the same way, with the same version as the SDK, and the update banner keeps it in step:
+
+| Add-on | What it adds | Git URL |
+| --- | --- | --- |
+| [Item Rarities](addons/item-rarities/Documentation~/index.md) | A rarity per item, written to `rarities.ir` | `https://github.com/Deaadman/mod-component-sdk.git?path=addons/item-rarities#2.0.0` |
+
 ### Coming from 1.x
 
 Open **ModComponent SDK › Import 1.x Mods…**, run a dry run, then import. Your 1.x assets are left as they are. After checking the result, remove the old scripts from your prefabs with the button in that window. A validation rule also points out any you missed.
@@ -55,6 +63,7 @@ To have the update banner offer each new nightly, turn on **Include nightlies** 
 | Icons | An inspect preview to line up the inspect view, and an inventory icon renderer |
 | Wizards | **New Mod** and **New Item**, with 14 item templates |
 | 1.x importer | Brings mods made with SDK 1.x across without touching the originals |
+| Add-ons | Packages that add support for other mods, such as Item Rarities, to every mod, item, build and check |
 
 [The guide](src/Documentation~/index.md) walks through making a mod, and the [wiki](https://github.com/Deaadman/mod-component-sdk/wiki) has the reference pages.
 

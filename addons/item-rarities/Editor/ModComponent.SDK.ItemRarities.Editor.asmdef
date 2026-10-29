@@ -1,0 +1,21 @@
+{
+    "name": "ModComponent.SDK.ItemRarities.Editor",
+    "rootNamespace": "ModComponent.SDK.ItemRarities.Editor",
+    "references": [
+        "ModComponent.SDK.ItemRarities",
+        "ModComponent.SDK.Runtime",
+        "ModComponent.SDK.Editor",
+        "ModComponent.SDK"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,8 +1,8 @@
 using System.Linq;
+using ModComponent.SDK.Editor.Integrations;
 using ModComponent.SDK.Editor.Modules;
 using ModComponent.SDK.Editor.UI.Preview;
 using ModComponent.SDK.Editor.Validation;
-using ModComponent.SDK.Integrations;
 using ModComponent.SDK.Modules;
 using UnityEditor;
 using UnityEditor.IMGUI.Controls;
@@ -208,8 +208,11 @@ namespace ModComponent.SDK.Editor.UI.Inspectors
             AddList("behaviours", Item.Behaviours.Cast<ModuleData>().ToList());
             AddList("modifications", Item.Modifications.Cast<ModuleData>().ToList());
 
-            if (SdkUI.OwningMods(Item).Any(m => m.HasIntegration<ItemRaritiesIntegration>()))
-                _modules.Add(BuildRaritySection());
+            var enabled = SdkUI.OwningMods(Item).SelectMany(m => m.Integrations).Where(i => i != null)
+                .Select(i => i.GetType()).ToHashSet();
+            foreach (var integration in IntegrationRegistry.All.Where(i => enabled.Contains(i.Type)))
+            foreach (var data in integration.ItemData)
+                _modules.Add(BuildIntegrationSection(integration, data));
 
             _modules.Bind(serializedObject);
         }
@@ -226,31 +229,25 @@ namespace ModComponent.SDK.Editor.UI.Inspectors
             }
         }
 
-        private VisualElement BuildRaritySection()
+        /// <summary>
+        /// One integration's data on this item: a toggle that adds or removes it, and its fields while it's there.
+        /// </summary>
+        private VisualElement BuildIntegrationSection(ModIntegrationInfo integration, ItemDataInfo data)
         {
-            var section = SdkUI.Section("Item Rarities", out var content);
-            var data = Item.GetIntegrationData<ItemRarityData>();
-            var field = new EnumField("Rarity", data?.Rarity ?? Rarity.Common);
-            var toggle = new Toggle("Has a rarity") { value = data != null };
-            field.SetEnabled(data != null);
+            var section = SdkUI.Section(integration.DisplayName, out var content);
+            var toggle = new Toggle(data.Label) { value = Item.GetIntegrationData(data.Type) != null, tooltip = integration.Description };
             toggle.RegisterValueChangedCallback(e =>
             {
-                Undo.RecordObject(Item, "Change rarity");
-                if (e.newValue) Item.GetOrAddIntegrationData<ItemRarityData>().Rarity = (Rarity)field.value;
-                else Item.RemoveIntegrationData(Item.GetIntegrationData<ItemRarityData>());
-                field.SetEnabled(e.newValue);
-                EditorUtility.SetDirty(Item);
-            });
-            field.RegisterValueChangedCallback(e =>
-            {
-                var current = Item.GetIntegrationData<ItemRarityData>();
-                if (current == null) return;
-                Undo.RecordObject(Item, "Change rarity");
-                current.Rarity = (Rarity)e.newValue;
-                EditorUtility.SetDirty(Item);
+                Undo.RecordObject(Item, "Change " + integration.DisplayName);
+                if (e.newValue) Item.GetOrAddIntegrationData(data.Type);
+                else Item.RemoveIntegrationData(Item.GetIntegrationData(data.Type));
+                Changed();
             });
             content.Add(toggle);
-            content.Add(field);
+
+            var list = serializedObject.FindProperty("integrationData");
+            var index = Item.IntegrationData.ToList().IndexOf(Item.GetIntegrationData(data.Type));
+            if (index >= 0 && index < list.arraySize) content.Add(SdkUI.ChildFields(list.GetArrayElementAtIndex(index)));
             return section;
         }
 

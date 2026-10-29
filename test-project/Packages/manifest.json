@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "com.deadman.modcomponent.sdk": "file:../../src",
+    "com.deadman.modcomponent.sdk.item-rarities": "file:../../addons/item-rarities"
+  },
+  "testables": [
+    "com.deadman.modcomponent.sdk",
+    "com.deadman.modcomponent.sdk.item-rarities"
+  ]
+}

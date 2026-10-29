@@ -1,0 +1,24 @@
+{
+  "name": "com.deadman.modcomponent.sdk.item-rarities",
+  "version": "2.0.0",
+  "displayName": "ModComponent SDK: Item Rarities",
+  "description": "Give items a rarity for the Item Rarities mod. Adds an Item Rarities integration to the ModComponent SDK, which writes rarities.ir into each mod that turns it on.",
+  "unity": "6000.0",
+  "unityRelease": "60f1",
+  "documentationUrl": "https://github.com/Deaadman/mod-component-sdk/blob/main/addons/item-rarities/Documentation~/index.md",
+  "changelogUrl": "https://github.com/Deaadman/mod-component-sdk/releases",
+  "licensesUrl": "https://github.com/Deaadman/mod-component-sdk/blob/main/LICENSE",
+  "keywords": [
+    "The Long Dark",
+    "ModComponent",
+    "modding",
+    "Item Rarities"
+  ],
+  "author": {
+    "name": "Deadman",
+    "url": "https://github.com/Deaadman"
+  },
+  "dependencies": {
+    "com.deadman.modcomponent.sdk": "2.0.0"
+  }
+}

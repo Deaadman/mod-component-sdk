@@ -14,6 +14,11 @@
     margin-bottom: 4px;
 }
 
+/* Fields that belong to the toggle above them, such as an enabled integration's settings. */
+.mcsdk-indent {
+    margin-left: 15px;
+}
+
 .mcsdk-header {
     flex-direction: row;
     align-items: center;

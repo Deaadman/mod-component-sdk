@@ -34,8 +34,10 @@ A rewrite of the SDK. To bring a mod made with 1.x across, install 2.0 over 1.x,
 - An inspect preview and an inventory icon renderer.
 - **New Mod** and **New Item** wizards with 14 item templates, and **Create Example Mod**.
 - An **Import 1.x Mods** window with a dry run.
-- An update banner in the Mod Hub that installs a release by its tag, and **Preferences › ModComponent SDK**.
-- Item Rarities support, as an optional part of each mod.
+- An update banner in the Mod Hub that installs a release by its tag, along with any add-ons, and **Preferences › ModComponent SDK**.
+- Item Rarities support, in the optional Item Rarities add-on. Install it with `https://github.com/Deaadman/mod-component-sdk.git?path=addons/item-rarities#2.0.0`, the same way as the SDK.
+- Add-on packages can extend the SDK: a setting on each mod, data on each item, files in the build, validation rules and steps for **Import 1.x Mods…**.
+- A warning on mods and items that use data from an add-on that isn't installed, with a button to remove it.
 
 ### Changed
 

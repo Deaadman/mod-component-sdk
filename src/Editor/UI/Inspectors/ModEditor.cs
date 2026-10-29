@@ -2,9 +2,9 @@ using System.IO;
 using System.Linq;
 using ModComponent.SDK.Editor.Authoring;
 using ModComponent.SDK.Editor.Build;
+using ModComponent.SDK.Editor.Integrations;
 using ModComponent.SDK.Editor.UI.Windows;
 using ModComponent.SDK.Editor.Validation;
-using ModComponent.SDK.Integrations;
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine.UIElements;
@@ -16,6 +16,7 @@ namespace ModComponent.SDK.Editor.UI.Inspectors
     public sealed class ModEditor : UnityEditor.Editor
     {
         private VisualElement _issues;
+        private VisualElement _integrations;
         private Label _buildStatus;
         private IVisualElementScheduledItem _pendingValidation;
 
@@ -65,16 +66,8 @@ namespace ModComponent.SDK.Editor.UI.Inspectors
                 new Button(() => { if (Mod.Spawns == null) AssetFactory.CreateSpawnTable(Mod); SpawnsWindow.Open(Mod); }) { text = "Edit spawns" }));
             root.Add(tables);
 
-            var integrations = SdkUI.Section("Integrations", out c);
-            var rarities = new Toggle("Item Rarities") { value = Mod.HasIntegration<ItemRaritiesIntegration>(), tooltip = "Write rarities.ir for the Item Rarities mod." };
-            rarities.RegisterValueChangedCallback(e =>
-            {
-                Undo.RecordObject(Mod, "Toggle Item Rarities");
-                if (e.newValue) Mod.EnableIntegration<ItemRaritiesIntegration>();
-                else Mod.DisableIntegration<ItemRaritiesIntegration>();
-                EditorUtility.SetDirty(Mod);
-            });
-            c.Add(rarities);
+            var integrations = SdkUI.Section("Integrations", out _integrations);
+            RebuildIntegrations();
             root.Add(integrations);
 
             var build = SdkUI.Section("Build", out c);
@@ -97,6 +90,42 @@ namespace ModComponent.SDK.Editor.UI.Inspectors
                 _pendingValidation = root.schedule.Execute(Revalidate).StartingIn(400);
             });
             return root;
+        }
+
+        /// <summary>A toggle per installed integration, with an enabled one's fields under it.</summary>
+        private void RebuildIntegrations()
+        {
+            _integrations.Clear();
+            if (IntegrationRegistry.All.Count == 0)
+            {
+                _integrations.Add(new HelpBox("No integrations are installed. Add-on packages, such as Item Rarities, add them here.",
+                    HelpBoxMessageType.Info));
+                return;
+            }
+
+            serializedObject.Update();
+            var list = serializedObject.FindProperty("integrations");
+            foreach (var info in IntegrationRegistry.All)
+            {
+                var toggle = new Toggle(info.DisplayName) { value = Mod.HasIntegration(info.Type), tooltip = info.Description };
+                toggle.RegisterValueChangedCallback(e =>
+                {
+                    Undo.RecordObject(Mod, "Toggle " + info.DisplayName);
+                    if (e.newValue) Mod.EnableIntegration(info.Type);
+                    else Mod.DisableIntegration(info.Type);
+                    EditorUtility.SetDirty(Mod);
+                    RebuildIntegrations();
+                });
+                _integrations.Add(toggle);
+
+                var index = Mod.Integrations.ToList().IndexOf(Mod.GetIntegration(info.Type));
+                if (index < 0 || index >= list.arraySize) continue;
+                var fields = SdkUI.ChildFields(list.GetArrayElementAtIndex(index));
+                fields.AddToClassList("mcsdk-indent");
+                _integrations.Add(fields);
+            }
+
+            _integrations.Bind(serializedObject);
         }
 
         private void RefreshBuildStatus()

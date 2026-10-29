@@ -116,8 +116,33 @@ namespace ModComponent.SDK.Editor.Validation.Rules
             }
 
             foreach (var integration in mod.Integrations.Where(i => i != null))
-                if (Integrations.IntegrationExporters.For(integration.GetType()) == null)
+                if (Integrations.IntegrationRegistry.Get(integration)?.Exporter == null)
                     yield return Warning($"No exporter is installed for {integration.DisplayName}, so its data won't be written.", mod, "Integrations");
+        }
+    }
+
+    /// <summary>
+    /// Integration data whose type no longer exists, usually because the add-on that defines it isn't installed.
+    /// Unity keeps the data but can't load it, so nothing of it is built.
+    /// </summary>
+    public sealed class MissingAddOnRule : ValidationRule
+    {
+        public override string Id => "mod.missing-add-on";
+
+        public override IEnumerable<ValidationIssue> Check(ValidationContext context)
+        {
+            var assets = new UnityEngine.Object[] { context.Mod }.Concat(context.Mod.Items.Where(i => i != null));
+            foreach (var asset in assets)
+            {
+                if (!SerializationUtility.HasManagedReferencesWithMissingTypes(asset)) continue;
+                var types = SerializationUtility.GetManagedReferencesWithMissingTypes(asset)
+                    .Select(t => $"{t.className} ({t.assemblyName})")
+                    .Distinct()
+                    .OrderBy(t => t, System.StringComparer.Ordinal);
+                yield return Warning($"Uses {string.Join(", ", types)}, which isn't installed, so that data won't be built. " +
+                                     "Install the add-on it came from, or remove the data.", asset, "Integrations", "Remove the data",
+                    () => ModIdentityRule.Edit(asset, a => SerializationUtility.ClearAllManagedReferencesWithMissingTypes(a)));
+            }
         }
     }
 }
